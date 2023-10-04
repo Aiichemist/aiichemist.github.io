@@ -1,4 +1,4 @@
 <!-- docs/_sidebar.md -->
 
-* [首页](math/)
-* [指南](math/linear-algebra/)
+* [数学](math/)
+* * [线性代数](math/linear-algebra/)
