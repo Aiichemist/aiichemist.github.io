@@ -1,18 +1,18 @@
 # Hey, I'm Aiichemist
 
-- This is my personal knowledge base:
+- This is my **personal knowledge base**.
 
-## Content
+## Content(Building)
 
-- Math:Calculus,Linear-algebra(Higher),Probably-statistics,Group-theory,Abstract-algebra,Category-theory,Tensor,Manifold,Lie-group...
+- Math:Calculus,**Linear-algebra**(Higher),**Probably-statistics**,Group-theory,Abstract-algebra,Category-theory,Tensor,Manifold,Lie-group...
 - Machine-Learning:...
 - Deep-Learning:...
 
 ## About ME
 
-- I'm [Aiichemist]()
+- I'm [Aiichemist](https://github.com/Aiichemist)
   -  An undergraduate student majoring in artificial intelligence at Chongqing University
-- Based on the long-term, stay patient, with the power of knowledge and time to make friends
+- **Proverbs**:Based on the long-term, stay patient, with the power of knowledge and time to make friends
 - Blog: [link here](https://aiichemist.github.io/)
 
 <img align="right" alt="GIF" src="https://github.com/abhisheknaiidu/abhisheknaiidu/blob/master/code.gif?raw=true" width="343" height="220" title="Do what you like, and do it best!">
