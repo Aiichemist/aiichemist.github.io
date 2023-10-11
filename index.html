@@ -31,8 +31,15 @@
       // 在侧边栏中出现的网站图标
       logo: '',
       auto2top: true,
-    // 完整配置参数
+      // 完整配置参数
       search: 'auto',
+      // 字数统计
+      count:{
+        countable:true,
+        fontsize:'0.9em',
+        color:'rgb(90,90,90)',
+        language:'chinese'
+      }
   }
   </script>
   
@@ -49,5 +56,12 @@
   <script src="//cdn.jsdelivr.net/npm/marked@4"></script>
   <!-- CDN files for docsify-katex -->
   <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+  <!-- 字数统计 -->
+  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+
+  <!-- python代码高亮 -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-python.min.js"></script>
+
+
 </body>
 </html>

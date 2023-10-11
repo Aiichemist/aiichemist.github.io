@@ -6,3 +6,4 @@
 * [Data Science](data/)
 * * [Numpy](data/numpy/)
 * * [Pandas](data/pandas/)
+* [Computer Graphics](CG/)
