@@ -8,7 +8,7 @@
 - Machine-Learning:...
 - Deep-Learning:...
 
-## About ME
+## About Me
 
 - I'm [Aiichemist](https://github.com/Aiichemist)
   -  An undergraduate student majoring in artificial intelligence at Chongqing University
