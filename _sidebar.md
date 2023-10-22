@@ -4,6 +4,7 @@
 * * [Linear Algebra](math/linear-algebra/)
 * * [Probability Statistics](math/probability-statistics/)
 * [Data Science](data/)
+* * [Data Analysis](data/data-science/)
 * * [Numpy](data/numpy/)
 * * [Pandas](data/pandas/)
 * [Computer Graphics](CG/)
