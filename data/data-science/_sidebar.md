@@ -1,3 +1,3 @@
 <!-- docs/_sidebar.md -->
 
-* [data](/data/data-science/数据有道.md)
+* [数据有道](/data/data-science/数据有道.md)
