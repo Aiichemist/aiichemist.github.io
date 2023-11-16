@@ -7,4 +7,6 @@
 * * [Data Analysis](data/data-science/)
 * * [Numpy](data/numpy/)
 * * [Pandas](data/pandas/)
+* [MachineLearning](ML/)
+* [DeepLearning](DL/)
 * [Computer Graphics](CG/)
