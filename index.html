@@ -18,16 +18,9 @@
     window.$docsify = {
       name: "<b>Aiichemist's PKM</b>",
       repo: '',
-      //加载自定义侧边栏
       loadSidebar: true,
-      // 设置生成目录的最大层级
-      subMaxLevel: 2,
-      alias: {
-        "/.*/_sidebar.md": "/_sidebar.md",
-      },
-      // 跳转后自动到顶部
-      auto2top: true,
-      // 封面
+      
+      subMaxLevel: 3,
       coverpage: false,
       // 配置仓库
       repo: 'https://github.com/Aiichemist',
@@ -35,6 +28,7 @@
       maxLevel: 4,
       // 在侧边栏中出现的网站图标
       logo: '',
+      // 跳转后自动到顶部
       auto2top: true,
       // 完整配置参数
       search: 'auto',
@@ -59,15 +53,13 @@
   }
   </script>
   
-  <!-- Docsify v4 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <!-- docsify -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>  
+</script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+
   <!-- 搜索 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <!-- 图片放大缩小支持 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-
   <!-- kalex支持 -->
   <script src="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
@@ -76,24 +68,17 @@
   <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
   <!-- 字数统计 -->
   <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
-
   <!-- python代码高亮 -->
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-python.min.js"></script>
   <!-- 复制到剪贴板 -->
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
-  <!-- 分页导航 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
-  <!-- 滚动条 -->
-  <style type="text/css">
-    .content {
-      overflow: auto;
-    }
-  </style>
-  <!-- 时间更新 -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js"></script>
   <!-- 页面右侧 TOC -->
   <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-toc@1.1.0/dist/docsify-plugin-toc.min.js"></script>
+  <!-- 时间更新 -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js"></script>
 
+  <!-- 以下插件可能导致左侧导航栏失效 -->
+  <!-- 滚动条 -->
+  <!-- 分页导航 -->
 </body>
 </html>
