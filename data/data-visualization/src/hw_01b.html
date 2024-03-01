@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization Homework_01b</title>
+    <script src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts-stat@1.2.0/dist/ecStat.min.js"></script>
+
+</head>
+<body>
+    <!-- 使用一个 div 容器来放置图表 -->
+    <div id="myChart" style="width: 100%; height: 600px;"></div>
+    
+    <!-- 创建图表的脚本 -->
+    <script>
+        // 初始化图表
+        var myChart = echarts.init(document.getElementById('myChart'));
+
+        // 自适应窗口大小
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+
+        // 注册回归分析
+        echarts.registerTransform(ecStat.transform.regression);
+
+        // 初始化图表
+        var myChart = echarts.init(document.getElementById('myChart'));
+        
+        // 数据集
+        const data =
+            [[
+                [ 10.00 , 8.04 ],
+                [ 8.00 , 6.95 ],
+                [ 13.00 , 7.58 ],
+                [ 9.00 , 8.81 ],
+                [ 11.00 , 8.33 ],
+                [ 14.00 , 9.96 ],
+                [ 6.00 , 7.24 ],
+                [ 4.00 , 4.26 ],
+                [ 12.00 , 10.84 ],
+                [ 7.00 , 4.82 ],
+                [ 5.00 , 5.68 ]
+            ],[
+                [ 10.00 , 9.14 ],
+                [ 8.00 , 8.14 ],
+                [ 13.00 , 8.74 ],
+                [ 9.00 , 8.77 ],
+                [ 11.00 , 9.26 ],
+                [ 14.00 , 8.10 ],
+                [ 6.00 , 6.13 ],
+                [ 4.00 , 3.10 ],
+                [ 12.00 , 9.13 ],
+                [ 7.00 , 7.26 ],
+                [ 5.00 , 4.74 ]
+            ],[
+                [ 10.00 , 7.46 ],
+                [ 8.00 , 6.77 ],
+                [ 13.00 , 12.74 ],
+                [ 9.00 , 7.11 ],
+                [ 11.00 , 7.81 ],
+                [ 14.00 , 8.84 ],
+                [ 6.00 , 6.08 ],
+                [ 4.00 , 5.39 ],
+                [ 12.00 , 8.15 ],
+                [ 7.00 , 6.42 ],
+                [ 5.00 , 5.73 ]
+            ],[   
+                [ 8.00 , 6.58 ],
+                [ 8.00 , 5.76 ],
+                [ 8.00 , 7.71 ],
+                [ 8.00 , 8.84 ],
+                [ 8.00 , 8.47 ],
+                [ 8.00 , 7.04 ],
+                [ 8.00 , 5.25 ],
+                [ 19.00 , 12.50 ],
+                [ 8.00 , 5.56 ],
+                [ 8.00 , 7.91 ],
+                [ 8.00 , 6.89 ]]
+            ];
+        
+
+        // 创建回归对象
+        var regression1 = ecStat.regression('polynomial', data[0], order=1 );
+        var regression2 = ecStat.regression('polynomial', data[1], order=1 );
+        var regression3 = ecStat.regression('polynomial', data[2], order=1 );
+        var regression4 = ecStat.regression('polynomial', data[3], order=1 );
+
+        // 动画持续时间
+        var ANIMATION_DURATION_UPDATE = 500;
+
+        option = {
+            // 图例
+            legend: {
+                orient: 'horizontal',
+                bottom: 'bottom',
+                data: ['data 0', 'data 1', 'data 2', 'data 3', 
+                'Regression 0', 'Regression 1', 'Regression 2', 'Regression 3']
+            },
+
+            // 数据集
+            dataset: [
+                {source:data[0]},
+                {source:data[1]},
+                {source:data[2]},
+                {source:data[3]},
+            ],
+
+            // 时间轴
+            timeline: {
+                top: 'center',
+                right: 100,
+                height: 400,
+                width: 15,
+                inverse: true,  // 时间轴是否反向
+                autoPlay: false,    // 是否自动播放
+                playInterval: 750, // 播放的速度
+                symbol: 'none', // 时间轴标记的图形
+                orient: 'vertical', // 布局朝向
+                axisType: 'category',
+                label: {
+                formatter: 'step {value}',  // 标签的内容格式器
+                position: 10
+                },
+                checkpointStyle: {
+                animationDuration:  ANIMATION_DURATION_UPDATE // 动画的持续时间
+                },
+                data: []
+            },
+            options: [],
+            
+            // 标题
+            title: {
+                text: "Anscombe's quartet",
+                subtext: 'By YangJiahao',
+                sublink: 'https://github.com/aiichemist',
+                left: 'center'
+            },
+
+            // 提示框的配置
+            tooltip: {
+                trigger: 'axis',    // 触发类型
+                axisPointer: {    // 坐标轴指示器配置项
+                type: 'cross'   // 十字准星指示器
+                }
+            },
+
+            // 坐标轴的配置
+            xAxis: [
+                { gridIndex: 0, name: 'x', splitLine: { show: false } }
+            ],
+            yAxis: [
+                { gridIndex: 0, name: 'y', splitLine: { show: false } }
+            ],
+        };
+        
+        // 添加数据
+        option.options.push({
+            series: [
+                {name: 'data 0',type: 'scatter',datasetIndex: 0},
+                {name: 'data 1',type: 'scatter',datasetIndex: 1},
+                {name: 'data 2',type: 'scatter',datasetIndex: 2},
+                {name: 'data 3',type: 'scatter',datasetIndex: 3},
+                {name: 'Regression 0', type: 'line',data: regression1.points},
+                {name: 'Regression 1', type: 'line',data: regression2.points},
+                {name: 'Regression 2', type: 'line',data: regression3.points},
+                {name: 'Regression 3', type: 'line',data: regression4.points}
+            ]
+        });
+        // 添加时间轴数据
+        option.timeline.data.push('0');
+
+        // 添加回归分析
+        for(var i = 1; i < 30; i++) {
+            var partialRegression1 = ecStat.regression('polynomial', data[0], order=i+1);
+            var partialRegression2 = ecStat.regression('polynomial', data[1], order=i+1);
+            var partialRegression3 = ecStat.regression('polynomial', data[2], order=i+1);
+            var partialRegression4 = ecStat.regression('polynomial', data[3], order=i+1);
+            option.options.push({
+                series: [
+                {name: 'data 0',type: 'scatter',datasetIndex: 0,},
+                {name: 'data 1',type: 'scatter',datasetIndex: 1,},
+                {name: 'data 2',type: 'scatter',datasetIndex: 2,},
+                {name: 'data 3',type: 'scatter',datasetIndex: 3,},
+                {name:'Regression 0', type: 'line',data: partialRegression1.points},
+                {name:'Regression 1', type: 'line',data: partialRegression2.points},
+                {name:'Regression 2', type: 'line',data: partialRegression3.points},
+                {name:'Regression 3', type: 'line',data: partialRegression4.points}
+            ]
+            });
+            option.timeline.data.push(i + '');
+        }
+
+        // 使用配置项显示图表
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
