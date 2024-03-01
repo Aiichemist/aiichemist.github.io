@@ -8,6 +8,7 @@
   - [Data Analysis](data/data-science/)
   - [Numpy](data/numpy/)
   - [Pandas](data/pandas/)
+  - [Data Visualization](data/data-visualization/)
 * [MachineLearning](ML/)
 * [DeepLearning](DL/)
 * [Computer Base](computer/)
