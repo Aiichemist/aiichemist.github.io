@@ -20,9 +20,9 @@
 
 ## Skill & Interest
 
-- Languages：Python,C++,  LaTeX, Markdown, PPT
-- Machine learning (but naive)
-- Deep Learning (Learning)
+- Languages：Python, C++, Java, SQL, LaTeX, Markdown
+- Machine Learning
+- DL,RL(Learning)
 - Interested in **CV, NLP,LLM**
 
 ## Languages and Tools
