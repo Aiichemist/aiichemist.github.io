@@ -1,7 +1,5 @@
 # 线性代数
 
-### 本部分为[《矩阵力量》](https://github.com/Visualize-ML/Book4_Power-of-Matrix)的读书笔记，分为20章
-
 - [向量](/math/linear-algebra/01_向量.md)
 - [矩阵](/math/linear-algebra/02_矩阵.md)
 - [向量空间](/math/linear-algebra/03_向量空间.md)
