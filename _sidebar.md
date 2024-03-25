@@ -1,7 +1,7 @@
 <!-- docs/_sidebar.md -->
 
 - [Math](math/)
-  - [Advanced Math](math/advanced/å)
+  - [Advanced Math](math/advanced/)
   - [Linear Algebra](math/linear-algebra/)
   - [Probability Statistics](math/probability-statistics/)
   - [Mathematical Analysis](math/analytic/)
