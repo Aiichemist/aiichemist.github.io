@@ -50,6 +50,33 @@
         tocMaxLevel: 2,
         target: "h2, h3, h4, h5, h6",
       },
+      // 标注块
+      'flexible-alerts': {
+      note: {
+        label: {
+          '/de-DE/': 'Hinweis',
+          '/': 'Note'
+        }
+      },
+      tip: {
+        label: {
+          '/de-DE/': 'Tipp',
+          '/': 'Tip'
+        }
+      },
+      warning: {
+        label: {
+          '/de-DE/': 'Warnung',
+          '/': 'Warning'
+        }
+      },
+      attention: {
+        label: {
+          '/de-DE/': 'Achtung',
+          '/': 'Attention'
+        }
+      }
+    }
   }
   </script>
   
@@ -76,7 +103,10 @@
   <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-toc@1.1.0/dist/docsify-plugin-toc.min.js"></script>
   <!-- 时间更新 -->
   <script src="https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js"></script>
-
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+  
+  <!-- 标注块 -->
+  <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
   <!-- 以下插件可能导致左侧导航栏失效 -->
   <!-- 滚动条 -->
   <!-- 分页导航 -->
