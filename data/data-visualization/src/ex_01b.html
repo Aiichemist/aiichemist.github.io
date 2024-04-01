@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization Homework_01a</title>
+    <!-- echarts.min.js -->
+    <script src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+
+</head>
+<body style="height: 100%; margin: 0">
+    <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript" src="https://cdn.staticfile.net/jquery/3.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+  <script type="text/javascript">
+  var dom = document.getElementById('container');
+  var myChart = echarts.init(dom, null, {
+    renderer: 'canvas',
+    useDirtyRect: false
+  });
+  var option;
+
+  myChart.showLoading();
+$.get('https://gw.alipayobjects.com/os/antvdemo/assets/data/world.geo.json', function (worldJson) {
+    myChart.hideLoading();
+    echarts.registerMap('World', worldJson);
+    option = {
+    
+    tooltip: {
+        trigger: 'item',
+        showDelay: 0,
+        transitionDuration: 0.2
+    },
+    visualMap: {
+        left: 'right',
+        min: 0,
+        max: 20,
+        inRange: {
+                color: [
+                '#313695',
+                '#4575b4',
+                '#74add1',
+                '#abd9e9',
+                '#e0f3f8',
+                '#ffffbf',
+                '#fee090',
+                '#fdae61',
+                '#f46d43',
+                '#d73027',
+                '#a50026'
+                ]
+            },
+        text: ['High', 'Low'],
+        calculable: true
+    },
+    series: [
+        {
+            name: 'Gold medal',
+            type: 'map',
+            roam: true,
+            map: 'World',
+            emphasis: {
+                label: {
+                    show: true
+                }
+            },
+        data: [
+                { name: 'Norway',                     value: 16,    },
+                { name: 'Germany',                    value: 12,    },
+                { name: "China",                      value: 9,	    },
+                { name: 'United States of America',   value: 8,	    },
+                { name: 'Sweden',                     value: 8,	    },
+                { name: 'Netherlands',	              value: 8,	    },
+                { name: 'Austria',                    value: 7,	    },
+                { name: 'Switzerland',	              value: 7,	    },
+                { name: 'ROC',	                      value: 6,	    },
+                { name: 'France',	                  value: 5,	    },
+                { name: 'Canada',	                  value: 4,	    },
+                { name: 'Japan',	                  value: 3,	    },
+                { name: 'Italy',	                  value: 2,	    },
+                { name: 'Republic of Korea',	      value: 2,	    },
+                { name: 'Slovenia',	                  value: 2,	    },
+                { name: 'Finland',	                  value: 2,	    },
+                { name: 'New Zealand',	              value: 2,	    },
+                { name: 'Australia',	              value: 1,	    },
+                { name: 'Great Britain',          	  value: 1,	    },
+                { name: 'Hungary',	                  value: 1,	    },
+                { name: 'Belgium',	                  value: 1,	    },
+                { name: 'Czech Republic',         	  value: 1,	    },
+                { name: 'Slovakia',	                  value: 1,	    },
+                { name: 'Belarus',	                  value: 0,	    },
+                { name: 'Spain',	                  value: 0,	    },
+                { name: 'Ukraine',	                  value: 0,	    },
+                { name: 'Estonia',	                  value: 0,	    },
+                { name: 'Latvia',                 	  value: 0,	    },
+                { name: 'Poland',	                  value: 0,	    },
+            ]
+        }
+        ]
+    };
+    myChart.setOption(option);
+});
+    </script>
+</body>
+</html>

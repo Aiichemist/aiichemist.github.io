@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization Homework_01a</title>
+    <!-- echarts.min.js -->
+    <script src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+
+</head>
+<body>
+    <!-- 使用一个 div 容器来放置图表 -->
+    <div id="myChart" style="width: 100%; height: 2500px;"></div>
+    
+    <!-- 创建图表的脚本 -->
+    <script>
+        // 初始化图表
+        var myChart = echarts.init(document.getElementById('myChart'));
+
+        // 自适应窗口大小
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+
+        // 颜色
+        var COLOR_ALL = [
+        '#FFD700',//金
+        '#c0c0c0',//银
+        '#B87333',//铜
+        ];
+        
+        var dataset = [  
+            ['Norway',                      16, 8,  13, 37,   'NOR'],
+            ['Germany',                     12, 10, 5,  27,   'GER'],
+            ["China",                       9,  4,  2,  15,   'CHN'],
+            ['USA',                         8,  10, 7,  25,   'USA'],
+            ['Sweden',                      8,  5,  5,  18,   'SWE'],
+            ['Netherlands',	                8,  5,  4,  17,   'NED'],
+            ['Austria',                     7,  7,  4,  18,   'AUT'],
+            ['Switzerland',	                7,  2,  5,  14,   'SUI'],
+            ['ROC',	                        6,  12, 14, 32,   'ROC'],
+            ['France',	                    5,  7,  2,  14,   'FRA'],
+            ['Canada',	                    4,  8,  14, 26,   'CAN'],
+            ['Japan',	                    3,  6,  9,  18,   'JPN'],
+            ['Italy',	                    2,  7,  8,  17,   'ITA'],
+            ['Korea',	                    2,  5,  2,  9,    'KOR'],
+            ['Slovenia',	                2,  3,  2,  7,    'SLO'],
+            ['Finland',	                    2,  2,  4,  8,    'FIN'],
+            ['New Zealand',	                2,  1,  0,  3,    'NZL'],
+            ['Australia',	                1,  2,  1,  4,    'AUS'],
+            ['Britain',          	        1,  1,  0,  2,    'GBR'],
+            ['Hungary',	                    1,  0,  2,  3,    'HUN'],
+            ['Belgium',	                    1,  0,  1,  2,    'BEL'],
+            ['Czech',         	            1,  0,  1,  2,    'CZE'],
+            ['Slovakia',	                1,  0,  1,  2,    'SVK'],
+            ['Belarus',	                    0,  2,  0,  2,    'BLR'],
+            ['Spain',	                    0,  1,  0,  1,    'ESP'],
+            ['Ukraine',	                    0,  1,  0,  1,    'UKR'],
+            ['Estonia',	                    0,  0,  1,  1,    'EST'],
+            ['Latvia',                 	    0,  0,  1,  1,    'LAT'],
+            ['Poland',	                    0,  0,  1,  1,    'POL']
+        ];
+
+        option = {
+            // 数据集
+            dataset: [  
+                {
+                    dimensions: ['Country', 'Gold', 'Silver', 'Bronze', 'Total', 'Country_Code'],
+                    source: dataset
+                },
+                {
+                    transform: {
+                        type: 'sort',
+                        config: { dimension: 'Gold', order: 'desc' },
+                        fromDatasetIndex: 0
+                    }
+                },
+                {
+                    transform: {
+                        type: 'sort',
+                        config: { dimension: 'Total', order: 'desc' },
+                        fromDatasetIndex: 0
+                    }
+                }
+            ],
+        
+            
+            
+            // 标题
+            title: {
+                text: "Beijing Winter Olympics medal data visualization",
+                subtext: 'By YangJiahao',
+                sublink: 'https://github.com/aiichemist',
+                left: 'center'
+            },
+
+            // 坐标系的配置
+            grid: [
+                { left: '7%', top: '100px', width: '90%', height: '400px'},//分组柱状图
+                { left: '7%', top: '600px', width: '42%', height: '350px' },//堆叠柱状图
+                { right: '3%', top: '600px', width: '42%', height: '350px' },//堆叠柱状图
+                { left: '10%', top: '1050px', width: '42%', height: '600px' },//堆叠条形图
+                { right: '3%', top: '1050px', width: '42%', height: '600px' },//堆叠条形图
+                { left: '10%', top: '2700px', width: '42%', height: '600px' },//雷达图
+            ],
+            
+            // 提示框的配置
+            tooltip: [
+                {trigger: 'axis',axisPointer: {type: 'shadow'}},
+        ],
+
+            // 坐标轴的配置
+            xAxis: [
+                {gridIndex: 0, type: 'category',axisLabel: { interval: 0, rotate: 30 }},
+                {gridIndex: 1, type: 'category',axisLabel: { interval: 0, rotate: 30 }},
+                {gridIndex: 2, type: 'category',axisLabel: { interval: 0, rotate: 30 }},
+                {gridIndex: 3, type: 'value'},
+                {gridIndex: 4, type: 'value'},
+            ],
+            yAxis: [
+                {gridIndex: 0, type: 'value'},
+                {gridIndex: 1, type: 'value'},
+                {gridIndex: 2, type: 'value'},
+                {gridIndex: 3, type: 'category', inverse: true},
+                {gridIndex: 4, type: 'category', inverse: true,},
+            ],
+
+            legend: {
+                type: 'scroll',
+                orient: 'vertical',
+                right: 10,
+                top: 20,
+                bottom: 20,
+                data: ['Gold', 'Silver', 'Bronze', 'Total']
+            },
+        
+
+            series: [
+                // 分组柱状图-金牌
+                {
+                    type: 'bar',
+                    encode: { x: 'Country', y: 'Gold' },
+                    xAxisIndex: 0,
+                    yAxisIndex: 0,
+                    datasetIndex: 0,
+                    color: COLOR_ALL[0],
+                    emphasis: {
+                        focus: 'series'
+                    },
+                },
+                // 分组柱状图-银牌
+                {
+                    type: 'bar',
+                    encode: { x: 'Country', y: 'Silver' },
+                    xAxisIndex: 0,
+                    yAxisIndex: 0,
+                    datasetIndex: 0,
+                    color: COLOR_ALL[1],
+                    emphasis: {
+                        focus: 'series'
+                    },
+                },
+                // 分组柱状图-铜牌
+                {
+                    type: 'bar',
+                    encode: { x: 'Country', y: 'Bronze' },
+                    xAxisIndex: 0,
+                    yAxisIndex: 0,
+                    datasetIndex: 0,
+                    color: COLOR_ALL[2],
+                    emphasis: {
+                        focus: 'series'
+                    },
+                },
+                
+                // 堆叠柱状图-金牌
+                {
+                    type: 'bar',
+                    stack: 'histogram',
+                    encode: { x: 'Country', y: 'Gold' },
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    datasetIndex: 0,
+                    color: COLOR_ALL[0],
+                    emphasis: {
+                        focus: 'series'
+                    },
+                },
+                // 堆叠柱状图-银牌
+                {
+                    type: 'bar',
+                    stack: 'histogram',
+                    encode: { x: 'Country', y: 'Silver' },
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    datasetIndex: 0,
+                    color: COLOR_ALL[1],
+                    emphasis: {
+                        focus: 'series'
+                    },
+                },
+                // 堆叠柱状图-铜牌
+                {
+                    type: 'bar',
+                    stack: 'histogram',
+                    encode: { x: 'Country', y: 'Bronze' },
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    datasetIndex: 0,
+                    color: COLOR_ALL[2],
+                    emphasis: {
+                        focus: 'series'
+                    },
+                },
+                // 柱状图-总数
+                {
+                    type: 'bar',
+                    encode: { x: 'Country', y: 'Total' },
+                    xAxisIndex: 2,
+                    yAxisIndex: 2,
+                    datasetIndex: 2,
+                    emphasis: {
+                        focus: 'series'
+                    },
+                },
+                // 堆叠条形图-金牌
+                {
+                    type: 'bar',
+                    stack: 'strip',
+                    encode: { y: 'Country', x: 'Gold' },
+                    xAxisIndex: 3,
+                    yAxisIndex: 3,
+                    datasetIndex: 0,
+                    color: COLOR_ALL[0],
+                    emphasis: {
+                        focus: 'series'
+                    },
+                },
+                // 堆叠条形图-银牌
+                {
+                    type: 'bar',
+                    stack: 'strip',
+                    encode: { y: 'Country', x: 'Silver' },
+                    xAxisIndex: 3,
+                    yAxisIndex: 3,
+                    datasetIndex: 0,
+                    color: COLOR_ALL[1],
+                    emphasis: {
+                        focus: 'series'
+                    },
+                },
+                //堆叠条形图-铜牌
+                {
+                    type: 'bar',
+                    stack: 'strip',
+                    encode: { y: 'Country', x: 'Bronze' },
+                    xAxisIndex: 3,
+                    yAxisIndex: 3,
+                    datasetIndex: 0,
+                    color: COLOR_ALL[2],
+                    emphasis: {
+                        focus: 'series'
+                    },
+                },
+                // 总数
+                {
+                    type: 'bar',
+                    encode: { x: 'Total', y: 'Country' },
+                    xAxisIndex: 4,
+                    yAxisIndex: 4,
+                    datasetIndex: 2,
+                    emphasis: {
+                        focus: 'series'
+                    },
+                },
+                // 环形图-金牌
+                {
+                    type: 'pie',
+                    radius: [100, 300],
+                    center: ['25%', '50%'],
+                    avoidLabelOverlap: false,
+                    itemStyle: {
+                        borderRadius: 10,
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    },
+                    label: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        label: {
+                        show: true,
+                        fontSize: 40,
+                        fontWeight: 'bold'
+                        }
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    //minAngle: 2,
+                    
+                    datasetIndex: 1,
+                    encode: {
+                        itemName: 'Country',
+                        value: 'Gold'
+                    },
+                    left: '10%',
+                    top: '1600px',
+                    height: '1000px',
+                    width: '1000px',
+                    tooltip: {
+                        trigger: 'item',
+                        formatter:function(params) {
+                            var country = params.name; // 获取数据项名称
+                            var gold = params.value[1]; // 获取数据项值
+                            var tooltipContent = country + '<br>' +'Gold: ' + gold;
+                            return tooltipContent; // 返回自定义的 tooltip 内容},
+                        }
+                    }
+                },
+                // 玫瑰图-金牌
+                {
+                    type: 'pie',
+                    radius: [50, 350],
+                    center: ['20%', '60%'],
+                    avoidLabelOverlap: false,
+                    roseType: 'radius',
+                    itemStyle: {
+                        borderRadius: 5
+                    },
+                    dataIndex: 2,
+                    label: {
+                        show: false,
+                        position: 'center'
+                    },
+                    //minAngle: 2,
+                    
+                    emphasis: {
+                        label: {
+                        show: true,
+                        fontSize: 20,
+                        fontWeight: 'bold'
+                        }
+                    },
+                    left: '60%',
+                    top: '1550px',
+                    height: '1000px',
+                    width: '1000px',
+                    tooltip: {
+                        trigger: 'item',
+                        formatter:function(params) {
+                            var country = params.name; // 获取数据项名称
+                            var gold = params.value[1]; // 获取数据项值
+                            var tooltipContent = country + '<br>' +'Gold: ' + gold;
+                            return tooltipContent; // 返回自定义的 tooltip 内容},
+                        }
+                    }
+                },
+                
+            ]
+        };
+        // 使用配置项显示图表
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
