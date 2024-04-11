@@ -183,10 +183,3 @@ file(GLOB SRC_LIST "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
 add_library(demo SHARED ${SRC_LIST})
 ```
 最终生成对应的动态库文件`libdemo.so`(Linux)、`libdemo.dll`(Windows)
-
-
-
-
-# 参考文章
-[CMake 保姆级教程（上）](https://subingwen.cn/cmake/CMake-primer/)
-[CMake 保姆级教程（下）](https://subingwen.cn/cmake/CMake-advanced/?highlight=cmake)
