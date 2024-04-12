@@ -7,6 +7,9 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
 </head>
 <body>
   <!-- 导航栏设置 -->
@@ -79,8 +82,24 @@
     }
   }
   </script>
-  
-</script>
+
+  <!-- 评论栏设置 -->
+  <script>
+    const gitalk = new Gitalk({
+      clientID: '42c4ca4868510dcb5156',
+      clientSecret: 'f4f48423b2197e34bb5819c5d6dff319e084f4ff',
+      repo: 'BlogTalk',
+      owner: 'Aiichemist',
+      admin: ['Aiichemist'],
+      // facebook-like distraction free mode
+      distractionFreeMode: false
+    })
+    window.onhashchange = function (event) {
+        if (event.newURL.split('?')[0] !== event.oldURL.split('?')[0]) {
+            location.reload()
+        }
+    }
+  </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 
   <!-- 搜索 -->
