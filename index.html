@@ -7,10 +7,6 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  <!-- 评论设置 -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
 </head>
 <body>
   <!-- 导航栏设置 -->
@@ -18,6 +14,7 @@
 
   </nav>
   <div id="app"></div>
+  <div id="gitalk-container"></div>
   <script>
     window.$docsify = {
       name: "<b>Aiichemist</b>",
@@ -87,8 +84,8 @@
   <!-- 评论栏设置 -->
   <script>
     const gitalk = new Gitalk({
-      clientID: '42c4ca4868510dcb5156',
-      clientSecret: 'f4f48423b2197e34bb5819c5d6dff319e084f4ff',
+      clientID: 'e13fe1652361e15a074c',
+      clientSecret: 'f234092dbe03fc076d2debbd2672d77708d07ae2',
       repo: 'BlogTalk',
       owner: 'Aiichemist',
       admin: ['Aiichemist'],
@@ -119,7 +116,10 @@
   <!-- 时间更新 -->
   <script src="https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js"></script>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
-  
+  <!-- 评论设置 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
   <!-- 标注块 -->
   <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
   <!-- 以下插件可能导致左侧导航栏失效 -->
