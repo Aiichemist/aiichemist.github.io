@@ -14,7 +14,7 @@ $$\lim\limits_{D\to\infty}\frac{V_{环}}{V_{球}}
 
 这就是所谓的维度灾难，在高维数据中，主要样本都分布在边缘，所以数据集更加稀疏。
 
->[!note]+ 降维的算法分为：
+>[!note] 降维的算法分为：
 >1.  直接降维：特征选择
 >
 >2.  线性降维：PCA，MDS等
@@ -117,9 +117,7 @@ $$HX=U\Sigma V^T$$
 其中 $\Sigma$ 为 $N\times p$ 的对角矩阵，$U^TU=\boldsymbol{I}_N,V^TV=\boldsymbol{I}_p$ 
 
 于是：
-$$
-S=\frac{1}{N}X^THX=\frac{1}{N}X^TH^THX=\frac{1}{N}V\Sigma U^TU\Sigma V^T=\frac{1}{N}V\Sigma^2V^T
-$$
+$$S=\frac{1}{N}X^THX=\frac{1}{N}X^TH^THX=\frac{1}{N}V\Sigma U^TU\Sigma V^T=\frac{1}{N}V\Sigma^2V^T$$
 因此，我们直接对**中心化后的数据集**进行**奇异值分解**，就相当于对**样本方差矩阵**进行**特征值分解**，就可以得到特征值和特征向量 $V$ 即主成分，然后做投影，在新坐标系中的坐标就是：
 $$HX\cdot V=U\Sigma V^TV=\underbrace{U\Sigma}_{坐标矩阵}$$
 由上面的推导，我们也可以得到另一种方法 PCoA **主坐标分析**，定义一个矩阵 $T$ 并进行特征值分解：
@@ -186,8 +184,9 @@ W^T&\boldsymbol{I}\\
 \end{bmatrix}\right)$$
 
 由多维高斯分布中 $p(x_b|x_a)$ 的求解：
->[!tip]- $p(x_b|x_a)$ 的求解
->![[01_数学入门#3. $p(x_b x_a)$]]
+
+>[!tip] $p(x_b|x_a)$ 的求解
+>[01_数学入门#3. $p(x_b x_a)$](/ML/00_mathFoundation.md)
 
 可得$x$ 与 $z$ 的条件分布：
 $$z|x\sim N(\underline{W^T(WW^T+\sigma^2\boldsymbol{I})^{-1}(x-\mu)},\underline{\boldsymbol{I}-W^T(WW^T+\sigma^2\boldsymbol{I})^{-1}W})$$
