@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Visualization Experiment 2</title>
+    <!-- echarts.min.js -->
+    <script src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        /* grid布局 */
+        #myCharts {
+            width: 100vw;   /* 宽度 */
+            height: 100vh;  /* 高度 */
+            display: grid;  /* 使用grid布局 */
+            grid-template-columns: repeat(2, 1fr);  /* 两列 */
+            grid-template-rows: repeat(2, 1fr);    /* 两行 */
+            gap: 20px;    /* 间隔 */
+            padding: 20px;  /* 内边距 */
+            box-sizing: border-box; /* 盒模型 */
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 100%;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!-- 使用一个 div 容器来放置图表 -->
+    <div id="myCharts">
+        <div id="chart1" class="chart-container"></div>
+        <div id="chart2" class="chart-container"></div>
+        <div id="chart3" class="chart-container"></div>
+        <div id="chart4" class="chart-container"></div>
+    </div>
+
+    <div id="container" style="height: 100%"></div>
+
+    <script type="text/javascript" src="https://cdn.staticfile.net/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+
+    <!-- 创建图表的脚本 -->
+    <script type="text/javascript">
+        // 初始化图表
+        var chart1 = echarts.init(document.getElementById('chart1'));
+        var chart2 = echarts.init(document.getElementById('chart2'));
+        var chart3 = echarts.init(document.getElementById('chart3'));
+        var chart4 = echarts.init(document.getElementById('chart4'));
+
+        
+        var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+        renderer: 'canvas',
+        useDirtyRect: false
+    });
+
+    myChart.showLoading();
+    $.get('https://gw.alipayobjects.com/os/antvdemo/assets/data/world.geo.json', function (worldJson) {
+        myChart.hideLoading();
+        echarts.registerMap('World', worldJson);
+
+        const csvData = `Year,HostCountry,Winner,Second,Third,Fourth,GoalsScored,QualifiedTeams,MatchesPlayed,Attendance,HostContinent,WinnerContinent
+1930,Uruguay,Uruguay,Argentina,USA,Yugoslavia,70,13,18,590549,America,America
+1934,Italy,Italy,Czechoslovakia,Germany,Austria,70,16,17,363000,Europe,Europe
+1938,France,Italy,Hungary,Brazil,Sweden,84,15,18,375700,Europe,Europe
+1950,Brazil,Uruguay,Brazil,Sweden,Spain,88,13,22,1045246,America,America
+1954,Switzerland,GermanyFR,Hungary,Austria,Uruguay,140,16,26,768607,Europe,Europe
+1958,Sweden,Brazil,Sweden,France,GermanyFR,126,16,35,819810,Europe,America
+1962,Chile,Brazil,Czechoslovakia,Chile,Yugoslavia,89,16,32,893172,America,America
+1966,England,England,GermanyFR,Portugal,SovietUnion,89,16,32,1563135,Europe,Europe
+1970,Mexico,Brazil,Italy,GermanyFR,Uruguay,95,16,32,1603975,America,America
+1974,Germany,GermanyFR,Netherlands,Poland,Brazil,97,16,38,1865753,Europe,Europe
+1978,Argentina,Argentina,Netherlands,Brazil,Italy,102,16,38,1545791,America,America
+1982,Spain,Italy,GermanyFR,Poland,France,146,24,52,2109723,Europe,Europe
+1986,Mexico,Argentina,GermanyFR,France,Belgium,132,24,52,2394031,America,America
+1990,Italy,GermanyFR,Argentina,Italy,England,115,24,52,2516215,Europe,Europe
+1994,USA,Brazil,Italy,Sweden,Bulgaria,141,24,52,3587538,America,America
+1998,France,France,Brazil,Croatia,Netherlands,171,32,64,2785100,Europe,Europe
+2002,Korea/Japan,Brazil,Germany,Turkey,KoreaRepublic,161,32,64,2705197,Asia,America
+2006,Germany,Italy,France,Germany,Portugal,147,32,64,3359439,Europe,Europe
+2010,SouthAfrica,Spain,Netherlands,Germany,Uruguay,145,32,64,3178856,Africa,Europe
+2014,Brazil,Germany,Argentina,Netherlands,Brazil,171,32,64,3386810,America,Europe
+2018,Russia,France,Croatia,Belgium,England,169,32,64,3031768,Europe,Europe`;
+
+        var data = csvData.split('\n').slice(1).map(line => {
+            const [Year, HostCountry, Winner, Second, Third, Fourth, GoalsScored, QualifiedTeams, MatchesPlayed, Attendance, HostContinent, WinnerContinent] = line.split(',');
+            return {
+                Year,
+                HostCountry,
+                Winner,
+                Second,
+                Third,
+                Fourth,
+                GoalsScored: parseInt(GoalsScored),
+                QualifiedTeams: parseInt(QualifiedTeams),
+                MatchesPlayed: parseInt(MatchesPlayed),
+                Attendance: parseInt(Attendance),
+                HostContinent,
+                WinnerContinent
+            };
+        });
+        const dataset = data.map(item => [  item.HostCountry, 
+                                            item.Winner, 
+                                            item.Second, 
+                                            item.Third, 
+                                            item.Fourth, 
+                                            item.GoalsScored, 
+                                            item.QualifiedTeams, 
+                                            item.MatchesPlayed, 
+                                            item.Attendance, 
+                                            item.HostContinent, 
+                                            item.WinnerContinent]);
+        // 柱状图表示各届世界杯比赛的比赛场次
+        const option1 = {
+            title: { text: '各届世界杯比赛场次' },
+            tooltip: [
+                {trigger: 'axis',axisPointer: {type: 'shadow'}},
+            ],
+            xAxis: {
+                type: 'category',
+                data: data.map(item => item.Year),
+                axisLabel: {
+                    rotate: 45
+                }
+            },
+            yAxis: { type: 'value' },
+            emphasis: {
+                focus: 'series'
+            },
+            series: [{ type: 'bar', data: data.map(item => item.MatchesPlayed) }],
+        };
+        // 地图表示各届世界杯比赛的总进球数
+        const option2 = {
+            title: { text: '各届世界杯比赛的总进球数' },
+            visualMap: {
+                left: 'right',
+                min: 0,
+                max: 300,
+                inRange: {
+                        color: [
+                        '#313695',
+                        '#4575b4',
+                        '#74add1',
+                        '#abd9e9',
+                        '#e0f3f8',
+                        '#ffffbf',
+                        '#fee090',
+                        '#fdae61',
+                        '#f46d43',
+                        '#d73027',
+                        '#a50026'
+                        ]
+                    },
+                text: ['High', 'Low'],
+                calculable: true
+            },
+        series: [
+            {
+                name: 'Goals Scored',
+                type: 'map',
+                roam: true,
+                map: 'World',
+                emphasis: {
+                    label: {
+                        show: true
+                    }
+                },
+            data: data.map(item => ({ name: item.HostCountry, value: item.GoalsScored }))
+            }
+            ]
+        };
+        // 折线图表示各届世界杯比赛的观众人数
+        const option3 = {
+            title: { text: '各届世界杯比赛的观众人数' },
+            tooltip: [
+                {trigger: 'axis',axisPointer: {type: 'shadow'}},
+            ],
+            xAxis: {
+                type: 'category',
+                data: data.map(item => item.Year),
+                axisLabel: {
+                    rotate: 45
+                }
+            },
+            yAxis: { type: 'value' },
+            series: [{ type: 'line', data: data.map(item => item.Attendance) }]
+        };
+        // 散点图表示各届世界杯比赛的比赛场次与观众人数的关系
+        const option4 = {
+            title: { text: '比赛场次与观众人数关系' },
+            tooltip: [
+                {trigger: 'axis',axisPointer: {type: 'shadow'}},
+            ],
+            xAxis: { type: 'value', name: '比赛场次' },
+            yAxis: { type: 'value', name: '观众人数' },
+            series: [{ type: 'scatter', data: data.map(item => [item.MatchesPlayed, item.Attendance]) }]
+        };
+        
+        chart1.setOption(option1);
+        chart2.setOption(option2);
+        chart3.setOption(option3);
+        chart4.setOption(option4);
+    });
+    </script>
+</body>
+</html>
