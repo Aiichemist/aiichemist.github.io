@@ -4,6 +4,7 @@
 * [线性分类](/ML/02_linearClassification.md)
 * [降维](/ML/03_dimensionalityReduction.md)
 * [指数族分布](/ML/04_exponentFamily.md)
+* [概率图模型](/ML/05_probGrapModel.md)
 * [最小二乘法](/ML/leastSquare.md)
 * [统计决策方法](/ML/statisticalDecision-MakingMethods.md)
 
