@@ -7,15 +7,18 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  
 </head>
 <body>
   <!-- 导航栏设置 -->
   <nav>
 
   </nav>
+
   <div id="app"></div>
-  <div id="gitalk-container"></div>
+  
   <script>
+    
     window.$docsify = {
       name: "<b>Aiichemist</b>",
       repo: '',
@@ -54,46 +57,32 @@
       // 标注块
       // 支持 tip, note, warning, attention
       'flexible-alerts': {
-      note: {
-        label: {
-          '/de-DE/': 'Hinweis',
-          '/': 'Note'
+        note: {
+          label: {
+            '/de-DE/': 'Hinweis',
+            '/': 'Note'
+          }
+        },
+        tip: {
+          label: {
+            '/de-DE/': 'Tipp',
+            '/': 'Tip'
+          }
+        },
+        warning: {
+          label: {
+            '/de-DE/': 'Warnung',
+            '/': 'Warning'
+          }
+        },
+        attention: {
+          label: {
+            '/de-DE/': 'Achtung',
+            '/': 'Attention'
+          }
         }
       },
-      tip: {
-        label: {
-          '/de-DE/': 'Tipp',
-          '/': 'Tip'
-        }
-      },
-      warning: {
-        label: {
-          '/de-DE/': 'Warnung',
-          '/': 'Warning'
-        }
-      },
-      attention: {
-        label: {
-          '/de-DE/': 'Achtung',
-          '/': 'Attention'
-        }
-      }
     }
-  }
-  </script>
-
-  <!-- 评论栏设置 -->
-  <script>
-    const gitalk = new Gitalk({
-      clientID: 'e13fe1652361e15a074c',
-      clientSecret: 'f234092dbe03fc076d2debbd2672d77708d07ae2',
-      repo: 'BlogTalk',
-      owner: 'Aiichemist',
-      admin: ['Aiichemist'],
-      // facebook-like distraction free mode
-      distractionFreeMode: false
-    })
-    gitalk.render('gitalk-container')
   </script>
 
   <!-- docsify -->
@@ -119,14 +108,14 @@
   <!-- 时间更新 -->
   <script src="https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js"></script>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
-  <!-- 评论设置 -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
   <!-- 标注块 -->
   <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
+  <!-- mermaid支持 -->
+  
+
   <!-- 以下插件可能导致左侧导航栏失效 -->
   <!-- 滚动条 -->
   <!-- 分页导航 -->
+
 </body>
 </html>
