@@ -5,6 +5,8 @@
 * [降维](/ML/03_dimensionalityReduction.md)
 * [指数族分布](/ML/04_exponentFamily.md)
 * [概率图模型](/ML/05_probGrapModel.md)
+* [期望最大算法](/ML/06_EM.md)
+* [高斯混合模型](/ML/07_GMM.md)
 * [最小二乘法](/ML/leastSquare.md)
 * [统计决策方法](/ML/statisticalDecision-MakingMethods.md)
 
