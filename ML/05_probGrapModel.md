@@ -9,10 +9,10 @@ $$\begin{align}
 \end{align}$$
 可以看到，在链式法则中，如果**数据维度特别高**，那么的**采样和计算非常困难**，我们需要在一定程度上作出简化：
 1. **每个维度相互独立**：$P(x_1,\cdots,x_p)=\prod\limits_{i=1}^pP(x_i)$ 
->[!example]+ 朴素贝叶斯：$P(x_1,\cdots,x_p|y)=\prod\limits_{i=1}^pP(x_i|y)$
+>[!note]+ 朴素贝叶斯：$P(x_1,\cdots,x_p|y)=\prod\limits_{i=1}^pP(x_i|y)$
 
 2. 在 Markov 假设中，给定数据的维度是**以时间顺序出现**的，给定当前时间的维度，那么下一个维度与之前的维度**独立**。
->[!example]+ 在 HMM 中，采用了**齐次 Markov 假设**。
+>[!note]+ 在 HMM 中，采用了**齐次 Markov 假设**。
 
 3. 在 Markov 假设之上，更一般的，加入**条件独立性假设**，对维度划分集合 $A,B,C$，使得 $X_A\perp X_B|X_C$。
 
