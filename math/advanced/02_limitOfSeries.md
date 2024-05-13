@@ -234,13 +234,16 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 >根据海涅定理：取$x=\dfrac{1}{n},n\to\infty$，$\lim\limits_{n\to\infty}\left(n\tan\dfrac{1}{n}\right)^{n^2}=e^{\frac{1}{3}}$。
 
 ## 1.6 夹逼准则
+
 >[!tip] [定理] **数列的夹逼准则**
 >1.  $y_n\leqslant x_n\leqslant z_n (n=1,2,3,\cdots)$。
 >
 >2.  $\lim\limits_{n\to\infty}y_n=a,\lim\limits_{n\to\infty}z_n=a$。(**也可以是同号无穷大**)
+>
+>则$\lim\limits_{n\to\infty}x_n=a$。
 > 
->	则$\lim\limits_{n\to\infty}x_n=a$。
-> ---
+>---
+>
 >证明：由于$\lim\limits_{n\to\infty}y_n=a,\lim\limits_{n\to\infty}z_n=a$。
 >
 >则$\forall\xi>0$，$\exists N\in N_+$，当$n>N$时，$\vert y_n-a|<\xi$，$\vert z_n-a|<\xi$。
@@ -277,10 +280,7 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 >\end{cases}$$
 >>[!tip] 可以将上述不等式拓展为 $n$ 个实数的情形，即
 >>$$|a_1\pm a_2\pm \cdots\pm a_n|\le|a_1|+|a_2|+\cdots+|a_n|$$
->1. $$\begin{cases}
->\sqrt{ab}\le\dfrac{a+b}{2}\le\sqrt{\dfrac{a^2+b^2}{2}}\qquad\qquad(a,b\ge 0)\\
->\sqrt[3]{abc}\le\dfrac{a+b+c}{3}\le\sqrt{\dfrac{a^2+b^2+c^2}{3}}\quad(a,b,c\ge 0)\\
->\end{cases}$$
+>1. $$\begin{cases}\sqrt{ab}\le\dfrac{a+b}{2}\le\sqrt{\dfrac{a^2+b^2}{2}}\qquad\qquad(a,b\ge 0)\\\sqrt[3]{abc}\le\dfrac{a+b+c}{3}\le\sqrt{\dfrac{a^2+b^2+c^2}{3}}\quad(a,b,c\ge 0)\\\end{cases}$$
 >>[!tip] $|ab|\le\dfrac{a^2+b^2}{2}$
 >>
 >> 例如，若 $u_n\gt 0$，则 $\dfrac{u_n}{n}=u_n\cdot\dfrac{1}{n}\le\dfrac{u_n^2+\dfrac{1}{n^2}}{2}$
