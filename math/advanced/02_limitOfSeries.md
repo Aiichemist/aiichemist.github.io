@@ -21,14 +21,14 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 
 >[!quote]+ **数列极限：**设$\{x_n\}$为一数列，若存在常数$a$，对于不论任意小的$\xi>0$，总存在正整数$N$，使$n>N$时，$\vert x_n-a\vert<\xi$恒成立，则常数$a$为数列$\{x_n\}$的**极限**，或$\{x_n\}$**收敛**于$a$，记为：$\lim\limits_{x\to\infty}x_n=a$或$x_n\to a(n\to\infty)$。
 
->[!note]+ $\xi-N$语言：$\lim\limits_{x\to\infty}x_n=a$$\Leftrightarrow$==$\forall\xi>0,\exists N\in N_+$，当$n>N$时，恒有$\vert x_n-a\vert<\xi$==。
+>[!note] $\xi-N$语言：$\lim\limits_{x\to\infty}x_n=a$$\Leftrightarrow$==$\forall\xi>0,\exists N\in N_+$，当$n>N$时，恒有$\vert x_n-a\vert<\xi$==。
 
 如果不存在该数$a$，则称数列$x_n$**发散**。
 
 即无论给出多么小的$\xi$，总可以找到一项从该项之后函数值与极限值之间的差小于$\xi$，即更接近这个极限值而不是其他任何值，所以该数列趋向于极限值。
 
 ### 极限证明
->[!note]+ 如何证明函数极限
+>[!note] 如何证明函数极限
 >
 >令$x_n$为通项，$a$为极限值，$\xi$为任意正数。
 >
@@ -36,7 +36,7 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 >2. 反解出项数$n<g(\xi)$。
 >3.  取$N=[g(\xi)]+1$，所以令$n>N$就可以证明。
 
->[!note]+ **例题：** 用定义证明$\lim\limits_{x\to\infty}\left[1+\dfrac{(-1)^n}{n}\right]=1$
+>[!note] **例题：** 用定义证明$\lim\limits_{x\to\infty}\left[1+\dfrac{(-1)^n}{n}\right]=1$
 >
 >证明：计算距离：$\left\vert 1+\dfrac{(-1)^n}{n}-1\right\vert=\left\vert\dfrac{(-1)^n}{n}\right\vert<\xi$。
 >
@@ -48,7 +48,7 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 >
 >$\therefore$证明完毕。
 
->[!note]+ **例题：** 用定义证明$\lim\limits_{n\to\infty}q^n=0$（$q$为常数且$\vert q\vert<1$）。
+>[!note] **例题：** 用定义证明$\lim\limits_{n\to\infty}q^n=0$（$q$为常数且$\vert q\vert<1$）。
 >
 >证明：$\vert q^n-0\vert<\xi$。
 >
@@ -74,7 +74,7 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 
 若$n_k$分别取奇数和偶数，则得到**奇数项数列**与**偶数项数列**。
 
->[!tip]+ **定理：** 若数列$\{a_n\}$收敛，则其任何子列$\{a_{n_k}\}$也收敛，且极限值相同。
+>[!tip] **定理：** 若数列$\{a_n\}$收敛，则其任何子列$\{a_{n_k}\}$也收敛，且极限值相同。
 
 所以对于其变式我们用到更多：
 
@@ -88,7 +88,7 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 
 ### 数列绝对值
 
->[!tip]+ **定理：** 若$\lim\limits_{x\to\infty}a_n=A$，则$\lim\limits_{x\to\infty}\vert a_n\vert=\vert A\vert$。
+>[!tip] **定理：** 若$\lim\limits_{x\to\infty}a_n=A$，则$\lim\limits_{x\to\infty}\vert a_n\vert=\vert A\vert$。
 >
 >证明：$\because\lim\limits_{n\to\infty}a_n=A\Leftrightarrow\forall\xi>0,\exists N>0,\text{当}n>N$，恒有$\vert a_n-A\vert<\xi$。
 >
@@ -103,7 +103,7 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 
 ### 1.3.1 唯一性
 
->[!tip]+ 定理：若数列$\{x_n\}$收敛于$A$，则$A$是唯一的。
+>[!tip] 定理：若数列$\{x_n\}$收敛于$A$，则$A$是唯一的。
 >
 >证明：设$\lim\limits_{n\to\infty}a_n=A$且$\lim\limits_{n\to\infty}a_n=B$且$A\neq B$。
 >
@@ -129,7 +129,7 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 
 ### 1.3.2 有界性
 
->[!tip]+ 定理：若数列$\{x_n\}$极限存在，则数列有界。
+>[!tip] 定理：若数列$\{x_n\}$极限存在，则数列有界。
 >
 >即$\lim\limits_{n\to\infty}a_n=A$，则存在$M>0$，使得$\vert a_n\vert\leqslant M$。
 >
@@ -155,11 +155,11 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 
 较重要。也称为**脱帽法**。
 
->[!tip]+ [定理]**脱帽法**。若数列$\{a_n\}$存在极限$\lim\limits_{n\to\infty}a_n=A\neq 0$，则存在正整数$N$，当$n>N$时$a_n$都与$A$同号。
+>[!tip] [定理]**脱帽法**。若数列$\{a_n\}$存在极限$\lim\limits_{n\to\infty}a_n=A\neq 0$，则存在正整数$N$，当$n>N$时$a_n$都与$A$同号。
 
 简单来说，**就是极限大于0，后面一部分数列大于0**，极限小于0，后面一部分数列小于0。
 
->[!tip]+ [推论]**戴帽法**：若数列$\{a_n\}$从某项开始$a_n\geqslant B$，且$\lim\limits_{n\to\infty}a_n=A$，则$A\geqslant B$。**这里一定要带等号。**
+>[!tip] [推论]**戴帽法**：若数列$\{a_n\}$从某项开始$a_n\geqslant B$，且$\lim\limits_{n\to\infty}a_n=A$，则$A\geqslant B$。**这里一定要带等号。**
 >
 >证明：设$A>0$，取$\xi=\dfrac{A}{2}>0$。
 >
@@ -169,7 +169,7 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 >
 >同理得证极限值小于0的情况。
 
->[!tip]+ 总结
+>[!tip] 总结
 >**脱帽严格不等**：
 >$\begin{cases}\lim x_n>0\Rightarrow x_n>0\\
 >\lim x_n<0\Rightarrow x_n<0\end{cases}$
@@ -178,13 +178,13 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 >x_n\le 0 \Rightarrow \lim x_n\le0\end{cases}$
 
 ## 1.4 数列极限运算法则
->[!note]+ 数列极限运算法则
+>[!note] 数列极限运算法则
 >若$\lim\limits_{n\to\infty}x_n=a$，$\lim\limits_{n\to\infty}y_n=b$则：
 >1.  $\lim\limits_{n\to\infty}x_n\pm y_n=a\pm b$。
 >2.  $\lim\limits_{n\to\infty}(x_ny_n)=\lim\limits_{n\to\infty}x_n\lim\limits_{n\to\infty}y_n=ab$。
 >3.  $\lim\limits_{n\to\infty}\dfrac{x_n}{y_n}=\dfrac{\lim\limits_{n\to\infty}x_n}{\lim\limits_{n\to\infty}y_n}=\dfrac{a}{b}(b\neq 0)$。
 
->[!note]+ **例题：** 若$\lim\limits_{n\to\infty}(a_n+b_n)=1$且$\lim\limits_{n\to\infty}(a_n-b_n)=3$，计算$\lim\limits_{n\to\infty}a_n$与$\lim\limits_{n\to\infty}b_n$。
+>[!note] **例题：** 若$\lim\limits_{n\to\infty}(a_n+b_n)=1$且$\lim\limits_{n\to\infty}(a_n-b_n)=3$，计算$\lim\limits_{n\to\infty}a_n$与$\lim\limits_{n\to\infty}b_n$。
 >
 >解：首先是不能通过运算法则第一条将两个条件直接加减的，因为不能保证两个极限是否都存在。
 >
@@ -198,18 +198,18 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 
 ## 1.5 海涅定理（归结原则）
 
->[!tip]+ **定理：** 设$f(x)$在$\mathring{U}(x_0,\delta)$内有定义，则$\lim\limits_{x\to x_0}f(x)=A$存在$\Leftrightarrow$对任何$\mathring{U}(x_0,\delta)$内以$x_0$为极限的数列$\{x_n\}(x_n\neq x_0)$，极限$\lim\limits_{n\to\infty}f(x_n)=A$存在。
+>[!tip] **定理：** 设$f(x)$在$\mathring{U}(x_0,\delta)$内有定义，则$\lim\limits_{x\to x_0}f(x)=A$存在$\Leftrightarrow$对任何$\mathring{U}(x_0,\delta)$内以$x_0$为极限的数列$\{x_n\}(x_n\neq x_0)$，极限$\lim\limits_{n\to\infty}f(x_n)=A$存在。
 
 海涅定理用来连接数列极限与函数极限。在极限存在下他们可以相互转换。
 
->[!tip]+ **常考：**
+>[!tip] **常考：**
 >1. 当 $x\to 0$ 时，取 $x_n=\dfrac{1}{n}$ ，即若 $\lim\limits_{x\to 0}f(x)=A$ ，则 $\lim\limits_{n\to\infty}\left(\dfrac{1}{n}\right)=A$
 >
 >2. ==当 $x\to\infty$ 时，取 $x_n=n$ ，即若 $\lim\limits_{x\to+\infty}f(x)=A$ ，则 $\lim\limits_{n\to\infty}f(n)=A$==
 >
 >3. 当 $x\to a$ 时，且 $x_n\neq a$ ，若 $\lim\limits_{x\to a}f(x)=A$ ，则 $\lim\limits_{n\to\infty}f(x_n)=A$
 
->[!note]+ **例题：** 求$\lim\limits_{n\to\infty}\left(n\tan\dfrac{1}{n}\right)^{n^2}$（$n\in N^+$）。
+>[!note] **例题：** 求$\lim\limits_{n\to\infty}\left(n\tan\dfrac{1}{n}\right)^{n^2}$（$n\in N^+$）。
 >
 >解：首先将式子由数列极限变为函数极限，并取$x=\dfrac{1}{n}$：$\lim\limits_{x\to 0}\left(\dfrac{\tan x}{x}\right)^{\frac{1}{x^2}}$。
 >
@@ -234,7 +234,7 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 >根据海涅定理：取$x=\dfrac{1}{n},n\to\infty$，$\lim\limits_{n\to\infty}\left(n\tan\dfrac{1}{n}\right)^{n^2}=e^{\frac{1}{3}}$。
 
 ## 1.6 夹逼准则
->[!tip]+ [定理] **数列的夹逼准则**
+>[!tip] [定理] **数列的夹逼准则**
 >1.  $y_n\leqslant x_n\leqslant z_n (n=1,2,3,\cdots)$。
 >
 >2.  $\lim\limits_{n\to\infty}y_n=a,\lim\limits_{n\to\infty}z_n=a$。(**也可以是同号无穷大**)
@@ -251,7 +251,7 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 >
 >$\therefore\vert x_n-a\vert<\xi$。
 
->[!note]+ **例题：** 求极限$\lim\limits_{n\to\infty}\left(\dfrac{n}{n^2+1}+\dfrac{n}{n^2+2}+\cdots+\dfrac{n}{n^2+n}\right)$。
+>[!note] **例题：** 求极限$\lim\limits_{n\to\infty}\left(\dfrac{n}{n^2+1}+\dfrac{n}{n^2+2}+\cdots+\dfrac{n}{n^2+n}\right)$。
 >
 >解：使用夹逼准则：$\dfrac{n^2}{n^2+n}<\sum_{i=1}^n\dfrac{n}{n^2+i}<\dfrac{n^2}{n^2+1}$。
 >
@@ -264,24 +264,24 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 数列的夹逼准则下不等式的证明往往要使用到**放缩法**，对于分式的放缩主要在于**分母的放缩**，不变分子，分母变小原式变大，分母变大原式变小。然后**分子分母除以最高项**得到逼向0的极限。
 
 ### 1.6.1 放缩的常用方法
->[!note]+ **利用简单的放大与缩小**
+>[!note] **利用简单的放大与缩小**
 >$$\begin{cases}
 >n\cdot u_{\min}\le u_1+u_2+\cdots+u_m\le n\cdot u_{\max}\\
 >1\cdot u_{\max}\le u_1+u_2+\cdots+u_m\le n\cdot u_{\max}(u_i\ge 0)\\
 >\end{cases}$$
 
->[!note]+ **利用重要不等式**
+>[!note] **利用重要不等式**
 >1. 设 $a,b$ 为实数，则$$\begin{cases}
 >|a\pm b|\le|a|+|b|\\
 >||a|-|b||\le|a-b|\\
 >\end{cases}$$
->>[!tip]+ 可以将上述不等式拓展为 $n$ 个实数的情形，即
+>>[!tip] 可以将上述不等式拓展为 $n$ 个实数的情形，即
 >>$$|a_1\pm a_2\pm \cdots\pm a_n|\le|a_1|+|a_2|+\cdots+|a_n|$$
 >1. $$\begin{cases}
 >\sqrt{ab}\le\dfrac{a+b}{2}\le\sqrt{\dfrac{a^2+b^2}{2}}\qquad\qquad(a,b\ge 0)\\
 >\sqrt[3]{abc}\le\dfrac{a+b+c}{3}\le\sqrt{\dfrac{a^2+b^2+c^2}{3}}\quad(a,b,c\ge 0)\\
 >\end{cases}$$
->>[!tip]+ $|ab|\le\dfrac{a^2+b^2}{2}$
+>>[!tip] $|ab|\le\dfrac{a^2+b^2}{2}$
 >>
 >> 例如，若 $u_n\gt 0$，则 $\dfrac{u_n}{n}=u_n\cdot\dfrac{1}{n}\le\dfrac{u_n^2+\dfrac{1}{n^2}}{2}$
 >
@@ -305,17 +305,17 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 >
 >12.$\dfrac{1}{1+x}\lt\ln\left(1+\dfrac{1}{x}\right)\lt\dfrac{1}{x}(x\gt 0)$ 或 $\dfrac{x}{1+x}\lt\ln(1+x)\lt x(x\gt 0)$ 
 
->[!note]+ **利用闭区间上连续函数必有最大值与最小值**
+>[!note] **利用闭区间上连续函数必有最大值与最小值**
 
->[!note]+ **利用压缩映射原理：**
+>[!note] **利用压缩映射原理：**
 >**原理一：** 对数列 $\{x_n\}$，若存在常数 $k(0\lt k\lt 1)$，使得 $|x_{n+1}-a|\le k|x_n-a|,n=1,2,\cdots$，则 $\{x_n\}$ 收敛于 $a$
 >
 >**原理二：** 对数列 $\{x_n\}$，若 $x_{n+1}=f(x_n),n=1,2,\cdots,f(x)$ 可导， $a$ 是 $f(x)=x$ 的唯一解，且 $\forall x\in R$，有 $|f'(x)|\le k\lt1$，则 $\{x_n\}$ 收敛于 $a$
 
->[!tip]+ **结论：** 当 $0\lt a\lt b$ 时， $\lim\limits_{n\to\infty}(a^{-n}+b^{-n})^{\frac{1}{n}}=\lim\limits_{n\to\infty}\sqrt[n]{\left(\dfrac{1}{a}\right)^n+\left(\dfrac{1}{b}\right)^n}=\dfrac{1}{a}(取较大值)$
+>[!tip] **结论：** 当 $0\lt a\lt b$ 时， $\lim\limits_{n\to\infty}(a^{-n}+b^{-n})^{\frac{1}{n}}=\lim\limits_{n\to\infty}\sqrt[n]{\left(\dfrac{1}{a}\right)^n+\left(\dfrac{1}{b}\right)^n}=\dfrac{1}{a}(取较大值)$
 
 ## 1.7 单调有界准则
->[!tip]+ **定理：** **单调有界数列必有极限**，即若$\{x_n\}$单调增加（减少）且有上界（下界），则极限存在。
+>[!tip] **定理：** **单调有界数列必有极限**，即若$\{x_n\}$单调增加（减少）且有上界（下界），则极限存在。
 >
 >该部分需要证明两个地方：
 >1.  **数列单调**：$x_{n+1}-x_n$与0的关系，或$\dfrac{x_{n+1}}{x_n}$与1的关系。
@@ -324,7 +324,7 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 >
 >见到**递推式（迭代式）**$a_{n+1}=f(a_n)$，一般都要用单调有界准则。单调性通过**减或除**进行计算，有界性通过**不等式**来计算。
 
->[!note]+ **例题：** 已知$a_1=a>0$，证明$a_{n+1}=\dfrac{1}{2}\left(a_n+\dfrac{2}{a_n}\right)$的极限存在并求出。
+>[!note] **例题：** 已知$a_1=a>0$，证明$a_{n+1}=\dfrac{1}{2}\left(a_n+\dfrac{2}{a_n}\right)$的极限存在并求出。
 >
 >解：$\because a_1=a>0$，且递推式中没有负数与减的操作，所以$a_n>0$。
 >
@@ -342,7 +342,7 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 >
 >又因为保号性，数列下界为$\sqrt{2}$，所以$A=\sqrt{2}$。
 
->[!note]+ **例题：** 求证$x_{n+1}=\sin x_n$极限存在，$0<x_1<\pi$。
+>[!note] **例题：** 求证$x_{n+1}=\sin x_n$极限存在，$0<x_1<\pi$。
 >
 >解：由三角函数中的不等式$\sin x<x$。
 >
@@ -360,7 +360,7 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 >
 >$\therefore\lim\limits_{n\to\infty}x_n=0$。
 
->[!note]+ **例题：** 证明$a_n=\dfrac{1}{1^2}+\dfrac{1}{2^2}+\cdots+\dfrac{1}{n^2}$存在极限。
+>[!note] **例题：** 证明$a_n=\dfrac{1}{1^2}+\dfrac{1}{2^2}+\cdots+\dfrac{1}{n^2}$存在极限。
 >
 >证明：因为是递推式，所以一般使用**单调有界准则**。
 >
@@ -386,7 +386,7 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 $x_{n}-x_{n-1}$ 与 $x_{n-1}-x_{n-2}$ 同号，则 $\{x_n\}$ 单调
 
 ### 1.8.5 利用结论
->[!note]+ **结论：**
+>[!note] **结论：**
 >对 $x_{n+1}=f(x_n)(n-1,2,\cdots),x_n\in I.$
 >1. ==若 $f'(x)\gt0,x\in I$，则数列 $\{x_n\}$单调==，
 >且$\begin{cases}当 x_2\gt x_1时，数列\{x_n\}单调增加\\\\当 x_2\lt x_1时，数列\{x_n\}单调增少\end{cases}$
