@@ -60,7 +60,7 @@ $$\max_{\lambda_i,\eta_j}\min_{x}L(x,\lambda_i,\eta_j)\le\min_{x}\max_{\lambda_i
 
 对于一个凸优化问题，有如下定理：
 
->[!success]+ 如果凸优化问题满足某些条件如 Slater 条件，那么它和其对偶问题满足强对偶关系。
+>[!tip] 如果凸优化问题满足某些条件如 Slater 条件，那么它和其对偶问题满足强对偶关系。
 >记问题的定义域为：$\mathcal{D}=domf(x)\cap dom m_i(x)\cap domn_j(x)$。于是 Slater 条件为：
 >$$\exists \hat{x}\in Relint\mathcal{D}\ s.t.\ \forall i=1,2,\cdots,M,m_i(x)\lt0$$
 >其中 Relint 表示相对内部（不包含边界的内部）。
@@ -222,7 +222,7 @@ $$\mathop{argmin}_{w,b}\frac{1}{2}w^Tw+C\sum\limits_{i=1}^N\xi_i\qquad s.t.\ y_i
 
 2. **对偶表示**带来**内积**（从**优化**角度） 
 
->[!success]+ **Cover Theorem：** 高维空间比低维空间更易线性可分。
+>[!tip] **Cover Theorem：** 高维空间比低维空间更易线性可分。
 
 应用在 SVM 中时，观察上面的 SVM 对偶问题：
 $$
