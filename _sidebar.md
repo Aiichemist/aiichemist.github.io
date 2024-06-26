@@ -12,5 +12,6 @@
   - [Data Visualization](data/data-visualization/)
 * [MachineLearning](ML/)
 * [DeepLearning](DL/)
+* [AI Demo](AI/)
 * [Computer Base](computer/)
 * [Computer Graphics](CG/)
