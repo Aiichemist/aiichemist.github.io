@@ -12,6 +12,6 @@
   - [Data Visualization](/data/data-visualization/)
 * [MachineLearning](/ml/)
 * [DeepLearning](/ml/)
-* [Project Demo](/projects)
+* [Project Demo](/projects/)
 * [Computer Base](/computer/)
 * [Computer Graphics](/cg/)
