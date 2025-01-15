@@ -25,7 +25,7 @@
 判断一个临界点到底是局部极小值还是鞍点需要知道损失函数的形状。可是怎么知道损失函数的形状？网络本身很复杂，用复杂网络算出来的损失函数显然也很复杂。虽然无法完整知道整个损失函数的样子，但是如果给定某一组参数，比如 $\theta^{\prime}$ ，在 $\theta^{\prime}$ 附近的损失函数是有办法写出来的——虽然 $L(\theta)$ 完整的样子写不出来。 $\pmb{\theta}^{\prime}$ 附近的 $L(\theta)$ 可近似为  
 
 $$
-\boldsymbol{L}(\boldsymbol{\theta})\approx\boldsymbol{L}\left(\boldsymbol{\theta}^{\prime}\right)+\left(\boldsymbol{\theta}-\boldsymbol{\theta}^{\prime}\right)^{\mathrm{T}}\boldsymbol{g}+\frac{1}{2}\left(\boldsymbol{\theta}-\boldsymbol{\theta}^{\prime}\right)^{\mathrm{T}}\boldsymbol{H}\left(\boldsymbol{\theta}-\boldsymbol{\theta}^{\prime}\right).
+\boldsymbol{L}(\boldsymbol{\theta})\approx\boldsymbol{L}\left(\boldsymbol{\theta}^{\prime}\right)+\left(\boldsymbol{\theta}-\boldsymbol{\theta}^{\prime}\right)^{\mathrm{T}}\boldsymbol{g}+\frac{1}{2}\left(\boldsymbol{\theta}-\boldsymbol{\theta}^{\prime}\right)^{\mathrm{T}}\boldsymbol{H}\left(\boldsymbol{\theta}-\boldsymbol{\theta}^{\prime}\right).\tag{3.1}
 $$
 
 式(3.1) 是泰勒级数近似（Tayler series appoximation）。其中，第一项 $L(\pmb\theta)^{\prime}$ 告诉我们，当 $\pmb{\theta}$ 跟 $\pmb{\theta}^{\prime}$ 很近的时候， $L(\theta)$ 应该跟 $L(\pmb\theta^{\prime})$ 还蛮靠近的；第二项 $\left(\pmb\theta-\pmb\theta^{\prime}\right)^{\mathrm{T}}\pmb g$ 中， $\textbf{\emph{g}}$ 代表梯度，它是一个向量，可以弥补 $L(\pmb\theta^{\prime})$ 跟 $L(\theta)$ 之间的差距。有时候梯度 $\textbf{\emph{g}}$ 会写成 $\nabla L(\pmb\theta^{\prime})$ 。 $g_{i}$ 是向量 $\textbf{\emph{g}}$ 的第 $i$ 个元素，就是 $L$ 关于 $\pmb{\theta}$ 的第 $i$ 个元素的偏导数，即  
@@ -34,7 +34,7 @@ $$
 g_{i}=\frac{\partial L\left(\pmb{\theta}^{\prime}\right)}{\partial\theta_{i}}.
 $$
 
-光看 $\textbf{\emph{g}}$ 还是没有办法完整地描述 $L(\theta)$ ，还要看式(3.1) 的第三项 $\begin{array}{r}{\frac{1}{2}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)^{\mathrm{T}}\pmb{H}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right).}\end{array}$ 。第三项跟海森矩阵（Hessian matrix） $_H$ 有关。 $\pmb{H}$ 里面放的是 $L$ 的二次微分，它第 $i$ 行，第 $j$ 列的值 $H_{i j}$ 就是把 $\pmb{\theta}$ 的第 $i$ 个元素对 $L\left(\theta^{\prime}\right)$ 作微分，再把 $\pmb{\theta}$ 的第 $j$ 个元素对 $\frac{\partial L\big(\pmb{\theta}^{\prime}\big)}{\partial\theta_{i}}$ 作微分后的结果，即  
+光看 $\textbf{\emph{g}}$ 还是没有办法完整地描述 $L(\theta)$ ，还要看式(3.1) 的第三项 $\begin{array}{r}{\frac{1}{2}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)^{\mathrm{T}}\pmb{H}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right).}\end{array}$ 。第三项跟海森矩阵（Hessian matrix） $\pmb{H{}$ 有关。 $\pmb{H}$ 里面放的是 $L$ 的二次微分，它第 $i$ 行，第 $j$ 列的值 $H_{i j}$ 就是把 $\pmb{\theta}$ 的第 $i$ 个元素对 $L\left(\theta^{\prime}\right)$ 作微分，再把 $\pmb{\theta}$ 的第 $j$ 个元素对 $\frac{\partial L\big(\pmb{\theta}^{\prime}\big)}{\partial\theta_{i}}$ 作微分后的结果，即  
 
 $$
 H_{i j}=\frac{\partial^{2}}{\partial\theta_{i}\partial\theta_{j}}L\left(\pmb{\theta}^{\prime}\right).
@@ -45,16 +45,16 @@ $$
 在临界点，梯度 $\textbf{\emph{g}}$ 为零，因此 $\left(\pmb\theta-\pmb\theta^{\prime}\right)^{\mathrm{T}}\pmb g$ 为零。所以在临界点的附近，损失函数可被近似为  
 
 $$
-{\cal L}(\pmb\theta)\approx{\cal L}\left(\pmb\theta^{\prime}\right)+\frac{1}{2}\left(\pmb\theta-\pmb\theta^{\prime}\right)^{\mathrm{T}}{\pmb H}\left(\pmb\theta-\pmb\theta^{\prime}\right)\,;
+L(\pmb\theta)\approx L\left(\pmb\theta^{\prime}\right)+\frac{1}{2}\left(\pmb\theta-\pmb\theta^{\prime}\right)^{\mathrm{T}}{\pmb H}\left(\pmb\theta-\pmb\theta^{\prime}\right)\,;
 $$
 
 我们可以根据 $\frac{1}{2}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)^{\mathrm{T}}\pmb{H}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)$ 来判断在 $\theta^{\prime}$ 附近的误差表面（error surface）到底长什么样子。知道误差表面的“地貌”，我们就可以判断 $L(\pmb\theta^{\prime})$ 是局部极小值、局部极大值，还是鞍点。为了符号简洁，我们用向量 $\pmb{v}$ 来表示 $\pmb\theta-\pmb\theta^{\prime}$ ， $\left(\pmb\theta-\pmb\theta^{\prime}\right)^{\mathrm{T}}\pmb H\left(\pmb\theta-\pmb\theta^{\prime}\right)$ 可改写为 $v^{\mathrm{T}}H v$ ，有如下三种情况。  
 
-（1）如果对所有 $\pmb{v}$ ， ${\pmb v}^{\mathrm{T}}{\pmb H}{\pmb v}>0$ . 这意味着对任意 $\pmb{\theta}$ ， ${\cal L}(\pmb\theta)>{\cal L}(\pmb\theta^{\prime})$ . 只要 $\pmb{\theta}$ 在 $\pmb{\theta}^{\prime}$ 附近，$L(\pmb\theta)$ 都大于 $L(\pmb\theta^{\prime})$ . 这代表 $L(\pmb\theta^{\prime})$ 是附近的一个最低点，所以它是局部极小值。  
+（1）如果对所有 $\pmb{v}$ ， ${\pmb v}^{\mathrm{T}}{\pmb H}{\pmb v}>0$ . 这意味着对任意 $\pmb{\theta}$ ， $L(\pmb\theta)>L(\pmb\theta^{\prime})$ . 只要 $\pmb{\theta}$ 在 $\pmb{\theta}^{\prime}$ 附近，$L(\pmb\theta)$ 都大于 $L(\pmb\theta^{\prime})$ . 这代表 $L(\pmb\theta^{\prime})$ 是附近的一个最低点，所以它是局部极小值。  
 
-（2）如果对所有 $\pmb{v}$ ， ${\pmb v}^{\mathrm{T}}{\pmb H}{\pmb v}<0$ . 这意味着对任意 $\pmb{\theta}$ ， ${\cal L}(\pmb\theta)<{\cal L}(\pmb\theta^{\prime})$ ， $\theta^{\prime}$ 是附近最高的一个点， $L(\pmb\theta^{\prime})$ 是局部极大值。  
+（2）如果对所有 $\pmb{v}$ ， ${\pmb v}^{\mathrm{T}}{\pmb H}{\pmb v}<0$ . 这意味着对任意 $\pmb{\theta}$ ， $L(\pmb\theta)<L(\pmb\theta^{\prime})$ ， $\theta^{\prime}$ 是附近最高的一个点， $L(\pmb\theta^{\prime})$ 是局部极大值。  
 
-（3）如果对于 $\pmb{v}$ ， $v^{\mathrm{T}}H v$ 有时候大于零，有时候小于零。这意味着在 $\pmb{\theta}^{\prime}$ 附近，有时候${\cal L}(\pmb\theta)>{\cal L}(\pmb\theta^{\prime})$ ，有时候 ${\cal L}(\pmb\theta)<{\cal L}(\pmb\theta^{\prime})$ . 因此在 $\pmb{\theta}^{\prime}$ 附近， $L(\pmb\theta^{\prime})$ 既不是局部极大值，也不是局部极小值，而是鞍点。  
+（3）如果对于 $\pmb{v}$ ， $v^{\mathrm{T}}H v$ 有时候大于零，有时候小于零。这意味着在 $\pmb{\theta}^{\prime}$ 附近，有时候${\cal L}(\pmb\theta)>L(\pmb\theta^{\prime})$ ，有时候 $L(\pmb\theta)<L(\pmb\theta^{\prime})$ . 因此在 $\pmb{\theta}^{\prime}$ 附近， $L(\pmb\theta^{\prime})$ 既不是局部极大值，也不是局部极小值，而是鞍点。  
 
 有一个问题，通过 $\frac{1}{2}\,\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)^{\mathrm{T}}\pmb{H}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)$ 判断临界点是局部极小值还是鞍点还是局部极大值，需要代入所有的 $\pmb{\theta}$ . 但我们不可能把所有的 $\pmb{v}$ 都拿来试试看，所以有一个更简便的方法来判断 $\pmb{v}^{\mathrm{T}}\pmb{H}\pmb{v}$ 的正负。算出一个海森矩阵后，不需要把它跟所有的 $\pmb{v}$ 都乘乘看，只要看 $_H$ 的特征值。若 $_H$ 的所有特征值都是正的， $_H$ 为正定矩阵，则 ${\pmb v}^{\mathrm{T}}{\pmb H}{\pmb v}>0$ ，临界点是局部极小值。若 $_H$ 的所有特征值都是负的， $\pmb{H}$ 为负定矩阵，则 ${\pmb v}^{\mathrm{T}}{\pmb H}{\pmb v}<0$ ，临界点是局部极大值。若 $\pmb{H}$ 的特征值有正有负，临界点是鞍点。  
 
