@@ -7,7 +7,7 @@ $$f_X(x)=\begin{cases}
 0&\text{for }x\lt a\text{ or }x\gt b
 \end{cases}$$
 则称 $X$ 区间 $[a, b]$ 上服从**连续均匀分布** (continuous uniform distribution)。这个连续分布常记做 $Uniform(a, b)$ 或 $U(a, b)$，比如 $[0, 1]$ 区间上的均匀分布可以记做 $Uniform(0, 1)$ 或 $U(0, 1)$。
-![](/upload/Pasted%20image%2020230908120348.png ':size=70%')
+![](/img/Pasted%20image%2020230908120348.png ':size=70%')
 
 ### 期望、方差
 服从上式连续均匀分布 $X$ 的期望和方差分别为：
@@ -17,7 +17,7 @@ $$E(X)=\dfrac{a+b}{2},\quad var(X)=\dfrac{(b-a)^2}{12}$$
 利用随机数发生器，我们可以获得满足连续均匀分布的随机数。图 2 (a) 所示为满足连续均匀 分布随机数的直方图。 
 
 图 2 (b) 所 示 为 随 机 数 的 **经 验 累 积 分 布 函 数** (Empirical Cumulative Distribution Function, ECDF)。不难看出 ECDF 的取值范围为 $[0, 1]$。经验分布函数是在所有 $n$ 个样本点上都跳跃 $1/n$ 的 阶跃函数。对于某个特定样本，它的 ECDF 为样本中小于或等于该值的样本所占的比例。
-![](/upload/Pasted%20image%2020230908120656.png ':size=70%')
+![](/img/Pasted%20image%2020230908120656.png ':size=70%')
 
 ## 高斯分布：最重要的概率分布，没有之一
 **高斯分布** (Gaussian distribution)，也叫**正态分布** (normal distribution)，仿佛是整个纷繁复杂宇宙表象下的终极秩序。实际上，高斯分布是由德国数学家和天文学家亚伯拉罕·棣莫弗 (Abraham de Moivre) 于 1733 年首先提出。
@@ -31,11 +31,11 @@ $$f_X(x)=\dfrac{1}{\sigma\sqrt{2\pi}}\exp\left(\dfrac{-1}{2}\left(\dfrac{x-\mu}{
 也就是说，连续随机变量 $X$ 服从 $N(μ, σ^2)$，即 $X ~ N(μ, σ^2)$，则 $X$ 的期望和方差为：
 $$E(X)=\mu,\quad var(X)=\sigma^2$$
 图3所示为三个不同一元高斯分布 PDF、CDF 图像。可以发现，一元高斯分布 PDF 关于 $x = μ$ 对称，当 $x$ 远离 $μ$，概率密度函数高度迅速下降。
-![](/upload/Pasted%20image%2020230908171448.png ':size=70%')
+![](/img/Pasted%20image%2020230908171448.png ':size=70%')
 
 ### 形状
 $μ$ 和 $σ$ 两个参数确定了一元高斯分布 PDF 的位置和形状。如图 4 所示，$μ$ 决定概率密度曲线 $p(x)$ 的位置，$σ$ 影响曲线的胖瘦。特别地，当 $μ = 0$，且 $σ = 1$ 时，得到的高斯分布为标准正态分布 (standard normal distribution)。
-![](/upload/Pasted%20image%2020230908171529.png ':size=70%')
+![](/img/Pasted%20image%2020230908171529.png ':size=70%')
 
 ### 二元高斯分布
 **二元高斯分布** (bivariate Gaussian distribution)，也叫二元正态分布，它的概率密度函数解析式 如下：
@@ -60,8 +60,8 @@ N\left(\mathop{\begin{bmatrix}
 \right)
 =N(\vec{\mu},\Sigma)$$
 图 5 所示为方差和相关性系数取不同值时，二元正态分布概率密度函数椭圆等高线以及边缘 分布形状。注意，图中 $σ_{1,1}$ 和 $σ_{2,2}$ 代表方差，即标准差的平方。
-![](/upload/Pasted%20image%2020230908172553.png ':size=70%')
-![](/upload/Pasted%20image%2020230908172613.png ':size=70%')
+![](/img/Pasted%20image%2020230908172553.png ':size=70%')
+![](/img/Pasted%20image%2020230908172613.png ':size=70%')
 
 ### 多元高斯分布
 多元高斯分布 PDF 每个不同成分的含义：
@@ -81,7 +81,7 @@ f_\chi(\vec{x})
 拉普拉斯分布的概率密度函数为：
 $$f_X(x)=\dfrac{1}{2b}\exp\left(-\dfrac{|x-\mu|}{b}\right)$$
 形式上，拉普拉斯分布和高斯分布很类似，只不过拉普拉斯分布的 PDF 图像在对称轴处存在尖点。很容易发现，参数 $μ$ 决定概率密度分布位置。如图 6 所示，参数 $b$ 决定分布形状。
-![](/upload/Pasted%20image%2020230908172958.png ':size=70%')
+![](/img/Pasted%20image%2020230908172958.png ':size=70%')
 如果连续随机变量 $X$ 满足拉普拉斯分布，$X$ 期望和方差为：
 $$E(X)=\mu,\quad var(X)=2b^2$$
 
@@ -92,13 +92,13 @@ $$f_X(x)=\dfrac{\exp\left(\dfrac{-(x-\mu)}{s}\right)}{s\left(1+\exp\left(\dfrac{
 
 相比 PDF，逻辑函数的 CDF 更常用：
 $$F_X(x)=\dfrac{1}{1+\exp\left(\dfrac{-(x-\mu)}{s}\right)}$$
-![](/upload/Pasted%20image%2020230908173651.png ':size=70%')
+![](/img/Pasted%20image%2020230908173651.png ':size=70%')
 
 ### 逻辑分布 vs 高斯分布
 逻辑分布和高斯分布 PDF、CDF 长得很相似。为了比较逻辑函数和高斯函数，用标准正态分布 $N(0, 1)$ 的 PDF 和 CDF 图像，而逻辑分布的位置参数 $μ = 0$。特别选取参数 $s$ 使得逻辑分布 PDF 和标准正态分布 PDF 在 $x = 0$ 处高度一致。 
 
 如图 8 所示，相比标准正态分布，逻辑分布 PDF 中心部位“稍瘦”，而**厚尾** (fat tail)。厚尾，也叫肥尾，指的是和正态分布相比，尾部分布较厚的分布。下一节介绍的学生 t-分布就是典型的厚尾分布。
-![](/upload/Pasted%20image%2020230908173853.png ':size=70%')
+![](/img/Pasted%20image%2020230908173853.png ':size=70%')
 
 ## 学生t-分布：厚尾分布
 **学生 t-分布** (Student's t-distribution) 也称**学生分布**，或 **t 分布**，是由戈赛特 (William Sealy Gosset) 于 1908 年提出的，Student 一词源自于他发表论文时用的化名。
@@ -121,8 +121,8 @@ $$\begin{split}
 \Gamma\left(\frac{3}{2}\right)&=\dfrac{1}{2}\sqrt{\pi}
 \end{split}$$
 图 9 所示为 Gamma 函数图像，其中红色 $×$ 是取正整数时 Gamma 函数的取值。
-![](/upload/Pasted%20image%2020230908183656.png ':size=70%')
-![](/upload/Pasted%20image%2020230908183702.png ':size=70%')
+![](/img/Pasted%20image%2020230908183656.png ':size=70%')
+![](/img/Pasted%20image%2020230908183702.png ':size=70%')
 
 一般情况，当 $v$ 为偶数时，上式中系数部分为：
 $$\dfrac{\Gamma\left(\dfrac{v+1}{2}\right)}{\sqrt{v\pi}\Gamma\left(\dfrac{v}{2}\right)}=\dfrac{(v-1)(v-3)\cdots 5\cdot 3}{2\sqrt{v}(v-2)(v-4)\cdots 4\cdot 2}$$
@@ -134,7 +134,7 @@ $$\Gamma(v+1)=\Gamma(v)\cdot v$$
 
 ### 自由度
 图 10 所示为 $v$ 从 1 变化到 30 时，学生 t-分布 PDF 和 CDF 图像。图 10 中黑色的曲线对应正态分布。当自由度 $v$ 不断提高时，厚尾现象逐渐消失，学生 t-分布逐渐接近标准正态分布 (黑色)。 很明显，学生 t-分布的偏度为 $0$。
-![](/upload/Pasted%20image%2020230908184057.png ':size=70%')
+![](/img/Pasted%20image%2020230908184057.png ':size=70%')
 
 ### 多元学生 t-分布
 类似多元高斯分布，多元学生 t-分布的概率密度函数为：
@@ -165,9 +165,9 @@ $$E(X)=\exp\left(\mu+\frac{\sigma^2}{2}\right),\quad var(X)=\left[\exp(\sigma^2)
 图 11 给出对数正态分布的图像。对数正态分布的最大特点是右偏，即正偏。对于右偏的对数 正态分布，其平均值大于其众数。
 
 再次强调，对数正态分布的随机变量取值只能为正值。
-![](/upload/Pasted%20image%2020230908221839.png ':size=70%')
+![](/img/Pasted%20image%2020230908221839.png ':size=70%')
 图 12 对比正态分布和对数正态分布。
-![](/upload/Pasted%20image%2020230908221852.png ':size=70%')
+![](/img/Pasted%20image%2020230908221852.png ':size=70%')
 
 ## 指数分布：泊松分布的连续随机变量版
 ### 定义
@@ -183,7 +183,7 @@ $$E(X)=\frac{1}{\lambda},\quad var(X)=\frac{1}{\lambda^2}$$
 ### 图像
  图 13 所示为 $λ$ 取不同值时，指数分布 PDF 和 CDF 图像。
  
-![](/upload/Pasted%20image%2020230909161131.png ':size=70%')
+![](/img/Pasted%20image%2020230909161131.png ':size=70%')
 
 ## 卡方分布：若干IID标准正态分布平方和
 ### 定义
@@ -199,7 +199,7 @@ $$X=\sum_{i=1}^kZ_i^2\thicksim\chi_k^2$$
 $$E(X)=k,\quad var(X)=2k$$
 ### 图像
 如图 14 所示，卡方分布的值均为正值，且呈现右偏态，随着自由度 $n$ 的增大，卡方分布趋近于正态分布。当自由度大于 30 时，已经非常类似于正态分布。
-![](/upload/Pasted%20image%2020230909161620.png ':size=70%')
+![](/img/Pasted%20image%2020230909161620.png ':size=70%')
 
 
 ## F-分布：和两个服从卡方分布的独立随机变量有关
@@ -216,10 +216,10 @@ $$f_X(x;d_1,d_2)=\dfrac{1}{B\left(\dfrac{d_1}{2},\dfrac{d_2}{2}\right)}\left(\df
 $$B(\alpha,\beta)=\int_0^1x^{\alpha-1}(1-x)^{\beta-1}dx=\dfrac{\Gamma(\alpha)\cdot\Gamma(\beta)}{\Gamma(\alpha+\beta)}$$
 ### 图像
 图 15 所示为 $B(α, β)$ 函数取值随 $α$ 和 $β$ 变化的火柴梗图、三维散点图。下一节的 Beta 分布中 也会用到 $B(α, β)$ 函数。
-![](/upload/Pasted%20image%2020230909162500.png ':size=70%')
+![](/img/Pasted%20image%2020230909162500.png ':size=70%')
 
 如图 16 所示，F-分布是一种非对称分布，且 $d_1$、$d_2$ 的位置不可随意互换。
-![](/upload/Pasted%20image%2020230909162525.png ':size=70%')
+![](/img/Pasted%20image%2020230909162525.png ':size=70%')
 
 ## Beta分布：概率的概率
 **贝叶斯推断** (Bayesian inference) 是数据科学和机器学习重要的数学工具，而 Beta 分布在贝叶斯推断中扮演重要角色。
@@ -244,7 +244,7 @@ $$B(\alpha,\beta)=\dfrac{(\alpha-1)!(\beta-1)!}{(\alpha+\beta-1)!}$$
 容易发现 $Beta(α, β)$ 分布实际上代表了一系列分布。举个例子，连续均匀分布 $U(0, 1)$ 便是 $Beta(1, 1)$。
 
 注意图 17 对角线上的图像，即 $α = β$，这些 PDF 图像对称，对应的分布相当于 $Beta(α, α)$。
-![](/upload/Pasted%20image%2020230909163245.png ':size=70%')
+![](/img/Pasted%20image%2020230909163245.png ':size=70%')
 
 ### 众数 vs 期望
 如果 $X$ 服从 $Beta(α, β)$ 分布，$X$ 的期望为：
@@ -313,16 +313,16 @@ $$x_1+x_2+x_3=1$$
 
 后文将采用五种可视化方案展示 Dirichlet 分布概率密度函数。如图 18 所示，这五种可视 化方案主要分成两大类。由于上式关系，给定 $x_1、x_2$，则 $x_3$ 确定。因此，我们可以用图 18 (a) 的 $x_1x_2$ 平面展示 Dirichlet 分布 PDF 图像。
 
-![](/upload/Pasted%20image%2020230909165630.png ':size=70%')
+![](/img/Pasted%20image%2020230909165630.png ':size=70%')
 
 Dirichlet 分布非常重要，因此下文用图 19~图 23 五种可视化方案展示 Dirichlet 分布的分布特征。
-![](/upload/Pasted%20image%2020230909165722.png ':size=70%')
-![](/upload/Pasted%20image%2020230909165735.png ':size=70%')
+![](/img/Pasted%20image%2020230909165722.png ':size=70%')
+![](/img/Pasted%20image%2020230909165735.png ':size=70%')
 
-![](/upload/Pasted%20image%2020230909165750.png ':size=70%')
-![](/upload/Pasted%20image%2020230909165802.png ':size=70%')
+![](/img/Pasted%20image%2020230909165750.png ':size=70%')
+![](/img/Pasted%20image%2020230909165802.png ':size=70%')
 
-![](/upload/Pasted%20image%2020230909165812.png ':size=70%')
+![](/img/Pasted%20image%2020230909165812.png ':size=70%')
 
 ### 边缘分布
 Dirichlet 分布的边缘分布服从 Beta 分布：
@@ -336,7 +336,7 @@ $$E(X_i)=\dfrac{\alpha_i}{\sum\limits_{k=1}^K\alpha_k}=\dfrac{\alpha_i}{\alpha_0
 $X_i$ 的众数为：
 $$\frac{\alpha_i-1}{\sum\limits_{k=1}^K\alpha_k-K}
 =\frac{\alpha_i-1}{\alpha_0-K},\quad \alpha_i\gt 1$$
-![](/upload/Pasted%20image%2020230909170305.png ':size=70%')
+![](/img/Pasted%20image%2020230909170305.png ':size=70%')
 
 
 

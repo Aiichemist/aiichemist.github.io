@@ -1,7 +1,7 @@
 
 # 正交投影
 
-![](/upload/Pasted%20image%2020230725155453.png ':size=70%')
+![](/img/Pasted%20image%2020230725155453.png ':size=70%')
 
 ## 标量投影
 
@@ -71,7 +71,7 @@ $$H=I-2\vec{v}\otimes \vec{v}$$
 
 豪斯霍尔德反射：
 
-![](/upload/Pasted%20image%2020230726124748)
+![](/img/Pasted%20image%2020230726124748)
 
 $$\vec{z}=2\vec{p}-\vec{x}=2(\vec{\tau}\otimes \vec{\tau})\vec{x}-\vec{x}=(2\vec{\tau}\otimes\vec{\tau}-I)\vec{x}=\underbrace{(I-2\vec{v}\otimes \vec{v})}_H\vec{x}$$
 
@@ -91,7 +91,7 @@ $$\vec{q}_1=\frac{\vec{\eta}_1}{\Vert\vec{\eta}_1\Vert},\vec{q}_2=\frac{\vec{\et
 
 ## 一元线性回归
 
-![](/upload/Pasted%20image%2020230726130639)
+![](/img/Pasted%20image%2020230726130639)
 
 $$\hat{y}=\vec{x}(\vec{x}^T\vec{x})^{-1}\vec{x}^T\vec{y}$$
 
@@ -99,7 +99,7 @@ $残差\varepsilon=\vec{y}-\hat{y}$
 
 ## 二元线性回归
 
-![](/upload/Pasted%20image%2020230726131833)
+![](/img/Pasted%20image%2020230726131833)
 
 $$\hat{y}=b_1\vec{x}_1+b_2\vec{x}_2=\underbrace{\begin{bmatrix}\vec{x}_1&\vec{x}_2\end{bmatrix}}_X\begin{bmatrix}b_1\\b_2\end{bmatrix}=Xb$$
 
@@ -111,7 +111,7 @@ $X(X^TX)^{-1}X^T常被称作$**帽子矩阵**
 
 ## 多元线性回归
 
-![](/upload/Pasted%20image%2020230726131818)
+![](/img/Pasted%20image%2020230726131818)
 
 $$\hat{y}=b_1\vec{x}_1+b_2\vec{x}_2+\cdots+b_D\vec{x}_D$$
 

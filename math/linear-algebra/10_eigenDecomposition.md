@@ -8,7 +8,7 @@ $$(A-\lambda I)\vec{v}=0$$
 
 如果矩阵 $A$ 和向量相乘得到的结果和原向量相比，仅仅发生缩放，也就是向量模变化，但是方向没有变化。
 $A$ 对这些向量只产生缩放变换，不产生旋转效果，那么这些向量就称为 $A$ 特征向量，伸缩的比例就是特征值
-![](/upload/Pasted%20image%2020230802202224.png ':size=70%')
+![](/img/Pasted%20image%2020230802202224.png ':size=70%')
 
 并不是所有方阵都可以特征值分解，只有**可对角化矩阵**(diagonalizable matrix) 才能进行特征值分解。
 
@@ -42,13 +42,13 @@ $$A=V\Lambda V^{-1}$$
 几何视角，$A$乘任意向量$\vec{w}$代表”旋转—>缩放—>旋转“，即：
 $$A\boldsymbol{\vec{w}}=V\Lambda V^{-1}\boldsymbol{\vec{w}}$$
 准确来说，只有 $V$ 是正交矩阵且 $\det(V) = 1$，$V$ 才是旋转矩阵，对应的几何操作才是纯粹的旋转。
-![](/upload/Pasted%20image%2020230802211510.png ':size=70%')
+![](/img/Pasted%20image%2020230802211510.png ':size=70%')
 
 ### 线性变换、特征值、行列式值
 如果 $A$ 可以进行特征值分解，矩阵 $A$ 的行列式值等于 $A$ 的所有特征值之积。
 $$\begin{split}det(A)&=det(V\Lambda V^{-1})=det(V)det(\Lambda)det(V^{-1})\\&=det(\Lambda)det(VV^{-1})=det(\Lambda)\end{split}$$
-![](/upload/Pasted%20image%2020230802212035.png ':size=70%')
-![](/upload/Pasted%20image%2020230802212050.png ':size=70%')
+![](/img/Pasted%20image%2020230802212035.png ':size=70%')
+![](/img/Pasted%20image%2020230802212050.png ':size=70%')
 
 ### 多维方阵
 对于 $D\times D$ 方阵 $A$，如果存在如下一系列等式：
@@ -106,7 +106,7 @@ $$\underbrace{\begin{bmatrix}\vec{v}_1^TX^TX\vec{v}_1 & \vec{v}_1^TX^TX\vec{v}_2
 
 对$G$进行特征值分解:$G=V\Lambda V$
 
-![](/upload/Pasted%20image%2020230806135302.png ':size=70%')
+![](/img/Pasted%20image%2020230806135302.png ':size=70%')
 
 特别地，如果$X$列满秩，$G$可逆，$G$逆矩阵的特征值分解为：
 $$G^{-1}=V\begin{bmatrix}\dfrac{1}{\lambda_1}\\&\dfrac{1}{\lambda_2}\\&&\ddots\\&&&\dfrac{1}{\lambda_D}\end{bmatrix}V^T$$
@@ -116,7 +116,7 @@ $$\Vert\vec{y}_j\Vert_2^2=\Vert X\vec{v}_j\Vert_2^2=\lambda_j$$
 
 图中红点代表矩阵 $X$ 的第 $i$ 行行向量为 $\vec{x}^(i)$。$\vec{x}^(i)$ 向 $\vec{v}_j$ 投影结果$\vec{y}_j^{(i)}$ 就是 $\vec{x}^(i)$ 在 $span(\vec{v}_j)$ 的坐标：
 
-![](/upload/Pasted%20image%2020230803140333.png ':size=70%')
+![](/img/Pasted%20image%2020230803140333.png ':size=70%')
 
 $\Vert\vec{y}_j\Vert_2^2$代表$y_j^{(i)}$到原点距离 (有正负) 的平方和，即：
 $$\Vert\vec{y}_j\Vert_2^2=(y_j^{(1)})^2+(y_j^{(2)})^2+\cdots+(y_j^{(n)})^2=\lambda_j$$
@@ -141,7 +141,7 @@ $$\begin{split}G&=\lambda_1\vec{v}_1\otimes\vec{v}_1+\lambda_2\vec{v}_2\otimes\v
 
 下图中五幅热图采用相同色谱，$\lambda_1\vec{v}_1\otimes\vec{v}_1$影响力最大，剩下三个成分影响几乎可以忽略不计。
 
-![](/upload/Pasted%20image%2020230803141739.png ':size=70%')
+![](/img/Pasted%20image%2020230803141739.png ':size=70%')
 
 
 
@@ -160,7 +160,7 @@ $\lambda_1\vec{e}_1$ 和 $\lambda_2\vec{e}_2$ 为边的平行四边形为矩形�
 
 图 12 (a) 左右两个图形的面积相同，即$\vert A\vert = \vert\Lambda\vert = 10$。
 
-![](/upload/Pasted%20image%2020230803142856.png ':size=70%')
+![](/img/Pasted%20image%2020230803142856.png ':size=70%')
 
 从几何角度来看，对角化实际上就是，平行四边形转化为矩形，或者，平行六面体转化为立方体的过程
 
@@ -210,7 +210,7 @@ $A$ 的特征值 $λ_1$ 和 $λ_2$ 对应的特征向量分别是：
 $$\vec{v}_1=\begin{bmatrix}i\\1\end{bmatrix},\vec{v}_2=\begin{bmatrix}1\\i\end{bmatrix}$$
 这样的特征向量被称作**共轭特征向量** (conjugate eigenvector)
 
-![](/upload/Pasted%20image%2020230803151334.png ':size=70%')
+![](/img/Pasted%20image%2020230803151334.png ':size=70%')
 
 复平面上，$θ$ 为 $(0, 0)$ 到 $(a, b)$ 线段和水平轴正方向夹角，$θ$ 也称作为复数 $λ_1 = a + bi$的辐角
 
@@ -237,7 +237,7 @@ $A$ 是缩放 ($S$) 和旋转 ($R$) 的复合。给平面上某个 $x_0$，将�
 $$\vec{x}_n=A^n\vec{x}_0$$
 如图 15 (a) 所示，当缩放系数 $r = 1.2 > 1$，我们可以看到，随着 $n$ 增大，向量$\vec{x}_n$ 不断旋转向外发散。
 如图 15 (b) 所示，当缩放系数 $r = 0.8 < 1$，随着 $n$ 增大，向量 $\vec{x}_n$ 不断旋转向内收缩。
-![](/upload/Pasted%20image%2020230803153633.png ':size=70%')
+![](/img/Pasted%20image%2020230803153633.png ':size=70%')
 
 补充：
 1. 复数矩阵的转置叫做**埃尔米特转置** (Hermitiantranspose)，记号一般用上标 $A^H$
@@ -287,7 +287,7 @@ $$\exp(A)=V\exp(\Lambda)V^{-1}$$
 $$\exp(A)=V\begin{bmatrix}e^{\lambda_1}\\&e^{\lambda_2}\\&&\ddots\\&&&e^{\lambda_D}\end{bmatrix}V^{-1}$$
 ### 马尔科夫过程的平稳状态
 
-![](/upload/Pasted%20image%2020230803160631.png ':size=70%')
+![](/img/Pasted%20image%2020230803160631.png ':size=70%')
 
 上图描述鸡兔互变的比例，每晚有 $30\%$的小鸡变成小兔，其他小鸡不变；同时，每晚有 $20\%$小兔变成小鸡，其余小兔不变。这个转化的过程叫做**马尔科夫过程** (Markov process)。
 
@@ -307,7 +307,7 @@ $$k\rightarrow k+1:T\pi(k)=\pi(k+1)$$
 对于鸡兔互变，$T$为:
 $$T=\begin{bmatrix}0.7&0.2\\0.3&0.8\end{bmatrix}$$
 #### 求平稳状态
-![](/upload/Pasted%20image%2020230803161503.png ':size=70%')
+![](/img/Pasted%20image%2020230803161503.png ':size=70%')
 
 观察图 3，我们初步得出结论不管初始状态向量 ($k = 0$) 如何，鸡兔比例最后都达到了一定的平衡，也就是:
 $$T\pi=\pi$$
@@ -365,7 +365,7 @@ $$\vec{x}^T\underbrace{(AA^T)^{-1}}_{Q}\vec{x}-1=0$$
 $$\vec{x}=\underbrace{\begin{bmatrix}1.25&-0.75\\-0.75 & 1.25\end{bmatrix}}_A\vec{z}$$
 代入得：
 $$2.125x_1^2+3.75x_1x_2+2.125x_2^2-1=0$$
-![](/upload/Pasted%20image%2020230804171908.png ':size=70%')
+![](/img/Pasted%20image%2020230804171908.png ':size=70%')
 
 令$Q$为：
 $$Q=(AA^T)^{-1}=\begin{bmatrix}2.125 & 1.875\\1.875 &2.125\end{bmatrix}$$
@@ -398,7 +398,7 @@ $$\vec{x}=V\Lambda^{\frac{-1}{2}}\vec{z}$$
 总结来说，$\vec{z}$先经过缩放($\Lambda^{\frac{-1}{2}}$)得到$\vec{y}$,$\vec{y}$经过旋转($V$)得到$\vec{x}$:
 $$\begin{split}\vec{y}&=\Lambda^{\frac{-1}{2}}\vec{z}\\\vec{x}&=V\vec{y}=V\Lambda^{\frac{-1}{2}}\vec{z}\end{split}$$
 如图所示为上述“单位圆 → 正椭圆 → 旋转椭圆”几何变换过程。
-![](/upload/Pasted%20image%2020230804174547.png|650 ':size=60%')
+![](/img/Pasted%20image%2020230804174547.png|650 ':size=60%')
 #### 椭圆长、短轴
 由于$\vec{y}=\Lambda^{\frac{-1}{2}}\vec{z}$，$\vec{z}^T\vec{z}-1=0$可以写成：
 $$\vec{y}^T\Lambda^{\frac{-1}{2}}\Lambda^{\frac{-1}{2}}\vec{y}-1=0$$
@@ -409,7 +409,7 @@ $$\frac{y_1^2}{(\frac{1}{\sqrt{\lambda_1}})^2}+\frac{y_2^2}{(\frac{1}{\sqrt{\lam
 如果 $λ_1 > λ_2 > 0$，上式中这个正椭圆的半长轴长度为$\sqrt{\frac{1}{\lambda_2}}$ ，半短轴长度为$\sqrt{\frac{1}{\lambda_1}}$
 代入具体值。得到正椭圆的解析式：
 $$\frac{y_1^2}{0.5^2}+\frac{y_2^2}{2^2}=1$$
-![](/upload/Pasted%20image%2020230804181555.png ':size=70%')
+![](/img/Pasted%20image%2020230804181555.png ':size=70%')
 
 #### LDL分解：缩放 —>剪切
 如$AA^T=(V\Lambda V^T)^{-1}=(V^T)^{-1}\Lambda^{-1}V^{-1}=V\Lambda^{-1}V^T$这般形式(方阵@对角方阵@方阵转置)的矩阵分解形式，对$AA^T$进行LDL分解得到：
@@ -419,7 +419,7 @@ $$\begin{split}AA^T&=LDL^T=\begin{bmatrix}1\\-0.882&1\end{bmatrix}\begin{bmatrix
 $$A\thicksim LD^{\frac{1}{2}}=\begin{bmatrix}1\\-0.882&1\end{bmatrix}\begin{bmatrix}1.458\\&0.686\end{bmatrix}$$
 从几何角度来看，如图 12 所示，$A$ 这个映射相当于先缩放 ($D^{\frac{-1}{2}}$ ) + 再剪切 ($L$)，即：
 $$\vec{x}=LD^{\frac{1}{2}}\vec{z}$$
-![](/upload/Pasted%20image%2020230804182904.png ':size=70%')
+![](/img/Pasted%20image%2020230804182904.png ':size=70%')
 
 
 

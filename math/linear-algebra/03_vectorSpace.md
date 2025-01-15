@@ -44,7 +44,7 @@ $$rank(X)\leqslant \min(D,n)$$
 
 特别地，若矩阵 $X$ 的列数为 $D$，当 $rank(X) = D$ 时，矩阵 $X$ 列满秩，列向量 $\vec{x}_1, \vec{x}_2, … , \vec{x}_D$ 线性无关
 
-![](/upload/Pasted%20image%2020230724173924.png ':size=70%')
+![](/img/Pasted%20image%2020230724173924.png ':size=70%')
 
 如果乘积 $AB$ 存在，$AB$ 的秩满足：
 $$rank(AB)\leqslant min(rank(A),rank(B))$$

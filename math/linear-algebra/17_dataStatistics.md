@@ -35,7 +35,7 @@ $$E(\vec{x}_j)=E(X_j)=\mu_j=\frac{\vec{x}_j^T\boldsymbol{1}}{n}
 上式左乘 $n$ 可以得到如下等式：
 $$n\mu_j=nE(\vec{x}_j)=\vec{x}_j^T\boldsymbol{1}=\boldsymbol{1}^T\vec{x}_j=\vec{x}_j\cdot\boldsymbol{1}=\boldsymbol{1}\cdot\vec{x}_j$$
 图 2 所示为计算 $E(\vec{x}_j)$ 对应的矩阵运算示意图。
-![](/upload/Pasted%20image%2020230829193251.png ':size=70%')
+![](/img/Pasted%20image%2020230829193251.png ':size=70%')
 
 利用矩阵运算分别得到鸢尾花的四个特征的期望值：
 $$\begin{cases}
@@ -64,7 +64,7 @@ $$\vec{x}_j-\text{proj}_{\boldsymbol{1}}(\vec{x}_j)=\vec{x}_j-E(\vec{x}_j)\bolds
 $$\boldsymbol{1}^T(\vec{x}_j-\text{proj}_{\boldsymbol{1}}(\vec{x}_j))=\boldsymbol{1}^T\left(\vec{x}_j-\frac{\vec{x}_j^T\boldsymbol{1}}{n}\boldsymbol{1}\right)=\boldsymbol{1}\vec{x}_j-\frac{\vec{x}_j^T\boldsymbol{1}}{n}\boldsymbol{1}^T\boldsymbol{1}=\boldsymbol{1}^T\vec{x}_j-\vec{x}_j^T\boldsymbol{1}=0$$
 注意，上式中 $\vec{x}_j^T\boldsymbol{1}$ 为标量，因此 $\boldsymbol{1}^T(\vec{x}_j^T\boldsymbol{1})\boldsymbol{1}=(\vec{x}_j^T\boldsymbol{1})\boldsymbol{1}^T\boldsymbol{1}$ 。均值作为一个统计量，它能解释列向量 $\vec{x}_j$ 一部分特征。$\vec{x}_j − E(\vec{x}_j)\boldsymbol{1}$ 将在标准差 (方差平方根) 中加以解释。
 
-![](/upload/Pasted%20image%2020230829222441.png ':size=70%')
+![](/img/Pasted%20image%2020230829222441.png ':size=70%')
 
 ### 两个极端例子
 
@@ -77,7 +77,7 @@ $$\boldsymbol{1}^T\vec{x}_j=0$$
 
 ## 质心：均值排列成向量
 本节介绍数据矩阵 $X$ 的每列特征均值构成的向量，这个向量叫做数据的**质心** (centroid)。图 4 所示为平面上数据 X 的质心位置。
-![](/upload/Pasted%20image%2020230829222828.png ':size=70%')
+![](/img/Pasted%20image%2020230829222828.png ':size=70%')
 
 ### 列向量
 
@@ -146,7 +146,7 @@ $$\boldsymbol{1}^TX=nE(X)$$
 
 $E(X)$ 一般用在和数据矩阵 $X$ 相关的计算中，比如中心化 (去均值) $X − E(X)$。$X − E(X)$ 用到了“广播原则”。
 
-![](/upload/Pasted%20image%2020230830164556.png ':size=70%')
+![](/img/Pasted%20image%2020230830164556.png ':size=70%')
 
 ## 中心化：平移
 
@@ -235,7 +235,7 @@ $$SSD(X)=trace(X_c^TX_c)=trace\left(\left(X-E(X)\right)^T\left(X-E(X)\right)\rig
 
 ## 分类数据：加标签
 鸢尾花样本数据有三类标签，定义为 $C_1、C_2、C_3$，具体如图 7 所示。
-![](/upload/Pasted%20image%2020230830191659.png ':size=70%')
+![](/img/Pasted%20image%2020230830191659.png ':size=70%')
 
 ### 簇质心
 
@@ -245,7 +245,7 @@ $$\vec{\mu}_k=\frac{1}{count(C_k)}\sum_{i\in C_k}\vec{x}^{(i)T}$$
 
 注意，$\vec{x}^{(i)}$为行向量，而 $\vec{μ}_k$ 为列向量。这就是为什么上式存在转置运算。
 
-![](/upload/Pasted%20image%2020230830192126.png ':size=70%')
+![](/img/Pasted%20image%2020230830192126.png ':size=70%')
 
 ### 举个例子
 假设样本数据中只有第 $2、5、6$ 和 $9$ 四个数据点标签为 $C_1$，它们构成了原始数据的一个子集：${(\vec{x}^{(2)}, y^{(2)} = C_1), (\vec{x}^{(5)}, y^{(5)} = C_1), (\vec{x}^{(6)}, y^{(6)} = C_1), (\vec{x}^{(9)}, y^{(9)} = C_1)}$。
@@ -272,7 +272,7 @@ $$\begin{split}
 =\begin{bmatrix}1 \\ 3\end{bmatrix}
 \end{split}$$
 以鸢尾花数据为例，计算簇质心就是对图 7 三组标签不同样本数据分别计算质心。图 9 不同颜色的 $×$ 代表不同标签鸢尾花的簇质心位置。
-![](/upload/Pasted%20image%2020230830193224.png ':size=70%')
+![](/img/Pasted%20image%2020230830193224.png ':size=70%')
 
 ## 方差：均值向量没有解释的部分
 对于总体来说，随机变量 $X$ 方差的计算式为：
@@ -298,7 +298,7 @@ $$\sum_{i=1}^{n}(x_i-E(X))^2=\left(x_i-E(\vec{x})^2\right)^T\left(x_i-E(\vec{x})
 
 $E(\vec{x})\boldsymbol{1}$ 和 $\boldsymbol{1}$ 平行，而 $\vec{x} – E(\vec{x})\boldsymbol{1}$ 和 $\boldsymbol{1}$ 垂直。而向量 $\vec{x} – E(\vec{x})\boldsymbol{1}$ 的模的平方就是上式，即：
 $$\|\vec{x}-E(\vec{x})\boldsymbol{1}\|_2^2=\sum_{i=1}^n(x_i-E(X))^2$$
-![](/upload/Pasted%20image%2020230830194322.png ':size=70%')
+![](/img/Pasted%20image%2020230830194322.png ':size=70%')
 
 ### 鸢尾花数据
 计算鸢尾花数据 $X$ 每一列标准差，以向量方式表达：
@@ -312,7 +312,7 @@ $$\sigma_X=\begin{bmatrix}
 $X$ 第三个特征，也就是花瓣长度 $X_3$ 对应的标准差最大。图 11 所示为 $KDE$ 估计得到的鸢尾花四个特征分布图。
 
 $KDE$ 是核密度估计 (Kernel Density Estimation, KDE)，采用核函数拟合样本数据点，用来模拟样本数据在某一个特征上的分布情况。
-![](/upload/Pasted%20image%2020230831180552.png ':size=70%')
+![](/img/Pasted%20image%2020230831180552.png ':size=70%')
 
 ## 协方差和相关性系数
 ### 协方差
@@ -401,7 +401,7 @@ var(aX+bY)&=a^2var(X)+b^2var{Y}+2abcov(X,Y)
 
 值得注意的是，统计中的方差和协方差运算都存在“中心化”，即去均值。也就是说，从几何角度来看，方差和协方差运算中都默认将“向量”起点移动到质心。
 
-![](/upload/Pasted%20image%2020230831184003.png ':size=70%')
+![](/img/Pasted%20image%2020230831184003.png ':size=70%')
 
 ## 协方差矩阵和相关性系数矩阵
 
@@ -471,7 +471,7 @@ $$\vec{y}^T\Lambda\vec{y}=\begin{bmatrix}y_1&y_2\end{bmatrix}
 \begin{bmatrix}y_1\\y_2\end{bmatrix}
 =\lambda_1y_1^2+\lambda_2y_2^2$$
 如图 13 所示，正是 $\Sigma=V\Lambda V^T$ 中的 $V$ 完成正椭圆到旋转椭圆的“旋转”。
-![](/upload/Pasted%20image%2020230831191539.png ':size=70%')
+![](/img/Pasted%20image%2020230831191539.png ':size=70%')
 
 ### 相关性系数矩阵
 **相关性系数矩阵** (correlation matrix) P 定义为：
@@ -532,18 +532,18 @@ length\quad & width\quad & \quad length & \quad width
 &\leftarrow\text{Petal width}\\
 \end{split}$$
 图 14 所示为 $Σ$ 和 $P$ 的热图。观察相关性系数矩阵 $P$，可以发现花萼长度和花萼宽度线性负相关，花瓣长度和花萼宽度线性负相关，花瓣宽度和花萼宽度线性负相关。当然，鸢尾花数据集样本数量有限，通过样本数据得出的结论还不足以推而广之。
-![](/upload/Pasted%20image%2020230831193811.png ':size=70%')
+![](/img/Pasted%20image%2020230831193811.png ':size=70%')
 
 图 15 中我们可以通过椭圆的大小和旋转角度了解不同特征标准差，以及不同特征之间的相关性这样的重要信息。
 
-![](/upload/Pasted%20image%2020230831193918.png ':size=70%')
+![](/img/Pasted%20image%2020230831193918.png ':size=70%')
 
 如前文所述，鸢尾花数据分为三类。标签为 $C_k$ 样本数据也对应自身协方差矩阵 $Σ_k$ (如图 16) 和相关性系数矩阵 $P_k$ (如图 17)。
 
-![](/upload/Pasted%20image%2020230831193926.png ':size=70%')
+![](/img/Pasted%20image%2020230831193926.png ':size=70%')
 
-![](/upload/Pasted%20image%2020230831193935.png ':size=70%')
+![](/img/Pasted%20image%2020230831193935.png ':size=70%')
 
-![](/upload/Pasted%20image%2020230831193949.png ':size=70%')
+![](/img/Pasted%20image%2020230831193949.png ':size=70%')
 
 

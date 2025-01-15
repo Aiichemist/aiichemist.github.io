@@ -20,7 +20,7 @@
 研究随机变量取值的统计规律是概率论重要目的之一。概率分布函数是对统计规律的简化和抽象。图 2 比较两种概率分布函数——**概率质量函数 PMF**、**概率密度函数 PDF**。
 
 白话来说，概率质量函数 PMF、概率密度函数 PDF 就是两种对样本空间概率为 1“切片、切 块”、“切丝、切条”的不同方法。
-![](/upload/Pasted%20image%2020230905171039.png ':size=70%')
+![](/img/Pasted%20image%2020230905171039.png ':size=70%')
 
 ### 概率质量函数PMF
 **概率质量函数** (probability mass function, PMF) 是离散随机变量在特定取值上的 概率。
@@ -34,10 +34,10 @@ $X$ 为一个随机变量，对 $X$ 进行函数变换，可以得到其他的�
 $$Y=h(X)$$
 特别地，如果 $h()$ 为线性函数，从 $X$ 到 $Y$ 进行的是线性变换，比如：
 $$Y=h(X)=aX+b$$
-![](/upload/Pasted%20image%2020230905171439.png ':size=70%')
-![](/upload/Pasted%20image%2020230905171458.png ':size=70%')
-![](/upload/Pasted%20image%2020230905171518.png ':size=70%')
-![](/upload/Pasted%20image%2020230905171532.png ':size=70%')
+![](/img/Pasted%20image%2020230905171439.png ':size=70%')
+![](/img/Pasted%20image%2020230905171458.png ':size=70%')
+![](/img/Pasted%20image%2020230905171518.png ':size=70%')
+![](/img/Pasted%20image%2020230905171532.png ':size=70%')
 
 ### 归一律
 一元离散随机变量 $X$ 的概率质量函数 $p_X(x)$ 有如下重要性质：
@@ -75,7 +75,7 @@ $$\begin{split}
 上式相当于加权平均数，边缘 PMF $p_X(x)$ 代表权重。
 
 运算符 $E()$ 把随机变量一系列取值转化成了一个标量数值，这相当于降维。如图 7 所示，从矩 阵乘法角度，计算期望值 $E(X)$ 相当于将 $X$ 这个维度折叠。
-![](/upload/Pasted%20image%2020230905172557.png ':size=70%')
+![](/img/Pasted%20image%2020230905172557.png ':size=70%')
 
 为了方便，常把上式简写作：
 $$E(X)=\sum_xx\cdot p_X(x)$$
@@ -110,7 +110,7 @@ $$var(X)
 上式中$x-E(X)$ 代表以期望值 $E(X)$ 为参照，样本点 $x$ 的偏离量。
 
 如图 9 所示， $X−E(X)$ 代表**去均值** (demean)，也叫**中心化** (centralize)。
-![](/upload/Pasted%20image%2020230905173804.png ':size=70%')
+![](/img/Pasted%20image%2020230905173804.png ':size=70%')
 
 观察上式，容易发现方差实际上是 $(X-E(X))^2$ 的期望值。上式就是求 $(x-E(X))^2$ 的加权平均数，权重为 $p_X(x)$。
 
@@ -126,7 +126,7 @@ $$\underbrace{E(X^2)}_{\text{Expectation of }X^2}=\sum_{x}x^2\cdot\underbrace{p_
 方差度量离散程度，本质上来说是“自己”和“自己”比较的产物。前一个“自己”是 $X$ 每个样本， 后一个“自己”是代表 $X$ 整体位置的期望值 $E(X)$。 
 
 如图 10 所示，方差 $var(X)$ 代表样本以**质心** (centroid) 为基准的离散程度。
-![](/upload/Pasted%20image%2020230905174511.png ':size=70%')
+![](/img/Pasted%20image%2020230905174511.png ':size=70%')
 计算方差 $var(X)$ 有 $E(X^2)$ 和 $-E(X)^2$ 两部分。
 
 $E(X^2)$ 度量 $X$ 样本以**原点** (origin) 为基准的离散程度。
@@ -180,7 +180,7 @@ $$F_X(x)=\Pr(X\le x)=\sum_{t\le x}p_X(t)$$
 上式相当于累加概念，累加从 $X$ 最小样本值开始并截止于 $X = x$。 
 离散随机变量 $X$ 的取值范围为 $a\lt x\le b$ 时，对应的概率可以利用 CDF 计算：
 $$\Pr(a\lt x\le b)=F_X(b)-F_X(a)$$
-![](/upload/Pasted%20image%2020230906113154.png ':size=70%')
+![](/img/Pasted%20image%2020230906113154.png ':size=70%')
 注意，对于离散随机变量，**区间端点的开闭影响结果**。
 $$\Pr(1\lt X\le 3)=\frac{1}{3}\quad \Pr(1\le X\le 3)=\frac{1}{2}$$
 对于连续随机变量，就没有区间端点的麻烦了。
@@ -193,7 +193,7 @@ $$\underbrace{p_{X,Y}(x,y)}_{Joint}=\Pr(X=x,Y=y)=\Pr(X=x\cap Y=y)$$
 再次强调，对于二元离散随机变量，$p_{X,Y}(x, y)$ 本身就是概率值。
 
 图 12 所示为二元离散随机变量 $(X, Y)$ 的样本空间 $Ω$，空间中共有 $81$ 个点。从函数角度来看， $p_{X,Y}(x, y)$ 是个二元函数。因此，我们可以用二元函数的分析方法来讨论 $p_{X,Y}(x, y)$。
-![](/upload/Pasted%20image%2020230906113558.png ':size=70%')
+![](/img/Pasted%20image%2020230906113558.png ':size=70%')
 
 ### 取值
 图3 所示为二元联合概率质量函数 $p_{X,Y}(x, y)$ 的取值表格。图 13 同时用热图来可视化 $p_{X,Y}(x, y)$。
@@ -201,7 +201,7 @@ $$\underbrace{p_{X,Y}(x,y)}_{Joint}=\Pr(X=x,Y=y)=\Pr(X=x\cap Y=y)$$
 二元联合概率质量函数 $p_{X,Y}(x, y)$ 也有一条重要的性质：
 $$\sum_x\sum_y\underbrace{p_{X,Y}(x,y)}_{Joint}=\sum_y\sum_x\underbrace{p_{X,Y}(x,y)}_{Joint}=1,\quad 0\le p_{X,Y}(x,y)\le 1$$
 也就是说，图 13 这幅热图中所有数值 (概率，概率质量) 求和的结果为 1，和求和顺序无关。
-![](/upload/Pasted%20image%2020230906113816.png ':size=70%')
+![](/img/Pasted%20image%2020230906113816.png ':size=70%')
 
 ### 火柴梗图
 二元联合概率质量函数 $p_{X,Y}(x, y)$ 长成什么样子呢？
@@ -209,8 +209,8 @@ $$\sum_x\sum_y\underbrace{p_{X,Y}(x,y)}_{Joint}=\sum_y\sum_x\underbrace{p_{X,Y}(
 火柴梗图最适合可视化概率质量函数，如图 14 所示。 
 
 注意，为了展示火柴梗图分别沿 $X$、$Y$ 方向变化趋势，图 14 将火柴梗散点连线。一般情况，火柴梗图不存在连线。
-![](/upload/Pasted%20image%2020230906113923.png ':size=70%')
-![](/upload/Pasted%20image%2020230906113934.png ':size=70%')
+![](/img/Pasted%20image%2020230906113923.png ':size=70%')
+![](/img/Pasted%20image%2020230906113934.png ':size=70%')
 
 ## 协方差、相关性系数
 ### 协方差
@@ -285,7 +285,7 @@ $σ_X、σ_Y、σ_{X + Y}$ 相当于三角形的三个边，,$\rho_{X,Y}$ 相当
 
 特别地，如果, $\rho_{X,Y}=0$ ，三角形为直角三角形，满足：
 $$\sigma_{X+Y}^2=\sigma_X^2+\sigma_Y^2$$
-![](/upload/Pasted%20image%2020230906191805.png ':size=70%')
+![](/img/Pasted%20image%2020230906191805.png ':size=70%')
 
 ## 边缘概率：偏求和，相当于降维
 **边缘概率** (marginal probability) 是某个事件发生的概率，而与其它事件无关。对于离散随机变 量来说，利用全概率定理，也就是穷举法，我们可以把联合概率结果中不需要的那些事件全部合 并。合并的过程叫做**边缘化** (marginalization)。
@@ -301,8 +301,8 @@ $$\underbrace{p_X(x)}_{Marginal}=\sum_y\underbrace{p_{X,Y}(x,y)}_{Joint}$$
 
 ### 几何视角：叠加
 显然，边缘分布 $p_X(x)$ 和 $p_Y(y)$ 本身也是概率质量函数。从图像上来看，$p_X(x)$ 相当于 $p_{X,Y}(x, y)$ 中 $y$ 在取不同值时对应的火柴梗图叠加得到，具体如图 17 所示。同理，图 18 所示为边缘分布 $p_Y(y)$ 求解过程。
-![](/upload/Pasted%20image%2020230906192217.png ':size=70%')
-![](/upload/Pasted%20image%2020230906192229.png ':size=70%')
+![](/img/Pasted%20image%2020230906192217.png ':size=70%')
+![](/img/Pasted%20image%2020230906192229.png ':size=70%')
 
 ## 条件概率：引入贝叶斯定理
 ### 联合概率—>条件概率
@@ -325,7 +325,7 @@ $p_Y(2)$ 为一定值。给定 $Y = 2$ 作为条件时，条件概率 $p_{X|Y}(x
 $$\underbrace{p_{X|Y}(x|2)}_{Conditional}
 =\frac{\overbrace{p_{X,Y}(x,2)}^{Joint}}{\underbrace{p_Y(2)}_{Marginal}}$$
 观察图 19，发现 $p_{X,Y}(x,2)$ 到 $p_{X|Y}(x|2)$ 相当于曲线缩放过程。
-![](/upload/Pasted%20image%2020230906193032.png ':size=70%')
+![](/img/Pasted%20image%2020230906193032.png ':size=70%')
 
 进一步，条件概率 $p_{X|Y}(x|2)$ 对 $x$ 求和得到 $1$：
 $$\sum_xp_{X|Y}(x|2)=\dfrac{\sum\limits_xp_{X,Y}(x,2)}{p_Y(2)}=\dfrac{p_Y(2)}{p_Y(2)}=1$$
@@ -343,27 +343,27 @@ $$\underbrace{p_{X,Y}(x,y)}_{Joint}=\underbrace{p_{X|Y}(x|y)}_{Conditional}\unde
 如果两个离散变量 $X$ 和 $Y$ 独立，条件概率 $p_{X|Y}(x|y)$ 等于边缘概率 $p_X(x)$，下式成立：
 $$\underbrace{p_{X|Y}(x|y)}_{Conditional}=\underbrace{p_X(x)}_{Marginal}$$
 如图 21 所示，$X$ 和 $Y$ 独立，不管 $y$ 取任何值 $(0 ~ 8)$，$p_X(x)$ 的形状和 $p_{X|Y}(x|y)$ 相同。
-![](/upload/Pasted%20image%2020230906194632.png ':size=70%')
+![](/img/Pasted%20image%2020230906194632.png ':size=70%')
 
 上式等价于下式：
 $$\underbrace{p_{Y|X}(y|x)}_{Conditional}=\underbrace{p_Y(y)}_{Marginal}$$
 
 同理，如图 22 所示，$X$ 和 $Y$ 独立时，$p_Y(y)$ 的形状和 $p_{Y|X}(y|x)$ 相同。这恰恰说明，$X$ 的取值和 $Y$ 无关，也就是为什么条件概率 $p_{Y|X}(y|x)$ 的形状不受 $X = x$ 影响，都和 $pY(y)$ 相同。
-![](/upload/Pasted%20image%2020230906194805.png ':size=70%')
+![](/img/Pasted%20image%2020230906194805.png ':size=70%')
 
 ### 独立：计算联合概率
 另外一个角度，如果离散随机变量 $X$ 和 $Y$ 独立，联合概率 $p_{X,Y}(x,y)$ 等于 $p_Y(y)$ 和 $p_X(x)$ 两个边 缘概率质量函数 PMF 乘积：
 $$\underbrace{p_{X,Y}(x,y)}_{Joint}=\underbrace{p_Y(y)}_{Marginal}+\underbrace{p_X(x)}_{Marginal}$$
 从向量角度来看，把 $p_Y(y)$ 和 $p_X(x)$ 看成是两个向量，上式相当于 $p_Y(y)$ 和 $p_X(x)$ 的张量积。
-![](/upload/Pasted%20image%2020230906195036.png ':size=70%')
+![](/img/Pasted%20image%2020230906195036.png ':size=70%')
 
 ### 不独立
 图 24 给出另一个联合概率 $p_{X,Y}(x, y)$ 的图像。
-![](/upload/Pasted%20image%2020230906195121.png ':size=70%')
+![](/img/Pasted%20image%2020230906195121.png ':size=70%')
 如果 $X$ 和 $Y$ 不独立，如果 $p_Y(y) > 0$，条件概率 $p_{X|Y}(x|y)$ 公式如下：
 $$\underbrace{p_{X|Y}(x|y)}_{Conditional}=\frac{\overbrace{p_{X,Y}(x,y)}^{Joint}}{\underbrace{p_Y(y)}_{Marginal}}=\frac{\overbrace{p_{X,Y}(x,y)}^{Joint}}{\sum\limits_xp_{X,Y}(x,y)}$$
 如图 25 所示，当 $X$ 和 $Y$ 不独立，条件概率 $p_{X|Y}(x|y)$ 不同于边缘概率 $p_X(x)$。
-![](/upload/Pasted%20image%2020230906195419.png ':size=70%')
+![](/img/Pasted%20image%2020230906195419.png ':size=70%')
 
 ## 再谈概率1：展开、折叠
 ### 偏求和：压扁
@@ -378,14 +378,14 @@ $$p_{X_3}(x_3)=\sum_{x_2}p_{X_2,X_3}(x_2,x_3)=\sum_{x_2}\sum_{x_1}p_{X_1,X_2,X_3
 而 $p_{X_3}(x_3)$ 相当于一个向量。
 
 沿着哪个方向求和，就相当于完成了这个维度上数据的合并。这个维度因此便消失。
-![](/upload/Pasted%20image%2020230906195910.png ':size=70%')
-![](/upload/Pasted%20image%2020230906195925.png ':size=70%')
+![](/img/Pasted%20image%2020230906195910.png ':size=70%')
+![](/img/Pasted%20image%2020230906195925.png ':size=70%')
 
 ### 条件概率：切片
 如图 50 所示，条件概率 $p_{X_1,X_2|X_3}(x_1, x_2|c)$ 相当于在 $X_3 = c$ 处切了一片，只考虑切片上的概率分 布情况，而不考虑整个立方体的概率分布。
 
 也就是说，$X_3 = c$ 对应的切片是条件概率 $p_{X_1,X_2|X_3}(x_1, x_2 | c)$ 的样本空间。
-![](/upload/Pasted%20image%2020230906200206.png ':size=70%')
+![](/img/Pasted%20image%2020230906200206.png ':size=70%')
 
 计算条件概率时，首先将切片上的联合概率求和得到 $p_{X_3}(c)$：
 $$p_{X_3}(c)=\sum_{x_2}\sum_{x_1}p_{X_1,X_2,X_3}(x_1,x_2,c)$$

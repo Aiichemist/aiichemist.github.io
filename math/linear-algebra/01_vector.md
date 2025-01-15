@@ -26,16 +26,16 @@ $p=2时，f(x_1, x_2) 函数的等高线为正圆：（欧几里得距离）$
 $$f(x_1,x_2)=\sqrt{x_1^2+x_2^2}$$
 $p=+\infty时，f(x_1, x_2) 函数等高线为正方形：（切比雪夫距离）$
 $$f(x_1,x_2)=max(\vert x_1\vert,\vert x_2\vert)$$
-![](/upload/Pasted%20image%2020230705104155.png ':size=40%')
+![](/img/Pasted%20image%2020230705104155.png ':size=40%')
 
 | 距离度量 | 定义 | 平面直角坐标系中等距线 |
 | ----- | ----- | ----- |
-| 欧氏距离 | $\sqrt{(\vec{x}-\vec{q})^T(\vec{x}-\vec{q})}$ | ![](/upload/Pasted%20image%2020230705104920.png ':size=30%') |
-| 标准化欧氏距离 | $\sqrt{(\vec{x}-\vec{q})^TD^{-1}(\vec{x}-\vec{q})}$ | ![](/upload/Pasted%20image%2020230705105517.png ':size=30%') |
-| 马氏距离 | $\sqrt{(\vec{x}-\vec{q})^T\sum^{-1}(\vec{x}-\vec{q})}$ | ![](/upload/Pasted%20image%2020230705105727.png ':size=30%') |
-| 曼哈顿距离 | $\Vert \vec{x}-\vec{q}\Vert_1$ | ![](/upload/Pasted%20image%2020230705110441.png ':size=30%') |
-| 切比雪夫距离 | $\Vert \vec{x}-\vec{q}\Vert_\infty$ | ![](/upload/Pasted%20image%2020230705110455.png ':size=30%') |
-| 闵氏距离 | $\Vert\vec{x}-\vec{q}\Vert_p$ | ![](/upload/Pasted%20image%2020230705110509.png ':size=70%') |
+| 欧氏距离 | $\sqrt{(\vec{x}-\vec{q})^T(\vec{x}-\vec{q})}$ | ![](/img/Pasted%20image%2020230705104920.png ':size=30%') |
+| 标准化欧氏距离 | $\sqrt{(\vec{x}-\vec{q})^TD^{-1}(\vec{x}-\vec{q})}$ | ![](/img/Pasted%20image%2020230705105517.png ':size=30%') |
+| 马氏距离 | $\sqrt{(\vec{x}-\vec{q})^T\sum^{-1}(\vec{x}-\vec{q})}$ | ![](/img/Pasted%20image%2020230705105727.png ':size=30%') |
+| 曼哈顿距离 | $\Vert \vec{x}-\vec{q}\Vert_1$ | ![](/img/Pasted%20image%2020230705110441.png ':size=30%') |
+| 切比雪夫距离 | $\Vert \vec{x}-\vec{q}\Vert_\infty$ | ![](/img/Pasted%20image%2020230705110455.png ':size=30%') |
+| 闵氏距离 | $\Vert\vec{x}-\vec{q}\Vert_p$ | ![](/img/Pasted%20image%2020230705110509.png ':size=70%') |
 
 ## 三角不等式（闵可夫斯基不等式）
 $$\Vert \vec{x}+\vec{y}\Vert_p\le\Vert\vec{x}\Vert_p+\Vert\vec{y}\Vert_p$$
@@ -43,7 +43,7 @@ $$\Vert \vec{x}+\vec{y}\Vert_p\le\Vert\vec{x}\Vert_p+\Vert\vec{y}\Vert_p$$
 ## 高斯核函数
 **二元高斯函数:**
 $$f(x_1,x_2)=\exp(-\gamma(x_1^2+x_2^2))$$
-![](/upload/Pasted%20image%2020230705110729.png ':size=70%')
+![](/img/Pasted%20image%2020230705110729.png ':size=70%')
 **高斯核函数(径向基核函数)：**
 $$\kappa_{RBF}(\vec{x},\vec{q})=\exp(-\gamma\Vert\vec{x}-\vec{q}\Vert_2^2)=\exp(-\gamma\Vert\vec{x}-\vec{q}\Vert^2)$$
 $$\kappa_{RBF}(\vec{x},\vec{q})=\exp(-\frac{\Vert\vec{x}-\vec{q}\Vert^2}{2\sigma^2})$$

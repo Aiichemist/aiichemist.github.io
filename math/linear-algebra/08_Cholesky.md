@@ -23,11 +23,11 @@ $$x^TAx\gt 0$$
 
 正定矩阵都是对称方阵
 
-![](/upload/Pasted%20image%2020230802172917.png ':size=70%')
+![](/img/Pasted%20image%2020230802172917.png ':size=70%')
 
-![](/upload/Pasted%20image%2020230802172933.png ':size=70%')
+![](/img/Pasted%20image%2020230802172933.png ':size=70%')
 
-![](/upload/Pasted%20image%2020230802172953.png ':size=70%')
+![](/img/Pasted%20image%2020230802172953.png ':size=70%')
 
   
   
@@ -36,7 +36,7 @@ Cholesky 分解把矩阵分解为一个下三角矩阵以及它的转置矩阵�
 
 $$A=LL^T$$
 
-![](/upload/Pasted%20image%2020230729211524.png ':size=70%')
+![](/img/Pasted%20image%2020230729211524.png ':size=70%')
 
 利用上三角矩阵 $R$，Cholesky 分解也可以写成：
 
@@ -56,7 +56,7 @@ $$A=LDL^T=LD^{\frac{1}{2}}(D^{\frac{1}{2}})^TL^T=LD^{\frac{1}{2}}(LD^{\frac{1}{2
 
 L 的作用就是“剪切”。也就是说，矩阵 A 被分解成“剪切 → 缩放 → 剪切
 
-![](/upload/Pasted%20image%2020230729211511.png ':size=70%')
+![](/img/Pasted%20image%2020230729211511.png ':size=70%')
 
   
 
@@ -104,15 +104,15 @@ $$\cos\theta=\frac{\vec{r}_1\cdot\vec{r}_2}{\Vert\vec{r}_1\Vert\Vert\vec{r}_2\Ve
 
 从几何角度来讲，$R$ 相当于把原本正交的 $[\vec{e}_1, \vec{e}_2]$ 标准正交基转化成具有一定夹角的 $[\vec{r}_1, \vec{r}_2]$ 非正交基，且$\vec{e}_1=\vec{r}_1$，相当于**锚定**
 
-![](/upload/Pasted%20image%2020230802174827.png ':size=70%')
+![](/img/Pasted%20image%2020230802174827.png ':size=70%')
 
-![](/upload/Pasted%20image%2020230802174858.png ':size=70%')
+![](/img/Pasted%20image%2020230802174858.png ':size=70%')
 
 计算中 $R$ 的行列式值：
 
 $$\vert R\vert=\begin{vmatrix}1 & \cos\theta_{1,2}\\0 & \sin\theta_{1,2}\end{vmatrix}=\sin\theta_{1,2}$$
 
-![](/upload/Pasted%20image%2020230802175022.png ':size=70%')
+![](/img/Pasted%20image%2020230802175022.png ':size=70%')
 
 $P=\begin{bmatrix}1 & \cos\theta_{1,2}\\\cos\theta_{1,2} & 1\end{bmatrix}$相当于指定了目标向量夹角的余弦值
 
@@ -145,7 +145,7 @@ $$\begin{split}\vec{x}_1&=RS\vec{e}_1=\begin{bmatrix}1 & \cos\theta_{1,2}\\0 & \
 
 这相当于，对 $\vec{e}1$ 和 $\vec{e}2$ 先缩放 (S)，再开合 (R)。
 
-![](/upload/Pasted%20image%2020230802180418.png ':size=70%')
+![](/img/Pasted%20image%2020230802180418.png ':size=70%')
 
 $$\cos\theta=\frac{\vec{x}_1\cdot\vec{x}_2}{\Vert\vec{x}_1\Vert\Vert\vec{x}_2\Vert}=\frac{a\cdot b\cdot \cos\theta_{1,2}}{a\cdot b}=\cos\theta_{1,2}$$
 
@@ -159,7 +159,7 @@ $$\cos\theta=\frac{\vec{x}_1\cdot\vec{x}_2}{\Vert\vec{x}_1\Vert\Vert\vec{x}_2\Ve
 
 $$G=X^TX=\begin{bmatrix}\vec{x}_1^T\\\vec{x}_2^T\\\vdots\\\vec{x}_D^T\end{bmatrix}\begin{bmatrix}\vec{x}_1 & \vec{x}_2 & \cdots & \vec{x}_D\end{bmatrix}=\begin{bmatrix}\vec{x}_1^T\vec{x}_1 & \vec{x}_1^T\vec{x}_2 & \cdots & \vec{x}_1^T\vec{x}_D\\\vec{x}_2^T\vec{x}_1 & \vec{x}_2^T\vec{x}_2 & \cdots & \vec{x}_2^T\vec{x}_D\\\vdots & \vdots & \ddots & \vdots\\\vec{x}_D^T\vec{x}_1 & \vec{x}_D^T\vec{x}_2 & \cdots & \vec{x}_D^T\vec{x}_D\end{bmatrix}$$
 
-![](/upload/Pasted%20image%2020230802193354.png ':size=70%')
+![](/img/Pasted%20image%2020230802193354.png ':size=70%')
 
 对$G$进行Cholesky分解得到：
 
@@ -173,7 +173,7 @@ $$R_G=\begin{bmatrix}\vec{r}_{G,1} & \vec{r}_{G,2} & \cdots & \vec{r}_{G,D}\end{
 
 $$G=\begin{bmatrix}\vec{r}_{G,1}^T \\ \vec{r}_{G,2}^T \\ \vdots \\ \vec{r}_{G,D}^T\end{bmatrix}\begin{bmatrix}\vec{r}_{G,1} & \vec{r}_{G,2} & \cdots & \vec{r}_{G,D}\end{bmatrix}=\begin{bmatrix}\vec{r}_{G,1}^T\vec{r}_{G,1} & \vec{r}_{G,1}^T\vec{r}_{G,2} & \cdots & \vec{r}_{G,1}^T\vec{r}_{G,D}\\\vec{r}_{G,2}^T\vec{r}_{G,1} & \vec{r}_{G,2}^T\vec{r}_{G,2} & \cdots & \vec{r}_{G,1}^T\vec{r}_{G,D}\\ \vdots & \vdots & \ddots & \vdots \\ \vec{r}_{G,D}^T\vec{r}_{G,1} & \vec{r}_{G,D}^T\vec{r}_{G,2} & \cdots & \vec{r}_{G,D}^T\vec{r}_{G,D}\end{bmatrix}$$
 
-![](/upload/Pasted%20image%2020230802193405.png ':size=70%')
+![](/img/Pasted%20image%2020230802193405.png ':size=70%')
 
 以向量夹角余弦形式展开$G$中向量积：
 
@@ -217,4 +217,4 @@ $$C=R^TR=\begin{bmatrix}\vec{r}_{1}^T \\ \vec{r}_{2}^T \\ \vdots \\ \vec{r}_{D}^
 
 鸢尾花数据矩阵的格拉姆矩阵 $G$，先转化成相似度矩阵 $C$，再转化成角度矩阵。角度越小说明特征越相似。
 
-![](/upload/Pasted%20image%2020230802195649.png ':size=70%')
+![](/img/Pasted%20image%2020230802195649.png ':size=70%')

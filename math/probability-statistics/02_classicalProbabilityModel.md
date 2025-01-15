@@ -25,8 +25,8 @@ $$A\cap B=\varnothing\quad\Rightarrow\quad\Pr(A\cap B)=\Pr(A,B)=0$$
 $$\underbrace{\Pr(A\cup B)}_{Union}=\Pr(A)+\Pr(B)-\underbrace{\Pr(A\cap B)}_{Joint}$$
 如果事件 $A$ 和 $B$ 互斥 (events A and B are mutually exclusive)，即 $A\cap B = \varnothing$ 。对于这种特殊情 况，$\Pr(A\cup B)$ 为：
 $$\Pr(A\cup B)=\Pr(A)+\Pr(B)$$
-![](/upload/Pasted%20image%2020230905162754.png ':size=70%')
-![](/upload/Pasted%20image%2020230905162805.png ':size=70%')
+![](/img/Pasted%20image%2020230905162754.png ':size=70%')
+![](/img/Pasted%20image%2020230905162805.png ':size=70%')
 
 ## 条件概率：给定部分信息作推断
 **条件概率** (conditional probability) 是在给定部分信息基础上对试验结果的一种推断。
@@ -64,7 +64,7 @@ $$\underbrace{\Pr(A|B)}_{Conditional}\underbrace{\Pr(B)}_{Marginal}
 - $\Pr(B)$ 是 $B$ 的边缘概率，不考虑事件 $A$ 的因素，样本空间为 $Ω$； 
 - $\Pr(A∩B)$ 是事件 $A$ 和 $B$ 的联合概率，样本空间为 $Ω$。
 
-![](/upload/Pasted%20image%2020230905164515.png ':size=70%')
+![](/img/Pasted%20image%2020230905164515.png ':size=70%')
 
 ### 频率学派 vs 贝叶斯学派
 贝叶斯学派和频率学派是统计学中两种主要的哲学观点。它们之间的区别在于它们对概率的解释和使用方式不同。
@@ -84,7 +84,7 @@ $$\underbrace{\Pr(B)}_{Marginal}
 $$\underbrace{\Pr(B)}_{Marginal}=\underbrace{\Pr(A_1,B)}_{Joint}
 +\underbrace{\Pr(A_2,B)}_{Joint}
 +\underbrace{\Pr(A_3,B)}_{Joint}$$
-![](/upload/Pasted%20image%2020230905165042.png ':size=70%')
+![](/img/Pasted%20image%2020230905165042.png ':size=70%')
 
 ### 引入贝叶斯定理
 利用贝叶斯定理，以 $A_1, A_2, …, A_n$ 条件，展开全概率定理：
@@ -96,7 +96,7 @@ $$\begin{split}
 \underbrace{\Pr(A_i)}_{Marginal}\\
 &=\Pr(B|A_1)\Pr(A_1)+\Pr(B|A_2)\Pr(A_2)+\cdots+\Pr(B|A_n)\Pr(A_n)
 \end{split}$$
-![](/upload/Pasted%20image%2020230905165418.png ':size=70%')
+![](/img/Pasted%20image%2020230905165418.png ':size=70%')
 
 反过来，根据贝叶斯定理，在给定事件 $B$ 发生条件下 ($\Pr(B) > 0$)，任意事件 $A_i$ 发生的概率为：
 $$\Pr(A_i|B)=\frac{\Pr(A_i,B)}{\Pr(B)}=\frac{\Pr(B|A_i)\Pr(A_i)}{\Pr(B)}$$
