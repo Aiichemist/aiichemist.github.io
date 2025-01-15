@@ -34,7 +34,7 @@ $$
 g_{i}=\frac{\partial L\left(\pmb{\theta}^{\prime}\right)}{\partial\theta_{i}}.
 $$
 
-光看 $\textbf{\emph{g}}$ 还是没有办法完整地描述 $L(\theta)$ ，还要看式(3.1) 的第三项 $\begin{array}{r}{\frac{1}{2}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)^{\mathrm{T}}\pmb{H}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right).}\end{array}$ 。第三项跟海森矩阵（Hessian matrix） $\pmb{H{}$ 有关。 $\pmb{H}$ 里面放的是 $L$ 的二次微分，它第 $i$ 行，第 $j$ 列的值 $H_{i j}$ 就是把 $\pmb{\theta}$ 的第 $i$ 个元素对 $L\left(\theta^{\prime}\right)$ 作微分，再把 $\pmb{\theta}$ 的第 $j$ 个元素对 $\frac{\partial L\big(\pmb{\theta}^{\prime}\big)}{\partial\theta_{i}}$ 作微分后的结果，即  
+光看 $\textbf{\emph{g}}$ 还是没有办法完整地描述 $L(\theta)$ ，还要看式(3.1) 的第三项 $\begin{array}{r}{\frac{1}{2}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)^{\mathrm{T}}\pmb{H}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right).}\end{array}$ 。第三项跟海森矩阵（Hessian matrix） $\pmb{H}$ 有关。 $\pmb{H}$ 里面放的是 $L$ 的二次微分，它第 $i$ 行，第 $j$ 列的值 $H_{i j}$ 就是把 $\pmb{\theta}$ 的第 $i$ 个元素对 $L\left(\theta^{\prime}\right)$ 作微分，再把 $\pmb{\theta}$ 的第 $j$ 个元素对 $\frac{\partial L\big(\pmb{\theta}^{\prime}\big)}{\partial\theta_{i}}$ 作微分后的结果，即  
 
 $$
 H_{i j}=\frac{\partial^{2}}{\partial\theta_{i}\partial\theta_{j}}L\left(\pmb{\theta}^{\prime}\right).
@@ -58,7 +58,7 @@ $$
 
 有一个问题，通过 $\frac{1}{2}\,\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)^{\mathrm{T}}\pmb{H}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)$ 判断临界点是局部极小值还是鞍点还是局部极大值，需要代入所有的 $\pmb{\theta}$ . 但我们不可能把所有的 $\pmb{v}$ 都拿来试试看，所以有一个更简便的方法来判断 $\pmb{v}^{\mathrm{T}}\pmb{H}\pmb{v}$ 的正负。算出一个海森矩阵后，不需要把它跟所有的 $\pmb{v}$ 都乘乘看，只要看 $_H$ 的特征值。若 $_H$ 的所有特征值都是正的， $_H$ 为正定矩阵，则 ${\pmb v}^{\mathrm{T}}{\pmb H}{\pmb v}>0$ ，临界点是局部极小值。若 $_H$ 的所有特征值都是负的， $\pmb{H}$ 为负定矩阵，则 ${\pmb v}^{\mathrm{T}}{\pmb H}{\pmb v}<0$ ，临界点是局部极大值。若 $\pmb{H}$ 的特征值有正有负，临界点是鞍点。  
 
-如果 $n$ 阶对称矩阵 $\pmb{A}$ 对于任意非零的 $n$ 维向量 $\textbf{\em x}$ 都有 $x^{\mathrm{T}}A x>0$ ，则称矩阵 $\pmb{A}$ 为正定矩阵。如果 $n$ 阶对称矩阵 $\pmb{A}$ 对于任意非零的 $n$ 维向量 $\textbf{\em x}$ 都有 $x^{\mathrm{T}}A x<0$ ，则称矩阵 $\pmb{A}$ 为负定矩阵。  
+如果 $n$ 阶对称矩阵 $\pmb{A}$ 对于任意非零的 $n$ 维向量 $\textbf{x}$ 都有 $x^{\mathrm{T}}A x>0$ ，则称矩阵 $\pmb{A}$ 为正定矩阵。如果 $n$ 阶对称矩阵 $\pmb{A}$ 对于任意非零的 $n$ 维向量 $\textbf{x}$ 都有 $x^{\mathrm{T}}A x<0$ ，则称矩阵 $\pmb{A}$ 为负定矩阵。  
 
 举个例子，我们有一个简单的神经网络，它只有两个神经元，而且这个神经元还没有激活函数和偏置。输入 $x$ ， $x$ 乘上 $w_{1}$ 以后输出，然后再乘上 $w_{2}$ ，接着再输出，最终得到的数据就是 $y$ 。  
 
