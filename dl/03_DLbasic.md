@@ -28,13 +28,13 @@ $$
 \boldsymbol{L}(\boldsymbol{\theta})\approx\boldsymbol{L}\left(\boldsymbol{\theta}^{\prime}\right)+\left(\boldsymbol{\theta}-\boldsymbol{\theta}^{\prime}\right)^{\mathrm{T}}\boldsymbol{g}+\dfrac{1}{2}\left(\boldsymbol{\theta}-\boldsymbol{\theta}^{\prime}\right)^{\mathrm{T}}\boldsymbol{H}\left(\boldsymbol{\theta}-\boldsymbol{\theta}^{\prime}\right).\tag{3.1}
 $$
 
-式(3.1) 是泰勒级数近似（Tayler series appoximation）。其中，第一项 $L(\pmb\theta)^{\prime}$ 告诉我们，当 $\pmb{\theta}$ 跟 $\pmb{\theta}^{\prime}$ 很近的时候， $L(\theta)$ 应该跟 $L(\pmb\theta^{\prime})$ 还蛮靠近的；第二项 $\left(\pmb\theta-\pmb\theta^{\prime}\right)^{\mathrm{T}}\pmb{g}$ 中， $\textbf{\pmb{g}}$ 代表梯度，它是一个向量，可以弥补 $L(\pmb\theta^{\prime})$ 跟 $L(\theta)$ 之间的差距。有时候梯度 $\textbf{\pmb{g}}$ 会写成 $\nabla L(\pmb\theta^{\prime})$ 。 $g_{i}$ 是向量 $\textbf{\pmb{g}}$ 的第 $i$ 个元素，就是 $L$ 关于 $\pmb{\theta}$ 的第 $i$ 个元素的偏导数，即  
+式(3.1) 是泰勒级数近似（Tayler series appoximation）。其中，第一项 $L(\pmb\theta)^{\prime}$ 告诉我们，当 $\pmb{\theta}$ 跟 $\pmb{\theta}^{\prime}$ 很近的时候， $L(\theta)$ 应该跟 $L(\pmb\theta^{\prime})$ 还蛮靠近的；第二项 $\left(\pmb\theta-\pmb\theta^{\prime}\right)^{\mathrm{T}}\pmb{g}$ 中， $\pmb{g}$ 代表梯度，它是一个向量，可以弥补 $L(\pmb\theta^{\prime})$ 跟 $L(\theta)$ 之间的差距。有时候梯度 $\pmb{g}$ 会写成 $\nabla L(\pmb\theta^{\prime})$ 。 $g_{i}$ 是向量 $\pmb{g}$ 的第 $i$ 个元素，就是 $L$ 关于 $\pmb{\theta}$ 的第 $i$ 个元素的偏导数，即  
 
 $$
 g_{i}=\dfrac{\partial L\left(\pmb{\theta}^{\prime}\right)}{\partial\theta_{i}}.
 $$
 
-光看 $\textbf{\pmb{g}}$ 还是没有办法完整地描述 $L(\theta)$ ，还要看式(3.1) 的第三项 $\begin{array}{r}{\dfrac{1}{2}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)^{\mathrm{T}}\pmb{H}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right).}\end{array}$ 。第三项跟海森矩阵（Hessian matrix） $\pmb{H}$ 有关。 $\pmb{H}$ 里面放的是 $L$ 的二次微分，它第 $i$ 行，第 $j$ 列的值 $H_{i j}$ 就是把 $\pmb{\theta}$ 的第 $i$ 个元素对 $L\left(\theta^{\prime}\right)$ 作微分，再把 $\pmb{\theta}$ 的第 $j$ 个元素对 $\dfrac{\partial L\big(\pmb{\theta}^{\prime}\big)}{\partial\theta_{i}}$ 作微分后的结果，即  
+光看 $\pmb{g}$ 还是没有办法完整地描述 $L(\theta)$ ，还要看式(3.1) 的第三项 $\begin{array}{r}{\dfrac{1}{2}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)^{\mathrm{T}}\pmb{H}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right).}\end{array}$ 。第三项跟海森矩阵（Hessian matrix） $\pmb{H}$ 有关。 $\pmb{H}$ 里面放的是 $L$ 的二次微分，它第 $i$ 行，第 $j$ 列的值 $H_{i j}$ 就是把 $\pmb{\theta}$ 的第 $i$ 个元素对 $L\left(\theta^{\prime}\right)$ 作微分，再把 $\pmb{\theta}$ 的第 $j$ 个元素对 $\dfrac{\partial L\big(\pmb{\theta}^{\prime}\big)}{\partial\theta_{i}}$ 作微分后的结果，即  
 
 $$
 H_{i j}=\dfrac{\partial^{2}}{\partial\theta_{i}\partial\theta_{j}}L\left(\pmb{\theta}^{\prime}\right).
