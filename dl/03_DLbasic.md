@@ -25,38 +25,38 @@
 判断一个临界点到底是局部极小值还是鞍点需要知道损失函数的形状。可是怎么知道损失函数的形状？网络本身很复杂，用复杂网络算出来的损失函数显然也很复杂。虽然无法完整知道整个损失函数的样子，但是如果给定某一组参数，比如 $\theta^{\prime}$ ，在 $\theta^{\prime}$ 附近的损失函数是有办法写出来的——虽然 $L(\theta)$ 完整的样子写不出来。 $\pmb{\theta}^{\prime}$ 附近的 $L(\theta)$ 可近似为  
 
 $$
-\boldsymbol{L}(\boldsymbol{\theta})\approx\boldsymbol{L}\left(\boldsymbol{\theta}^{\prime}\right)+\left(\boldsymbol{\theta}-\boldsymbol{\theta}^{\prime}\right)^{\mathrm{T}}\boldsymbol{g}+\frac{1}{2}\left(\boldsymbol{\theta}-\boldsymbol{\theta}^{\prime}\right)^{\mathrm{T}}\boldsymbol{H}\left(\boldsymbol{\theta}-\boldsymbol{\theta}^{\prime}\right).\tag{3.1}
+\boldsymbol{L}(\boldsymbol{\theta})\approx\boldsymbol{L}\left(\boldsymbol{\theta}^{\prime}\right)+\left(\boldsymbol{\theta}-\boldsymbol{\theta}^{\prime}\right)^{\mathrm{T}}\boldsymbol{g}+\dfrac{1}{2}\left(\boldsymbol{\theta}-\boldsymbol{\theta}^{\prime}\right)^{\mathrm{T}}\boldsymbol{H}\left(\boldsymbol{\theta}-\boldsymbol{\theta}^{\prime}\right).\tag{3.1}
 $$
 
-式(3.1) 是泰勒级数近似（Tayler series appoximation）。其中，第一项 $L(\pmb\theta)^{\prime}$ 告诉我们，当 $\pmb{\theta}$ 跟 $\pmb{\theta}^{\prime}$ 很近的时候， $L(\theta)$ 应该跟 $L(\pmb\theta^{\prime})$ 还蛮靠近的；第二项 $\left(\pmb\theta-\pmb\theta^{\prime}\right)^{\mathrm{T}}\pmb g$ 中， $\textbf{\emph{g}}$ 代表梯度，它是一个向量，可以弥补 $L(\pmb\theta^{\prime})$ 跟 $L(\theta)$ 之间的差距。有时候梯度 $\textbf{\emph{g}}$ 会写成 $\nabla L(\pmb\theta^{\prime})$ 。 $g_{i}$ 是向量 $\textbf{\emph{g}}$ 的第 $i$ 个元素，就是 $L$ 关于 $\pmb{\theta}$ 的第 $i$ 个元素的偏导数，即  
+式(3.1) 是泰勒级数近似（Tayler series appoximation）。其中，第一项 $L(\pmb\theta)^{\prime}$ 告诉我们，当 $\pmb{\theta}$ 跟 $\pmb{\theta}^{\prime}$ 很近的时候， $L(\theta)$ 应该跟 $L(\pmb\theta^{\prime})$ 还蛮靠近的；第二项 $\left(\pmb\theta-\pmb\theta^{\prime}\right)^{\mathrm{T}}\pmb{g}$ 中， $\textbf{\pmb{g}}$ 代表梯度，它是一个向量，可以弥补 $L(\pmb\theta^{\prime})$ 跟 $L(\theta)$ 之间的差距。有时候梯度 $\textbf{\pmb{g}}$ 会写成 $\nabla L(\pmb\theta^{\prime})$ 。 $g_{i}$ 是向量 $\textbf{\pmb{g}}$ 的第 $i$ 个元素，就是 $L$ 关于 $\pmb{\theta}$ 的第 $i$ 个元素的偏导数，即  
 
 $$
-g_{i}=\frac{\partial L\left(\pmb{\theta}^{\prime}\right)}{\partial\theta_{i}}.
+g_{i}=\dfrac{\partial L\left(\pmb{\theta}^{\prime}\right)}{\partial\theta_{i}}.
 $$
 
-光看 $\textbf{\emph{g}}$ 还是没有办法完整地描述 $L(\theta)$ ，还要看式(3.1) 的第三项 $\begin{array}{r}{\frac{1}{2}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)^{\mathrm{T}}\pmb{H}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right).}\end{array}$ 。第三项跟海森矩阵（Hessian matrix） $\pmb{H}$ 有关。 $\pmb{H}$ 里面放的是 $L$ 的二次微分，它第 $i$ 行，第 $j$ 列的值 $H_{i j}$ 就是把 $\pmb{\theta}$ 的第 $i$ 个元素对 $L\left(\theta^{\prime}\right)$ 作微分，再把 $\pmb{\theta}$ 的第 $j$ 个元素对 $\frac{\partial L\big(\pmb{\theta}^{\prime}\big)}{\partial\theta_{i}}$ 作微分后的结果，即  
+光看 $\textbf{\pmb{g}}$ 还是没有办法完整地描述 $L(\theta)$ ，还要看式(3.1) 的第三项 $\begin{array}{r}{\dfrac{1}{2}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)^{\mathrm{T}}\pmb{H}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right).}\end{array}$ 。第三项跟海森矩阵（Hessian matrix） $\pmb{H}$ 有关。 $\pmb{H}$ 里面放的是 $L$ 的二次微分，它第 $i$ 行，第 $j$ 列的值 $H_{i j}$ 就是把 $\pmb{\theta}$ 的第 $i$ 个元素对 $L\left(\theta^{\prime}\right)$ 作微分，再把 $\pmb{\theta}$ 的第 $j$ 个元素对 $\dfrac{\partial L\big(\pmb{\theta}^{\prime}\big)}{\partial\theta_{i}}$ 作微分后的结果，即  
 
 $$
-H_{i j}=\frac{\partial^{2}}{\partial\theta_{i}\partial\theta_{j}}L\left(\pmb{\theta}^{\prime}\right).
+H_{i j}=\dfrac{\partial^{2}}{\partial\theta_{i}\partial\theta_{j}}L\left(\pmb{\theta}^{\prime}\right).
 $$
 
 总结一下，损失函数 $L(\theta)$ 在 $\theta^{\prime}$ 附近可近似为式(3.1)，式(3.1) 跟梯度和海森矩阵有关，梯度就是一次微分，海森矩阵里面有二次微分的项。  
 
-在临界点，梯度 $\textbf{\emph{g}}$ 为零，因此 $\left(\pmb\theta-\pmb\theta^{\prime}\right)^{\mathrm{T}}\pmb g$ 为零。所以在临界点的附近，损失函数可被近似为  
+在临界点，梯度 $\textbf{\pmb{g}}$ 为零，因此 $\left(\pmb\theta-\pmb\theta^{\prime}\right)^{\mathrm{T}}\pmb g$ 为零。所以在临界点的附近，损失函数可被近似为  
 
 $$
-L(\pmb\theta)\approx L\left(\pmb\theta^{\prime}\right)+\frac{1}{2}\left(\pmb\theta-\pmb\theta^{\prime}\right)^{\mathrm{T}}{\pmb H}\left(\pmb\theta-\pmb\theta^{\prime}\right)\,;
+L(\pmb\theta)\approx L\left(\pmb\theta^{\prime}\right)+\dfrac{1}{2}\left(\pmb\theta-\pmb\theta^{\prime}\right)^{\mathrm{T}}{\pmb H}\left(\pmb\theta-\pmb\theta^{\prime}\right)\,;
 $$
 
-我们可以根据 $\frac{1}{2}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)^{\mathrm{T}}\pmb{H}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)$ 来判断在 $\theta^{\prime}$ 附近的误差表面（error surface）到底长什么样子。知道误差表面的“地貌”，我们就可以判断 $L(\pmb\theta^{\prime})$ 是局部极小值、局部极大值，还是鞍点。为了符号简洁，我们用向量 $\pmb{v}$ 来表示 $\pmb\theta-\pmb\theta^{\prime}$ ， $\left(\pmb\theta-\pmb\theta^{\prime}\right)^{\mathrm{T}}\pmb H\left(\pmb\theta-\pmb\theta^{\prime}\right)$ 可改写为 $v^{\mathrm{T}}H v$ ，有如下三种情况。  
+我们可以根据 $\dfrac{1}{2}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)^{\mathrm{T}}\pmb{H}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)$ 来判断在 $\theta^{\prime}$ 附近的误差表面（error surface）到底长什么样子。知道误差表面的“地貌”，我们就可以判断 $L(\pmb\theta^{\prime})$ 是局部极小值、局部极大值，还是鞍点。为了符号简洁，我们用向量 $\pmb{v}$ 来表示 $\pmb\theta-\pmb\theta^{\prime}$ ， $\left(\pmb\theta-\pmb\theta^{\prime}\right)^{\mathrm{T}}\pmb H\left(\pmb\theta-\pmb\theta^{\prime}\right)$ 可改写为 $v^{\mathrm{T}}H v$ ，有如下三种情况。  
 
-（1）如果对所有 $\pmb{v}$ ， ${\pmb v}^{\mathrm{T}}{\pmb H}{\pmb v}>0$ . 这意味着对任意 $\pmb{\theta}$ ， $L(\pmb\theta)>L(\pmb\theta^{\prime})$ . 只要 $\pmb{\theta}$ 在 $\pmb{\theta}^{\prime}$ 附近，$L(\pmb\theta)$ 都大于 $L(\pmb\theta^{\prime})$ . 这代表 $L(\pmb\theta^{\prime})$ 是附近的一个最低点，所以它是局部极小值。  
+1. 如果对所有 $\pmb{v}$ ， ${\pmb v}^{\mathrm{T}}{\pmb H}{\pmb v}>0$ . 这意味着对任意 $\pmb{\theta}$ ， $L(\pmb\theta)>L(\pmb\theta^{\prime})$ . 只要 $\pmb{\theta}$ 在 $\pmb{\theta}^{\prime}$ 附近，$L(\pmb\theta)$ 都大于 $L(\pmb\theta^{\prime})$ . 这代表 $L(\pmb\theta^{\prime})$ 是附近的一个最低点，所以它是局部极小值。  
 
-（2）如果对所有 $\pmb{v}$ ， ${\pmb v}^{\mathrm{T}}{\pmb H}{\pmb v}<0$ . 这意味着对任意 $\pmb{\theta}$ ， $L(\pmb\theta)<L(\pmb\theta^{\prime})$ ， $\theta^{\prime}$ 是附近最高的一个点， $L(\pmb\theta^{\prime})$ 是局部极大值。  
+2. 如果对所有 $\pmb{v}$ ， ${\pmb v}^{\mathrm{T}}{\pmb H}{\pmb v}<0$ . 这意味着对任意 $\pmb{\theta}$ ， $L(\pmb\theta)<L(\pmb\theta^{\prime})$ ， $\theta^{\prime}$ 是附近最高的一个点， $L(\pmb\theta^{\prime})$ 是局部极大值。  
 
-（3）如果对于 $\pmb{v}$ ， $v^{\mathrm{T}}H v$ 有时候大于零，有时候小于零。这意味着在 $\pmb{\theta}^{\prime}$ 附近，有时候${\cal L}(\pmb\theta)>L(\pmb\theta^{\prime})$ ，有时候 $L(\pmb\theta)<L(\pmb\theta^{\prime})$ . 因此在 $\pmb{\theta}^{\prime}$ 附近， $L(\pmb\theta^{\prime})$ 既不是局部极大值，也不是局部极小值，而是鞍点。  
+3. 如果对于 $\pmb{v}$ ， $v^{\mathrm{T}}H v$ 有时候大于零，有时候小于零。这意味着在 $\pmb{\theta}^{\prime}$ 附近，有时候${L}(\pmb\theta)>L(\pmb\theta^{\prime})$ ，有时候 $L(\pmb\theta)<L(\pmb\theta^{\prime})$ . 因此在 $\pmb{\theta}^{\prime}$ 附近， $L(\pmb\theta^{\prime})$ 既不是局部极大值，也不是局部极小值，而是鞍点。  
 
-有一个问题，通过 $\frac{1}{2}\,\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)^{\mathrm{T}}\pmb{H}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)$ 判断临界点是局部极小值还是鞍点还是局部极大值，需要代入所有的 $\pmb{\theta}$ . 但我们不可能把所有的 $\pmb{v}$ 都拿来试试看，所以有一个更简便的方法来判断 $\pmb{v}^{\mathrm{T}}\pmb{H}\pmb{v}$ 的正负。算出一个海森矩阵后，不需要把它跟所有的 $\pmb{v}$ 都乘乘看，只要看 $_H$ 的特征值。若 $_H$ 的所有特征值都是正的， $_H$ 为正定矩阵，则 ${\pmb v}^{\mathrm{T}}{\pmb H}{\pmb v}>0$ ，临界点是局部极小值。若 $_H$ 的所有特征值都是负的， $\pmb{H}$ 为负定矩阵，则 ${\pmb v}^{\mathrm{T}}{\pmb H}{\pmb v}<0$ ，临界点是局部极大值。若 $\pmb{H}$ 的特征值有正有负，临界点是鞍点。  
+有一个问题，通过 $\dfrac{1}{2}\,\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)^{\mathrm{T}}\pmb{H}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)$ 判断临界点是局部极小值还是鞍点还是局部极大值，需要代入所有的 $\pmb{\theta}$ . 但我们不可能把所有的 $\pmb{v}$ 都拿来试试看，所以有一个更简便的方法来判断 $\pmb{v}^{\mathrm{T}}\pmb{H}\pmb{v}$ 的正负。算出一个海森矩阵后，不需要把它跟所有的 $\pmb{v}$ 都乘乘看，只要看 $H$ 的特征值。若 $H$ 的所有特征值都是正的， $H$ 为正定矩阵，则 ${\pmb v}^{\mathrm{T}}{\pmb H}{\pmb v}>0$ ，临界点是局部极小值。若 $H$ 的所有特征值都是负的， $\pmb{H}$ 为负定矩阵，则 ${\pmb v}^{\mathrm{T}}{\pmb H}{\pmb v}<0$ ，临界点是局部极大值。若 $\pmb{H}$ 的特征值有正有负，临界点是鞍点。  
 
 如果 $n$ 阶对称矩阵 $\pmb{A}$ 对于任意非零的 $n$ 维向量 $\textbf{x}$ 都有 $x^{\mathrm{T}}A x>0$ ，则称矩阵 $\pmb{A}$ 为正定矩阵。如果 $n$ 阶对称矩阵 $\pmb{A}$ 对于任意非零的 $n$ 维向量 $\textbf{x}$ 都有 $x^{\mathrm{T}}A x<0$ ，则称矩阵 $\pmb{A}$ 为负定矩阵。  
 
@@ -68,9 +68,7 @@ $$
 
 我们还有一个简单的训练数据集，这个数据集只有一组数据(1,1)，也就是 $x=1$ 的标签是1. 所以输入1 进去，我们希望最终的输出跟1 越接近越好，如图3.3 所示。  
 
-$$
-\overset{x\to\infty}{=}\overset{w_{2}}{\longrightarrow}\overset{w_{2}}{\longrightarrow}\overset{\vartriangle}{\longrightarrow}\overset{\vartriangle\rightarrow\vartriangle}{=}\overset{y\vartriangle}{=}
-$$
+![](img/image4.png)
 
 图3.3 简单的神经网络  
 
@@ -85,10 +83,10 @@ $$
 ![](img/9474fff03333171424659936b140fc986d46be3bb923d01fb547503c45c60db0.jpg)  
 图3.4 误差表面  
 
-可以求出损失函数的梯度 $\begin{array}{r}{\pmb{g}=\left[\frac{\partial L}{\partial w_{1}},\frac{\partial L}{\partial w_{2}}\right]}\end{array}$ ：  
+可以求出损失函数的梯度 $\begin{array}{r}{\pmb{g}=\left[\dfrac{\partial L}{\partial w_{1}},\dfrac{\partial L}{\partial w_{2}}\right]}\end{array}$ ：  
 
 $$
-\left\{\begin{array}{r l}{\frac{\partial L}{\partial w_{1}}}&{=2\left(1-w_{1}w_{2}\right)\left(-w_{2}\right)\,;}\\ {\frac{\partial L}{\partial w_{2}}}&{=2\left(1-w_{1}w_{2}\right)\left(-w_{1}\right).}\end{array}\right.
+\left\{\begin{array}{r l}{\dfrac{\partial L}{\partial w_{1}}}&{=2\left(1-w_{1}w_{2}\right)\left(-w_{2}\right)\,;}\\ {\dfrac{\partial L}{\partial w_{2}}}&{=2\left(1-w_{1}w_{2}\right)\left(-w_{1}\right).}\end{array}\right.
 $$
 
 什么时候梯度会为零（也就是到一个临界点）呢？比如，在原点时， $w_{1}=0$ , $w_{2}=0$ ，此时的梯度为零，原点就是一个临界点，但通过海森矩阵才能判断它是哪种临界点。刚才我们通过取 $[-2,\!2]$ 之间的 $w_{1}$ 和 $w_{2}$ 来判断出原点是一个鞍点，但是假设我们还没有取所有可能的损失，我们要看看能不能够用海森矩阵来判断原点是什么临界点。  
@@ -96,7 +94,7 @@ $$
 海森矩阵 $\pmb{H}$ 收集了 $L$ 的二次微分：  
 
 $$
-\left\{\begin{array}{r l}{H_{1,1}}&{=\frac{\partial^{2}L}{\partial w_{1}^{2}}=2\left(-w_{2}\right)\left(-w_{2}\right);}\\ {H_{1,2}}&{=\frac{\partial^{2}L}{\partial w_{1}\partial w_{2}}=-2+4w_{1}w_{2};}\\ {H_{2,1}}&{=\frac{\partial^{2}L}{\partial w_{2}\partial w_{1}}=-2+4w_{1}w_{2};}\\ {H_{2,2}}&{=\frac{\partial^{2}L}{\partial w_{2}^{2}}=2\left(-w_{1}\right)\left(-w_{1}\right).}\end{array}\right.
+\left\{\begin{array}{r l}{H_{1,1}}&{=\dfrac{\partial^{2}L}{\partial w_{1}^{2}}=2\left(-w_{2}\right)\left(-w_{2}\right);}\\ {H_{1,2}}&{=\dfrac{\partial^{2}L}{\partial w_{1}\partial w_{2}}=-2+4w_{1}w_{2};}\\ {H_{2,1}}&{=\dfrac{\partial^{2}L}{\partial w_{2}\partial w_{1}}=-2+4w_{1}w_{2};}\\ {H_{2,2}}&{=\dfrac{\partial^{2}L}{\partial w_{2}^{2}}=2\left(-w_{1}\right)\left(-w_{1}\right).}\end{array}\right.
 $$
 
 对于原点，只要把 $w_{1}=0$ , $w_{2}=0$ 代进去，有海森矩阵  
@@ -107,15 +105,15 @@ $$
 
 通过海森矩阵来判断原点是局部极小值还是鞍点，要看它的特征值，这个矩阵有两个特征值：2 和 $-2$ ，特征值有正有负，因此原点是鞍点。  
 
-如果我们当前处于鞍点，就不用那么害怕了。 $\pmb{H}$ 不只可以帮助我们判断是不是在一个鞍点，还指出了参数可以更新的方向。之前我们参数更新的时候，都是看梯度 $\textbf{\emph{g}}$ ，但是我们走到某个地方以后发现 $\textbf{\emph{g}}$ 变成0 了，就不能再看 $\textbf{\emph{g}}$ 了， $\textbf{\emph{g}}$ 不见了。但如果临界点是一个鞍点，还可以再看 $_H$ ，怎么再看 $\pmb{H}$ 呢， $_H$ 怎么告诉我们怎么更新参数呢？  
+如果我们当前处于鞍点，就不用那么害怕了。 $\pmb{H}$ 不只可以帮助我们判断是不是在一个鞍点，还指出了参数可以更新的方向。之前我们参数更新的时候，都是看梯度 $\pmb{g}$ ，但是我们走到某个地方以后发现 $\pmb{g}$ 变成0 了，就不能再看 $\pmb{g}$ 了， $\pmb{g}$ 不见了。但如果临界点是一个鞍点，还可以再看 $H$ ，怎么再看 $\pmb{H}$ 呢， $H$ 怎么告诉我们怎么更新参数呢？  
 
-设 $\lambda$ 为 $\pmb{H}$ 的一个特征值 $\lambda$ ， $\pmb{u}$ 为其对应的特征向量。对于我们的优化问题，可令 $\textbf{\em u}=$ $\theta-\theta^{\prime}$ ，则  
+设 $\lambda$ 为 $\pmb{H}$ 的一个特征值 $\lambda$ ， $\pmb{u}$ 为其对应的特征向量。对于我们的优化问题，可令 $\textbf{u}=$ $\theta-\theta^{\prime}$ ，则  
 
 $$
 \pmb{u}^{\mathrm{T}}\pmb{H}\pmb{u}=\pmb{u}^{\mathrm{T}}(\lambda\pmb{u})=\lambda\|\pmb{u}\|^{2}.
 $$
 
-若 $\lambda<0$ ，则 $\lambda\|u\|^{2}<0$ 。所以 $\begin{array}{r}{\frac{1}{2}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)^{\mathrm{T}}\pmb{H}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)<0}\end{array}$ 。此时， ${\cal L}(\pmb\theta)<{\cal L}(\pmb\theta^{\prime})$ ，且  
+若 $\lambda<0$ ，则 $\lambda\|u\|^{2}<0$ 。所以 $\begin{array}{r}{\dfrac{1}{2}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)^{\mathrm{T}}\pmb{H}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)<0}\end{array}$ 。此时， ${L}(\pmb\theta)<{L}(\pmb\theta^{\prime})$ ，且  
 
 $$
 {\pmb\theta}={\pmb\theta}^{\prime}+{\pmb u}.
@@ -129,7 +127,11 @@ $$
 
 讲到这边会有一个问题：鞍点跟局部极小值谁比较常见？鞍点其实并没有很可怕，如果我们经常遇到的是鞍点，比较少遇到局部极小值，那就太好了。科幻小说《三体III：死神永生》中有这样一个情节：东罗马帝国的国王君士坦丁十一世为对抗土耳其人，找来了具有神秘力量的做狄奥伦娜。狄奥伦娜可以于万军丛中取上将首级，但大家不相信她有这么厉害，想要狄奥伦娜先展示下她的力量。于是狄奥伦娜拿出了一个圣杯，大家看到圣杯大吃一惊，因为这个圣杯本来是放在圣索菲亚大教堂地下室的一个石棺里面，而且石棺是密封的，没有人可以打开。狄奥伦娜不仅取得了圣杯，还自称在石棺中放了一串葡萄。于是君士坦丁十一世带人撬开了石棺，发现圣杯真的被拿走了，而是棺中真的有一串新鲜的葡萄，为什么迪奥伦娜可以做到这些事呢？是因为狄奥伦娜可以进入四维的空间。从三维的空间来看这个石棺是封闭的，没有任何路可以进去，但从高维的空间来看，这个石棺并不是封闭的，是有路可以进去的。误差表面会不会也一样呢。  
 
-如图3.5(a) 所示的一维空间中的误差表面，有一个局部极小值。但是在二维空间（如图3.5(b) 所示），这个点就可能只是一个鞍点。常常会有人画类似图3.5(c) 这样的图来告诉我们深度学习的训练是非常复杂的。如果我们移动某两个参数，误差表面的变化非常的复杂，有非常多局部极小值。低维度空间中的局部极小值点，在更高维的空间中，实际是鞍点。同样地，如果在二维的空间中没有路可以走，会不会在更高维的空间中，其实有路可以走？更高的维度难以视化它，但我们在训练一个网络的时候，参数数量动辄达百万千万级，所以误差表面其实有非常高的维度—— 参数的数量代表了误差表面的维度。既然维度这么高，会不会其实就有非常多的路可以走呢？既然有非常多的路可以走，会不会其实局部极小值就很少呢?而经验上，我们如果自己做一些实验，会发现实际情况也支持这个假说。图3.6 是训练某不同神经网络的结果，每个点对应一个神经网络。纵轴代表训练网络时，损失收敛到临界点，损失没法下降时的损失。我们常常会遇到两种情况：损失仍然很高，却遇到了临界点而不再下降；或者损失降得很低，才遇到临界点。图3.6 中，横轴代表最小值比例（minimum ratio），最小值比例定义为  
+如图3.5(a) 所示的一维空间中的误差表面，有一个局部极小值。但是在二维空间（如图3.5(b) 所示），这个点就可能只是一个鞍点。常常会有人画类似图3.5(c) 这样的图来告诉我们深度学习的训练是非常复杂的。如果我们移动某两个参数，误差表面的变化非常的复杂，有非常多局部极小值。低维度空间中的局部极小值点，在更高维的空间中，实际是鞍点。同样地，如果在二维的空间中没有路可以走，会不会在更高维的空间中，其实有路可以走？更高的维度难以视化它，但我们在训练一个网络的时候，参数数量动辄达百万千万级，所以误差表面其实有非常高的维度—— 参数的数量代表了误差表面的维度。既然维度这么高，会不会其实就有非常多的路可以走呢？既然有非常多的路可以走，会不会其实局部极小值就很少呢?而经验上，我们如果自己做一些实验，会发现实际情况也支持这个假说。图3.6 是训练某不同神经网络的结果，每个点对应一个神经网络。纵轴代表训练网络时，损失收敛到临界点，损失没法下降时的损失。我们常常会遇到两种情况：损失仍然很高，却遇到了临界点而不再下降；或者损失降得很低，才遇到临界点。图3.6 中，横轴代表最小值比例（minimum ratio），最小值比例定义为
+
+$$
+最小值比例=\frac{正特征值数量}{负特征值数量}\tag{3.12}
+$$
 
 实际上，我们几乎找不到所有特征值都为正的临界点。在图3.6 所示的例子中，最小值比例最大也不过处于 $0.5\sim0.6$ 的范围，代表只有约一半的特征值为正，另一半的特征值为负，代表在所有的维度里面有约一半的路可以让损失上升，还有约一半的路可以让损失下降。虽然在这个图上，越靠近右侧代表临界点“看起来越像”局部极小值，但是这些点都不是真正的局部极小值。所以从经验上看起来，局部极小值并没有那么常见。多数的时候，我们训练到一个梯度很小的地方，参数不再更新，往往只是遇到了鞍点。  
 
@@ -160,11 +162,11 @@ $$
 ![](img/a045fee0c4ad72560e8cede29f56949c524c415c7964b2c765fc6e4efdb98718.jpg)  
 图3.8 批量梯度下降法与随机梯度下降法  
 
-随机梯度下降的梯度上引入了随机噪声，因此在非凸优化问题中，其相比批量梯度下降更容易逃离局部最小值。  
+> 随机梯度下降的梯度上引入了随机噪声，因此在非凸优化问题中，其相比批量梯度下降更容易逃离局部最小值。  
 
 实际上，考虑并行运算，批量梯度下降花费的时间不一定更长；对于比较大的批量，计算损失和梯度花费的时间不一定比使用小批量的计算时间长 。使用Tesla V100 GPU 在MNIST数据集得到的实验结果如图3.9 所示。图3.9 中横坐标表示批量大小，纵坐标表示给定批量大小的批量，计算梯度并更新参数所耗费的时间。批量大小从1 到1000，需要耗费的时间几乎是一样的，因为在实际上GPU 可以做并行运算，这1000 笔数据是并行处理的，所以1000笔数据所花的时间并不是一笔数据的1000 倍。当然GPU 并行计算的能力还是存在极限的，当批量大小很大的时候，时间还是会增加的。 当批量大小非常大的时候，GPU 在“跑”完一个批量，计算出梯度所花费的时间还是会随着批量大小的增加而逐渐增长 。当批量大小增加到10000，甚至增加到60000 的时候，GPU 计算梯度并更新参数所耗费的时间确实随着批量大小的增加而逐渐增长。  
 
-MNIST 中的“NIST”是指国家标准和技术研究所（National Institute of Standards andTechnology），其最初收集了这些数据。MNIST 中 $\mathrm{^{\acute{M}}}^{\prime\prime}$ 是指修改的（Modified），数据经过预处理以方便机器学习算法使用。MNIST 数据集收集了数万张手写数字（ $\mathrm{[0\sim9)}$ ）的 $28\times28$ 像素的灰度图像及其标签。一般大家第一个会尝试的机器学习的任务，往往就是用MNIST 做手写数字识别， 这个简单的分类问题是深度学习研究中的“HelloWorld”。  
+> MNIST 中的“NIST”是指国家标准和技术研究所（National Institute of Standards andTechnology），其最初收集了这些数据。MNIST 中 $\mathrm{^{\acute{M}}}^{\prime\prime}$ 是指修改的（Modified），数据经过预处理以方便机器学习算法使用。MNIST 数据集收集了数万张手写数字（ $\mathrm{[0\sim9)}$ ）的 $28\times28$ 像素的灰度图像及其标签。一般大家第一个会尝试的机器学习的任务，往往就是用MNIST 做手写数字识别， 这个简单的分类问题是深度学习研究中的“HelloWorld”。  
 
 ![](img/90f879c2fe9799880126a99bff6644073a8478b09692d54ac0f3ebb3fc6d0f10.jpg)  
 图3.9 批量大小与计算时间的关系  
@@ -184,7 +186,7 @@ MNIST 中的“NIST”是指国家标准和技术研究所（National Institute 
 ![](img/b185cd3c4210b2d879f375e6c9e17a36f3eb38c4b47eefd0fadbc57977df776b.jpg)  
 图3.12 小批量梯度下降更好的原因  
 
-其实小的批量也对测试有帮助。假设有一些方法（比如调大的批量的学习率）可以把大的批量跟小的批量训练得一样好。实验结果发现小的批量在测试的时候会是比较好的[1]。在论文“On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima”中，作者在不同数据集上训练了六个网络（包括全连接网络、不同的卷积神经网络），在很多不同的情况都观察到一样的结果。在小的批量，一个批量里面有256 笔样本。在大的批量中，批量大小等于数据集样本数乘0.1。比如数据集有60000 笔数据，则一个批量里面有6000 笔数据。大的批量跟小的批量的训练准确率（accuracy）差不多，但就算是在训练的时候结果差不多，测试的时候，大的批量比小的批量差，代表过拟合。  
+其实小的批量也对测试有帮助。假设有一些方法（比如调大的批量的学习率）可以把大的批量跟小的批量训练得一样好。实验结果发现小的批量在测试的时候会是比较好的。在论文“On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima”中，作者在不同数据集上训练了六个网络（包括全连接网络、不同的卷积神经网络），在很多不同的情况都观察到一样的结果。在小的批量，一个批量里面有256 笔样本。在大的批量中，批量大小等于数据集样本数乘0.1。比如数据集有60000 笔数据，则一个批量里面有6000 笔数据。大的批量跟小的批量的训练准确率（accuracy）差不多，但就算是在训练的时候结果差不多，测试的时候，大的批量比小的批量差，代表过拟合。  
 
 这篇论文给出了一个解释，如图3.13 所示，训练损失上面有多个局部最小值，这些局部最小值的损失都很低，其损失可能都趋近于0。但是局部最小值有好最小值跟坏最小值之分，如果局部最小值在一个“峡谷”里面，它是坏的最小值；如果局部最小值在一个平原上，它是好的最小值。训练的损失跟测试的损失函数是不一样的，这有两种可能。一种可能是本来训练跟测试的分布就不一样；另一种可能是因为训练跟测试都是从采样的数据算出来的，训练跟测试采样到的数据可能不一样，所以它们计算出的损失是有一点差距。 对在一个“盆地”里面的最小值，其在训练跟测试上面的结果不会差太多，只差了一点点。但对在右边在“峡谷”里面的最小值，一差就可以天差地远 。虽然它在训练集上的损失很低，但训练跟测试之间的损失函数不一样，因此测试时，损失函数一变，计算出的损失就变得很大。  
 
@@ -192,16 +194,17 @@ MNIST 中的“NIST”是指国家标准和技术研究所（National Institute 
 
 大的批量跟小的批量的对比结果如表3.1 所示。在有并行计算的情况下，小的批量跟大的批量运算的时间并没有太大的差距。除非大的批量非常大，才会显示出差距。但是一个回合需要的时间，小的批量比较长，大的批量反而是比较快的，所以从一个回合需要的时间来看，大的批量是较有优势的。 而小的批量更新的方向比较有噪声的，大的批量更新的方向比较稳定。但是有噪声的更新方向反而在优化的时候有优势，而且在测试的时候也会有优势。所以大的批量跟小的批量各有优缺点，批量大小是需要去调整的超参数。  
 
-其实用大的批量大小来做训练，用并行计算的能力来增加训练的效率，并且训练出的结果很好是可以做到的[2-3]。比如76 分钟训练BERT[4]，15 分钟训练ResNet[5]，一分钟训练  
+其实用大的批量大小来做训练，用并行计算的能力来增加训练的效率，并且训练出的结果很好是可以做到的[2-3]。比如76 分钟训练BERT，15 分钟训练ResNet，一分钟训练  
 
 ![](img/73ec12060a93dbc8a7da3fdd582782c9df6f3a95e782553e5063e8c74b0d6f98.jpg)  
 图3.13 小批量优化容易跳出局部最小值的原因  
 
-ImageNet[6] 等等。这些论文批量大小很大，比如论文“Large Batch Optimization for DeepLearning: Training BERT in 76 minutes ”中批量大小为三万。批量大小很大可以算得很快，这些论文有一些特别的方法来解决批量大小可能会带来的劣势。  
+ImageNet 等等。这些论文批量大小很大，比如论文“Large Batch Optimization for DeepLearning: Training BERT in 76 minutes ”中批量大小为三万。批量大小很大可以算得很快，这些论文有一些特别的方法来解决批量大小可能会带来的劣势。  
 
 表3.1 小批量梯度下降与批量梯度下降的比较
 
 | 评价标准 | 小批量梯度下降 | 批量梯度下降 |
+|-----|-----|-----|
 | 一次更新的速度 （没有并行计算） | 更快 | 更慢 |
 | 一次更新的速度 （有并行计算） | 相同 | 相同（批量大小不是很大）|
 | 一个回合的时间 | 更慢 | 更快 |
@@ -281,7 +284,7 @@ $$
 $\pmb{\theta}_{t}^{i}$ 在第 $t$ 个迭代的值减掉在第 $t$ 个迭代参数 $i$ 算出来的梯度  
 
 $$
-{\pmb g}_{t}^{i}=\left.\frac{\partial{\cal L}}{\partial{\pmb\theta}^{i}}\right|_{{\pmb\theta}={\pmb\theta}_{t}}
+{\pmb g}_{t}^{i}=\left.\dfrac{\partial{L}}{\partial{\pmb\theta}^{i}}\right|_{{\pmb\theta}={\pmb\theta}_{t}}
 $$
 
 ![](img/b509eda59d6751c023212d2ac7660abf3c608bf83c153944674701d51192ef43.jpg)  
@@ -289,18 +292,18 @@ $$
 
 $\pmb{g}_{t}^{i}$ 代表在第 $t$ 个迭代，即 $\pmb\theta=\pmb\theta_{t}$ 时, 损失 $L$ 关于参数 $\pmb\theta^{i}$ 的偏导，学习率是固定的。  
 
-现在要有一个随着参数定制化的学习率，即把原来学习率 $\eta$ 变成 $\frac{\eta}{\sigma_{t}^{i}}$  
+现在要有一个随着参数定制化的学习率，即把原来学习率 $\eta$ 变成 $\dfrac{\eta}{\sigma_{t}^{i}}$  
 
 $$
-\pmb{\theta}_{t+1}^{i}\leftarrow\pmb{\theta}_{t}^{i}-\frac{\eta}{\sigma_{t}^{i}}\pmb{g}_{t}^{i}
+\pmb{\theta}_{t+1}^{i}\leftarrow\pmb{\theta}_{t}^{i}-\dfrac{\eta}{\sigma_{t}^{i}}\pmb{g}_{t}^{i}
 $$
 
-$\boldsymbol{\sigma}_{t}^{i}$ 的上标为 $i$ ，这代表参数 $\sigma$ 与 $i$ 相关，不同的参数的 $\sigma$ 不同。 $\sigma_{t}^{i}$ 的下标为 $t$ ，这代表参数 $\sigma$ 与迭代相关，不同的迭代也会有不同的 $\sigma$ 。学习率从 $\eta$ 改成 $\frac{\eta}{\sigma_{t}^{i}}$ 的时候，学习率就变得参数相关（parameter dependent）。  
+$\boldsymbol{\sigma}_{t}^{i}$ 的上标为 $i$ ，这代表参数 $\sigma$ 与 $i$ 相关，不同的参数的 $\sigma$ 不同。 $\sigma_{t}^{i}$ 的下标为 $t$ ，这代表参数 $\sigma$ 与迭代相关，不同的迭代也会有不同的 $\sigma$ 。学习率从 $\eta$ 改成 $\dfrac{\eta}{\sigma_{t}^{i}}$ 的时候，学习率就变得参数相关（parameter dependent）。  
 
 参数相关的一个常见的类型是算梯度的均方根（root mean square）。参数的更新过程为  
 
 $$
-\pmb{\theta}_{1}^{i}\leftarrow\pmb{\theta}_{0}^{i}-\frac{\eta}{\sigma_{0}^{i}}\pmb{g}_{0}^{i}
+\pmb{\theta}_{1}^{i}\leftarrow\pmb{\theta}_{0}^{i}-\dfrac{\eta}{\sigma_{0}^{i}}\pmb{g}_{0}^{i}
 $$
 
 其中 $\theta_{0}^{i}$ 是初始化参数。而 $\boldsymbol{\sigma}_{0}^{i}$ 的计算过程为  
@@ -309,33 +312,33 @@ $$
 \sigma_{0}^{i}=\sqrt{\left(g_{0}^{i}\right)^{2}}=\left|\pmb{g}_{0}^{i}\right|
 $$
 
-其中 $\pmb{g}_{\mathrm{0}}^{i}$ 是梯度。将 $\sigma_{0}^{i}$ 的值代入更新的公式可知 $\frac{g_{0}^{i}}{\sigma_{0}^{i}}$ 的值是 $+1$ 或 $-1$ 。第一次在更新参数，从 $\theta_{0}^{i}$ 更新到 $\theta_{1}^{i}$ 的时候，要么是加上 $\eta$ ，要么是减掉 $\eta$ ，跟梯度的大小无关，这个是第一步的情况。  
+其中 $\pmb{g}_{\mathrm{0}}^{i}$ 是梯度。将 $\sigma_{0}^{i}$ 的值代入更新的公式可知 $\dfrac{g_{0}^{i}}{\sigma_{0}^{i}}$ 的值是 $+1$ 或 $-1$ 。第一次在更新参数，从 $\theta_{0}^{i}$ 更新到 $\theta_{1}^{i}$ 的时候，要么是加上 $\eta$ ，要么是减掉 $\eta$ ，跟梯度的大小无关，这个是第一步的情况。  
 
 第二次更新参数过程为  
 
 $$
-\pmb{\theta}_{2}^{i}\leftarrow\pmb{\theta}_{1}^{i}-\frac{\eta}{\sigma_{1}^{i}}\pmb{g}_{1}^{i}
+\pmb{\theta}_{2}^{i}\leftarrow\pmb{\theta}_{1}^{i}-\dfrac{\eta}{\sigma_{1}^{i}}\pmb{g}_{1}^{i}
 $$
 
 其中 $\sigma_{1}^{i}$ 是过去所有计算出来的梯度的平方的平均再开根号，即均方根，如式(3.20) 所示。  
 
 $$
-\sigma_{1}^{i}=\sqrt{\frac{1}{2}\left[\left({\pmb g}_{0}^{i}\right)^{2}+\left({\pmb g}_{1}^{i}\right)^{2}\right]}
+\sigma_{1}^{i}=\sqrt{\dfrac{1}{2}\left[\left({\pmb g}_{0}^{i}\right)^{2}+\left({\pmb g}_{1}^{i}\right)^{2}\right]}
 $$
 
 同样的操作反复继续下去，如式(3.21) 所示。  
 
 $$
-\pmb{\theta}_{3}^{i}\leftarrow\pmb{\theta}_{2}^{i}-\frac{\eta}{\sigma_{2}^{i}}\pmb{g}_{2}^{i}\quad\sigma_{2}^{i}=\sqrt{\frac13\left[\left(\pmb{g}_{0}^{i}\right)^{2}+\left(\pmb{g}_{1}^{i}\right)^{2}+\left(\pmb{g}_{2}^{i}\right)^{2}\right]}
+\pmb{\theta}_{3}^{i}\leftarrow\pmb{\theta}_{2}^{i}-\dfrac{\eta}{\sigma_{2}^{i}}\pmb{g}_{2}^{i}\quad\sigma_{2}^{i}=\sqrt{\dfrac13\left[\left(\pmb{g}_{0}^{i}\right)^{2}+\left(\pmb{g}_{1}^{i}\right)^{2}+\left(\pmb{g}_{2}^{i}\right)^{2}\right]}
 $$
 
 第 $t+1$ 次更新参数的时候，即  
 
 $$
-\theta_{t+1}^{i}\leftarrow\theta_{t}^{i}-\frac{\eta}{\sigma_{t}^{i}}g_{t}^{i}\quad\sigma_{t}^{i}=\sqrt{\frac{1}{t+1}\sum_{j=0}^{t}\left(g_{j}^{i}\right)^{2}}
+\theta_{t+1}^{i}\leftarrow\theta_{t}^{i}-\dfrac{\eta}{\sigma_{t}^{i}}g_{t}^{i}\quad\sigma_{t}^{i}=\sqrt{\dfrac{1}{t+1}\sum_{j=0}^{t}\left(g_{j}^{i}\right)^{2}}
 $$
 
-$\frac{\eta}{\sigma_{t}^{i}}$ 当作是新的学习率来更新参数。  
+$\dfrac{\eta}{\sigma_{t}^{i}}$ 当作是新的学习率来更新参数。  
 
 图3.24 中有两个参数： $\theta^{1}$ 和 $\theta_{\mathrm{~\circ~}}^{2}\theta^{1}$ 坡度小， $\theta^{2}$ 坡度大。因为 $\theta^{1}$ 坡度小，根据式(3.22)，$\theta^{1}$ 这个参数上面算出来的梯度值都比较小，因为梯度算出来的值比较小，所以算出来的 ${\boldsymbol{\sigma}}_{t}^{i}$ 就小， ${\boldsymbol{\sigma}}_{t}^{i}$ 小学习率就大。反过来， $\theta^{2}$ 坡度大，所以计算出的梯度都比较大， ${\boldsymbol{\sigma}}_{t}^{i}$ 就比较大，在更新的时候，步伐（参数更新的量）就比较小。因此有了 ${\boldsymbol{\sigma}}_{t}^{i}$ 这一项以后，就可以随着梯度的不同，每一个参数的梯度的不同，来自动调整学习率的大小。  
 
@@ -357,7 +360,7 @@ $$
 第二步更新过程为  
 
 $$
-\pmb{\theta}_{2}^{i}\leftarrow\pmb{\theta}_{1}^{i}-\frac{\eta}{\sigma_{1}^{i}}\pmb{g}_{1}^{i}\quad\sigma_{1}^{i}=\sqrt{\alpha\left(\sigma_{0}^{i}\right)^{2}+\left(1-\alpha\right)\left(\pmb{g}_{1}^{i}\right)^{2}}
+\pmb{\theta}_{2}^{i}\leftarrow\pmb{\theta}_{1}^{i}-\dfrac{\eta}{\sigma_{1}^{i}}\pmb{g}_{1}^{i}\quad\sigma_{1}^{i}=\sqrt{\alpha\left(\sigma_{0}^{i}\right)^{2}+\left(1-\alpha\right)\left(\pmb{g}_{1}^{i}\right)^{2}}
 $$
 
 其中 $0<\alpha<1$ ，其是一个可以调整的超参数。计算 $\pmb{\theta}_{1}^{i}$ 的方法跟AdaGrad 算均方根不一样，在算均方根的时候，每一个梯度都有同等的重要性，但在RMSprop 里面，可以自己调整现在  
@@ -370,21 +373,21 @@ $$
 同样的过程就反复继续下去，如式(3.25) 所示。  
 
 $$
-\pmb{\theta}_{3}^{i}\leftarrow\pmb{\theta}_{2}^{i}-\frac{\eta}{\sigma_{2}^{i}}\pmb{g}_{2}^{i}\quad\sigma_{2}^{i}=\sqrt{\alpha\left(\sigma_{1}^{i}\right)^{2}+\left(1-\alpha\right)\left(\pmb{g}_{2}^{i}\right)^{2}}
+\pmb{\theta}_{3}^{i}\leftarrow\pmb{\theta}_{2}^{i}-\dfrac{\eta}{\sigma_{2}^{i}}\pmb{g}_{2}^{i}\quad\sigma_{2}^{i}=\sqrt{\alpha\left(\sigma_{1}^{i}\right)^{2}+\left(1-\alpha\right)\left(\pmb{g}_{2}^{i}\right)^{2}}
 $$
 
 $$
-\pmb{\theta}_{t+1}^{i}\leftarrow\pmb{\theta}_{t}^{i}-\frac{\eta}{\sigma_{t}^{i}}\pmb{g}_{t}^{i}\quad\sigma_{t}^{i}=\sqrt{\alpha\left(\sigma_{t-1}^{i}\right)^{2}+\left(1-\alpha\right)\left(\pmb{g}_{t}^{i}\right)^{2}}
+\pmb{\theta}_{t+1}^{i}\leftarrow\pmb{\theta}_{t}^{i}-\dfrac{\eta}{\sigma_{t}^{i}}\pmb{g}_{t}^{i}\quad\sigma_{t}^{i}=\sqrt{\alpha\left(\sigma_{t-1}^{i}\right)^{2}+\left(1-\alpha\right)\left(\pmb{g}_{t}^{i}\right)^{2}}
 $$
 
-RMSProp 通过 $\alpha$ 可以决定， $\pmb{g}_{t}^{i}$ 相较于之前存在 $\sigma_{t-1}^{i}$ 里面的 $g_{1}^{i},g_{2}^{i},\cdot\cdot\cdot\cdot\cdot,g_{t-1}^{i}$ 的重要性有多大。如果使用RMSprop，就可以动态调整 ${\boldsymbol{\sigma}}_{t}^{i}$ 这一项。图3.26 中黑线是误差表面，球就从A 走到B，AB 段的路很平坦， $\textbf{\emph{g}}$ 很小，更新参数的时候，我们会走比较大的步伐。走动BC 段后梯度变大了，AdaGrad 反应比较慢，而RMSprop 会把 $\alpha$ 设小一点，让新的、刚看到的梯度的影响比较大，很快地让 ${\boldsymbol{\sigma}}_{t}^{i}$ 的值变大，很快地让步伐变小，RMSprop 可以很快地“踩刹车”。如果走到CD 段，CD 段是平坦的地方，可以调整 $\alpha$ ，让其比较看重最近算出来的梯度，梯度一变小， ${\boldsymbol{\sigma}}_{t}^{i}$ 的值就变小了，走的步伐就变大了。  
+RMSProp 通过 $\alpha$ 可以决定， $\pmb{g}_{t}^{i}$ 相较于之前存在 $\sigma_{t-1}^{i}$ 里面的 $g_{1}^{i},g_{2}^{i},\cdot\cdot\cdot\cdot\cdot,g_{t-1}^{i}$ 的重要性有多大。如果使用RMSprop，就可以动态调整 ${\boldsymbol{\sigma}}_{t}^{i}$ 这一项。图3.26 中黑线是误差表面，球就从A 走到B，AB 段的路很平坦， $\textbf{\pmb{g}}$ 很小，更新参数的时候，我们会走比较大的步伐。走动BC 段后梯度变大了，AdaGrad 反应比较慢，而RMSprop 会把 $\alpha$ 设小一点，让新的、刚看到的梯度的影响比较大，很快地让 ${\boldsymbol{\sigma}}_{t}^{i}$ 的值变大，很快地让步伐变小，RMSprop 可以很快地“踩刹车”。如果走到CD 段，CD 段是平坦的地方，可以调整 $\alpha$ ，让其比较看重最近算出来的梯度，梯度一变小， ${\boldsymbol{\sigma}}_{t}^{i}$ 的值就变小了，走的步伐就变大了。  
 
 ![](img/0a9a1bf074ac99bc9dcd4543ebe326c2b0fb98de385c236cefbbe09a4cbc90a4.jpg)  
 图3.26 RMSprop 示例  
 
 ### 3.3.3 Adam  
 
-最常用的优化的策略或者优化器（optimizer）是Adam（Adaptive moment estima-tion）[7]。Adam 可以看作RMSprop 加上动量，其使用动量作为参数更新方向，并且能够自适应调整学习率。PyTorch 里面已经写好了Adam 优化器，这个优化器里面有一些超参数需要人为决定，但是往往用PyTorch 预设的参数就足够好了。  
+最常用的优化的策略或者优化器（optimizer）是Adam（Adaptive moment estima-tion）。Adam 可以看作RMSprop 加上动量，其使用动量作为参数更新方向，并且能够自适应调整学习率。PyTorch 里面已经写好了Adam 优化器，这个优化器里面有一些超参数需要人为决定，但是往往用PyTorch 预设的参数就足够好了。  
 
 ## 3.4 学习率调度  
 
@@ -396,10 +399,10 @@ RMSProp 通过 $\alpha$ 可以决定， $\pmb{g}_{t}^{i}$ 相较于之前存在 
 通过学习率调度（learning rate scheduling）可以解决这个问题。之前的学习率调整方法中 $\eta$ 是一个固定的值，而在学习率调度中 $\eta$ 跟时间有关，如式(3.26) 所示。学习率调度中最常见的策略是学习率衰减（learning rate decay），也称为学习率退火（learning rateannealing）。随着参数的不断更新，让 $\eta$ 越来越小，如图3.28 所示。图3.27 的情况，如果加上学习率下降，可以很平顺地走到终点，如图3.29 所示。在图3.27 红圈的地方，虽然步伐很大，但 $\eta$ 变得非常小，步伐乘上 $\eta$ 就变小了，就可以慢慢地走到终点。  
 
 $$
-\pmb{\theta}_{t+1}^{i}\leftarrow\pmb{\theta}_{t}^{i}-\frac{\eta_{t}}{\sigma_{t}^{i}}\pmb{g}_{t}^{i}
+\pmb{\theta}_{t+1}^{i}\leftarrow\pmb{\theta}_{t}^{i}-\dfrac{\eta_{t}}{\sigma_{t}^{i}}\pmb{g}_{t}^{i}
 $$
 
-除了学习率下降以外，还有另外一个经典的学习率调度的方式— ——预热。预热的方法是让学习率先变大后变小，至于变到多大、变大的速度、变小的速度是超参数。残差网络[8] 里面是有预热的，在残差网络里面，学习率先设置成0.01，再设置成0.1，并且其论文还特别说明，一开始用0.1 反而训练不好。除了残差网络，BERT 和Transformer 的训练也都使用了预热。  
+除了学习率下降以外，还有另外一个经典的学习率调度的方式— ——预热。预热的方法是让学习率先变大后变小，至于变到多大、变大的速度、变小的速度是超参数。残差网络 里面是有预热的，在残差网络里面，学习率先设置成0.01，再设置成0.1，并且其论文还特别说明，一开始用0.1 反而训练不好。除了残差网络，BERT 和Transformer 的训练也都使用了预热。  
 
 ![](img/de493f795385057995cbcd88d2dd19c8593a3299d7d019f841caa7a29b21f446.jpg)  
 图3.28 学习率衰减  
@@ -407,25 +410,24 @@ $$
 ![](img/8d2f1605f4af4a83e9b08870da87d274ffc3595b6d7400e8a36a9191cf8a3a4b.jpg)  
 图3.29 学习率衰减的优化效果  
 
-Q：为什么需要预热？  
-
-A：当我们使用Adam、RMSprop 或AdaGrad 时，需要计算 $\sigma$ 。而 $\sigma$ 是一个统计的结果。从 $\sigma$ 可知某一个方向的陡峭程度。统计的结果需要足够多的数据才精准，一开始统计结果 $\sigma$ 是不精准的。一开始学习率比较小是用来探索收集一些有关误差表面的情报，先收集有关 $\sigma$ 的统计数据，等 $\sigma$ 统计得比较精准以后，再让学习率慢慢爬升。如果读者想要学更多有关预热的东西可参考Adam 的进阶版— RAdam[9]。  
+> Q：为什么需要预热？  
+> A：当我们使用Adam、RMSprop 或AdaGrad 时，需要计算 $\sigma$ 。而 $\sigma$ 是一个统计的结果。从 $\sigma$ 可知某一个方向的陡峭程度。统计的结果需要足够多的数据才精准，一开始统计结果 $\sigma$ 是不精准的。一开始学习率比较小是用来探索收集一些有关误差表面的情报，先收集有关 $\sigma$ 的统计数据，等 $\sigma$ 统计得比较精准以后，再让学习率慢慢爬升。如果读者想要学更多有关预热的东西可参考Adam 的进阶版— RAdam。  
 
 ## 3.5 优化总结  
 
 所以我们从最原始的梯度下降，进化到这一个版本，如式(3.27) 所示。  
 
 $$
-\pmb{\theta}_{t+1}^{i}\leftarrow\pmb{\theta}_{t}^{i}-\frac{\eta_{t}}{\sigma_{t}^{i}}\pmb{m}_{t}^{i}
+\pmb{\theta}_{t+1}^{i}\leftarrow\pmb{\theta}_{t}^{i}-\dfrac{\eta_{t}}{\sigma_{t}^{i}}\pmb{m}_{t}^{i}
 $$
 
 其中 $m_{t}^{i}$ 是动量。  
 
-这个版本里面有动量，其不是顺着某个时刻算出的梯度方向来更新参数，而是把过去所有算出梯度的方向做一个加权总和当作更新的方向。接下来的步伐大小为 $\frac{m_{t}^{i}}{\sigma_{t}^{i}}$ 。最后通过 $\eta_{t}$ 来实现学习率调度。这个是目前优化的完整的版本，这种优化器除了Adam 以外，还有各种变形。但其实各种变形是使用不同的方式来计算 $m_{t}^{i}$ 或 ${\boldsymbol{\sigma}}_{t}^{i}$ ，或者是使用不同的学习率调度的方式。  
+这个版本里面有动量，其不是顺着某个时刻算出的梯度方向来更新参数，而是把过去所有算出梯度的方向做一个加权总和当作更新的方向。接下来的步伐大小为 $\dfrac{m_{t}^{i}}{\sigma_{t}^{i}}$ 。最后通过 $\eta_{t}$ 来实现学习率调度。这个是目前优化的完整的版本，这种优化器除了Adam 以外，还有各种变形。但其实各种变形是使用不同的方式来计算 $m_{t}^{i}$ 或 ${\boldsymbol{\sigma}}_{t}^{i}$ ，或者是使用不同的学习率调度的方式。  
 
-Q：动量 $m_{t}^{i}$ 考虑了过去所有的梯度，均方根 ${\boldsymbol{\sigma}}_{t}^{i}$ 考虑了过去所有的梯度，一个放在分子，一个放在分母，并且它们都考虑过去所有的梯度，不就是正好抵消了吗？  
+> Q：动量 $m_{t}^{i}$ 考虑了过去所有的梯度，均方根 ${\boldsymbol{\sigma}}_{t}^{i}$ 考虑了过去所有的梯度，一个放在分子，一个放在分母，并且它们都考虑过去所有的梯度，不就是正好抵消了吗？ 
 
-A： $m_{t}^{i}$ 和 ${\boldsymbol{\sigma}}_{t}^{i}$ 在使用过去所有梯度的方式是不一样的，动量是直接把所有的梯度都加起来，所以它有考虑方向，它有考虑梯度的正负。但是均方根不考虑梯度的方向，只考虑梯度的大小，计算 ${\boldsymbol{\sigma}}_{t}^{i}$ 的时候，都要把梯度取一个平方项，把平方的结果加起来，所以只考虑梯度的大小，不考虑它的方向，所以动量跟 ${\boldsymbol{\sigma}}_{t}^{i}$ 计算出来的结果并不会互相抵消。  
+> A： $m_{t}^{i}$ 和 ${\boldsymbol{\sigma}}_{t}^{i}$ 在使用过去所有梯度的方式是不一样的，动量是直接把所有的梯度都加起来，所以它有考虑方向，它有考虑梯度的正负。但是均方根不考虑梯度的方向，只考虑梯度的大小，计算 ${\boldsymbol{\sigma}}_{t}^{i}$ 的时候，都要把梯度取一个平方项，把平方的结果加起来，所以只考虑梯度的大小，不考虑它的方向，所以动量跟 ${\boldsymbol{\sigma}}_{t}^{i}$ 计算出来的结果并不会互相抵消。  
 
 ## 3.6 分类  
 
@@ -433,7 +435,7 @@ A： $m_{t}^{i}$ 和 ${\boldsymbol{\sigma}}_{t}^{i}$ 在使用过去所有梯度
 
 ### 3.6.1 分类与回归的关系  
 
-回归是输入一个向量 $\mathbfcal{x}$ ，输出 $\hat{y}$ ，我们希望 $\hat{y}$ 跟某一个标签 $y$ 越接近越好， $y$ 是要学习的目标。而分类可当作回归来看，输入 $\mathbfcal{x}$ 后，输出仍然是一个标量 $\hat{y}$ ，要让它跟正确答案的那个类越接近越好。 $\hat{y}$ 是一个数字，我们可以把类也变成数字。如图3.30 所示，类1 是编号1，类2 是编号2，类3 是编号3， $\hat{y}$ 跟类的编号越接近越好。但该方法在某些状况下会有问题，假设类1、2、3 有某种关系。比如根据一个人的身高跟体重，预测他的年级，一年级、二年级还是三年级。一年级跟二年级关系比较近，一年级跟三年级关系比较远。用数字来表示类会预设1 和2 有比较近的关系，1 和3 有比较远的关系。但假设三个类本身没有特定的关系，类1 是1，类2 是2 类3 是3。这种情况，需要引入独热向量来表示类。实际上，在做分类的问题的时候，比较常见的做法也是用独热向量表示类。  
+回归是输入一个向量 $\pmb{x}$ ，输出 $\hat{y}$ ，我们希望 $\hat{y}$ 跟某一个标签 $y$ 越接近越好， $y$ 是要学习的目标。而分类可当作回归来看，输入 $\pmb{x}$ 后，输出仍然是一个标量 $\hat{y}$ ，要让它跟正确答案的那个类越接近越好。 $\hat{y}$ 是一个数字，我们可以把类也变成数字。如图3.30 所示，类1 是编号1，类2 是编号2，类3 是编号3， $\hat{y}$ 跟类的编号越接近越好。但该方法在某些状况下会有问题，假设类1、2、3 有某种关系。比如根据一个人的身高跟体重，预测他的年级，一年级、二年级还是三年级。一年级跟二年级关系比较近，一年级跟三年级关系比较远。用数字来表示类会预设1 和2 有比较近的关系，1 和3 有比较远的关系。但假设三个类本身没有特定的关系，类1 是1，类2 是2 类3 是3。这种情况，需要引入独热向量来表示类。实际上，在做分类的问题的时候，比较常见的做法也是用独热向量表示类。  
 
 ![](img/4487005cf9cfb1d2977a1fa94e28b1164b8eb7e53664bdd16b174d45bc68fb2f.jpg)  
 图3.30 用数字表示类的问题  
@@ -452,14 +454,14 @@ A： $m_{t}^{i}$ 和 ${\boldsymbol{\sigma}}_{t}^{i}$ 在使用过去所有梯度
 ![](img/85d130649b4ff449b12fa9fdaa0da1d1c05cb53f5839682fb992f73767d8f1b7.jpg)  
 图3.32 带有softmax 的分类  
 
-Q：为什么分类过程中要加上softmax 函数？  
+> Q：为什么分类过程中要加上softmax 函数？  
 
-A：一个比较简单的解释是， $y$ 是独热向量，所以其里面的值只有0 跟1，但是 $\hat{y}$ 里面有任何值。既然目标只有0 跟1，但 $\hat{y}$ 有任何值，可以先把它归一化到0 到1 之间，这样才能跟标签的计算相似度。  
+> A：一个比较简单的解释是， $y$ 是独热向量，所以其里面的值只有0 跟1，但是 $\hat{y}$ 里面有任何值。既然目标只有0 跟1，但 $\hat{y}$ 有任何值，可以先把它归一化到0 到1 之间，这样才能跟标签的计算相似度。  
 
 softmax 的计算如式(3.28) 所示，先把所有的 $y$ 取一个指数（负数取指数后也会变成正的），再对其做归一化（除掉所有 $y$ 的指数值的和）得到 $y^{\prime}$ 。图3.33 是softmax 的块（block），输入 $y_{1}\setminus~y_{2}$ 和 $y_{3}$ ，产生 $y_{1}^{\prime}$ 、 $y_{2}^{\prime}$ 和 $y_{3}^{\prime}$ 。比如 $y_{1}\,=\,3$ ， $y_{2}=1$ ， $y_{3}\,=\,-3$ ，取完指数的时候，$\exp(3)=20$ 、 $\exp(1)=2.7$ 和 $\exp(-3)=0.05$ ，做完归一化后，就变成0.88、0.12 跟0。 3取完指数，再做归一化以后，会变成趋近于0 的值。所以softmax 除了归一化，让 $y_{1}^{\prime}$ 、 $y_{2}^{\prime}$ 和$y_{3}^{\prime}$ ，变成0 到1 之间，和为1 以外，它还会让大的值跟小的值的差距更大。  
 
 $$
-y_{i}^{\prime}=\frac{\exp(y_{i})}{\sum_{j}\exp(y_{i})}
+y_{i}^{\prime}=\dfrac{\exp(y_{i})}{\sum_{j}\exp(y_{i})}
 $$
 
 其中， $1>y_{i}^{\prime}>0\,,~\textstyle\sum_{i}y_{i}^{\prime}=1$ 。  
@@ -518,7 +520,7 @@ $$
 
 什么样的状况会产生像上面这样子，比较不好训练的误差表面呢？对 $w_{1}$ 有一个小小的改变，比如加上 $\Delta w_{1}$ 的时候， $L$ 也会有一个改变，那这个 $w_{1}$ 呢，是通过 $w_{1}$ 改变的时候，就改变了 $y$ ， $y$ 改变的时候就改变了 $e$ ，接下来就改变了 $L$ 。  
 
-什么时候 $w_{1}$ 的改变会对 $L$ 的影响很小呢，也就是它在误差表面上的斜率会很小呢？一个可能性是当输入很小的时候，假设 $x_{1}$ 的值在不同的训练样本里面，它的值都很小，那因为$x_{1}$ 是直接乘上 $w_{1}$ ，如果 $x_{1}$ 的值都很小， $w_{1}$ 有一个变化的时候，它得到的，它对 $y$ 的影响也是小的，对 $e$ 的影响也是小的，它对 $L$ 的影响就会是小的。反之，如图3.39 所示，如果是$x_{2}$ 的话，假设 $x_{2}$ 的值都很大，当 $w_{2}$ 有一个小小的变化的时候，虽然 $w_{2}$ 这个变化可能很小，但是因为它乘上了 $x_{2}$ ， $x_{2}$ 的值很大，那 $_\mathrm{y}$ 的变化就很大， $e$ 的变化就很大， $L$ 的变化就会很大，就会导致我们在 $w$ 这个方向上，做变化的时候，我们把 $w$ 改变一点点，误差表面就会有很大的变化。所以既然在这个线性的的模型里面，当输入的特征，每一个维度的值，它的范围差距很大的时候，我们就可能产生像这样子的误差表面，就可能产生不同方向，斜率非常不同，坡度非常不同的误差表面所以怎么办呢，有没有可能给特征里面不同的维度，让它有同样的数值的范围。如果我们可以给不同的维度，同样的数值范围的话，那我们可能就可以制造比较好的误差表面，让训练变得比较容易一点其实有很多不同的方法，这些不同的方法往往就合起来统称为特征归一化（feature normalization）。  
+什么时候 $w_{1}$ 的改变会对 $L$ 的影响很小呢，也就是它在误差表面上的斜率会很小呢？一个可能性是当输入很小的时候，假设 $x_{1}$ 的值在不同的训练样本里面，它的值都很小，那因为$x_{1}$ 是直接乘上 $w_{1}$ ，如果 $x_{1}$ 的值都很小， $w_{1}$ 有一个变化的时候，它得到的，它对 $y$ 的影响也是小的，对 $e$ 的影响也是小的，它对 $L$ 的影响就会是小的。反之，如图3.39 所示，如果是$x_{2}$ 的话，假设 $x_{2}$ 的值都很大，当 $w_{2}$ 有一个小小的变化的时候，虽然 $w_{2}$ 这个变化可能很小，但是因为它乘上了 $x_{2}$ ， $x_{2}$ 的值很大，那 $\mathrm{y}$ 的变化就很大， $e$ 的变化就很大， $L$ 的变化就会很大，就会导致我们在 $w$ 这个方向上，做变化的时候，我们把 $w$ 改变一点点，误差表面就会有很大的变化。所以既然在这个线性的的模型里面，当输入的特征，每一个维度的值，它的范围差距很大的时候，我们就可能产生像这样子的误差表面，就可能产生不同方向，斜率非常不同，坡度非常不同的误差表面所以怎么办呢，有没有可能给特征里面不同的维度，让它有同样的数值的范围。如果我们可以给不同的维度，同样的数值范围的话，那我们可能就可以制造比较好的误差表面，让训练变得比较容易一点其实有很多不同的方法，这些不同的方法往往就合起来统称为特征归一化（feature normalization）。  
 
 ![](img/20c5813013e2864908a21b6c92dec68058f2fc082b9ed2270096505bb502b66f.jpg)  
 图3.39 需要特征归一化的原因  
@@ -526,7 +528,7 @@ $$
 以下所讲的方法只是特征归一化的一种可能性，即Z 值归一化（Z-score normalization），也称为标准化（standardization）。它并不是特征归一化的全部，假设 $x^{1}$ 到 $x^{R}$ ，是我们所有的训练数据的特征向量。我们把所有训练数据的特征向量，统统都集合起来。向量 $x_{1}$ 里面就$x_{1}^{1}$ 代表 $x^{1}$ 的第一个元素， $x_{1}^{2}$ 代表 $x^{2}$ 的第一个元素，以此类推。我们把不同笔数据即不同特征向量，同一个维度里面的数值，把它取出来，对于每个维度 $i$ ，计算其平均值（mean） $m_{i}$ 和标准差（standard deviation） $\sigma_{i}$ 。接下来我们就可以做一种归一化。  
 
 $$
-\tilde{x}_{i}^{r}{\leftarrow}\frac{x_{i}^{r}-m_{i}}{{\pmb\sigma}_{i}}
+\tilde{x}_{i}^{r}{\leftarrow}\dfrac{x_{i}^{r}-m_{i}}{{\pmb\sigma}_{i}}
 $$
 
 我们就是把这边的某一个数值 $x$ ，减掉这一个维度算出来的平均值，再除掉这个维度，算出来的标准差，得到新的数值 $\tilde{x}$ 。得到新的数值以后，再把新的数值把它塞回去。  
@@ -540,23 +542,23 @@ $$
 
 ### 3.7.1 考虑深度学习  
 
-$\tilde{\pmb{x}}$ 代表归一化的特征，把它丢到深度网络里面，去做接下来的计算和训练。如图3.41 所示， $\tilde{\pmb{x}^{1}}$ 通过第一层得到 $z^{1}$ ，有可能通过激活函数，不管是选sigmoid 或者ReLU 都可以，再得到 $a^{1}$ ，接着再通过下一层等等。对每个 $\mathbfcal{x}$ 都做类似的事情。  
+$\tilde{\pmb{x}}$ 代表归一化的特征，把它丢到深度网络里面，去做接下来的计算和训练。如图3.41 所示， $\tilde{\pmb{x}^{1}}$ 通过第一层得到 $z^{1}$ ，有可能通过激活函数，不管是选sigmoid 或者ReLU 都可以，再得到 $a^{1}$ ，接着再通过下一层等等。对每个 $\pmb{x}$ 都做类似的事情。  
 
-虽然 $\tilde{\pmb{x}}$ 已经做归一化了，但是通过 $W_{1}$ 以后，没有做归一化。如果 $\tilde{\pmb{x}}$ 通过 $W_{1}$ 得到 $z^{1}$ ，而 $z^{1}$ 不同的维度间，它的数值的分布仍然有很大的差异，训练 $W_{2}$ 第二层的参数也会有困难。对于 $W_{2}$ ， $\textbf{\em a}$ 或 $_{\mathscr{z}}$ 其实也是一种特征，也应该要对这些特征做归一化。如果选择sigmoid，比较推荐对 $_{\textit{\textbf{z}}}$ 做特征归一化，因为sigmoid 是一个s 的形状，其在0 附近斜率比较大，如果对 $_{\mathscr{z}}$ 做特征归一化，把所有的值都挪到0 附近，到时候算梯度的时候，算出来的值会比较大。如果使用别的激活函数，可能对 $\textbf{\em a}$ 归一化也会有好的结果。一般而言，特征归一化，要放在激活函数之前，之后都是可以的，在实现上，没有太大的差别。  
+虽然 $\tilde{\pmb{x}}$ 已经做归一化了，但是通过 $W_{1}$ 以后，没有做归一化。如果 $\tilde{\pmb{x}}$ 通过 $W_{1}$ 得到 $z^{1}$ ，而 $z^{1}$ 不同的维度间，它的数值的分布仍然有很大的差异，训练 $W_{2}$ 第二层的参数也会有困难。对于 $W_{2}$ ， $\pmb{a}$ 或 ${\mathscr{z}}$ 其实也是一种特征，也应该要对这些特征做归一化。如果选择sigmoid，比较推荐对 ${\textit{\textbf{z}}}$ 做特征归一化，因为sigmoid 是一个s 的形状，其在0 附近斜率比较大，如果对 ${\mathscr{z}}$ 做特征归一化，把所有的值都挪到0 附近，到时候算梯度的时候，算出来的值会比较大。如果使用别的激活函数，可能对 $\pmb{a}$ 归一化也会有好的结果。一般而言，特征归一化，要放在激活函数之前，之后都是可以的，在实现上，没有太大的差别。  
 
 ![](img/1863dcb5cae40397935f0328086c0d42a415018ca958cba45505a6a987027a9a.jpg)  
 图3.41 深度学习的归一化  
 
-如何对 $_{\mathscr{z}}$ 做特征归一化？ $_{\textit{\textbf{z}}}$ 可以看成另外一种特征。首先计算下 $z^{1},z^{2},z^{3}$ 的平均值，即  
+如何对 ${\mathscr{z}}$ 做特征归一化？ ${\textit{\textbf{z}}}$ 可以看成另外一种特征。首先计算下 $z^{1},z^{2},z^{3}$ 的平均值，即  
 
 $$
-\mu=\frac{1}{3}\sum_{i=1}^{3}z^{i}
+\mu=\dfrac{1}{3}\sum_{i=1}^{3}z^{i}
 $$
 
 接下来计算标准差  
 
 $$
-\pmb{\sigma}=\sqrt{\frac{1}{3}\sum_{i=1}^{3}\left(z^{i}-\pmb{\mu}\right)^{2}}
+\pmb{\sigma}=\sqrt{\dfrac{1}{3}\sum_{i=1}^{3}\left(z^{i}-\pmb{\mu}\right)^{2}}
 $$
 
 注意，式(3.33) 中的平方就是指对每一个元素都去做平方，开根号指的是对向量里面的每一个元素开根号。  
@@ -564,7 +566,7 @@ $$
 最后，根据计算出的 $\pmb{\mu}$ 和 $\sigma$ 进行归一化：  
 
 $$
-\tilde{z}^{i}=\frac{z^{i}-\mu}{\sigma}
+\tilde{z}^{i}=\dfrac{z^{i}-\mu}{\sigma}
 $$
 
 其中，除号代表逐元素的除，即分子分母两个向量对应元素相除。  
@@ -588,13 +590,13 @@ $$
 
 其中， $\odot$ 代表逐元素的相乘。 $\beta,\gamma$ 可以想成是网络的参数，需要另外再被学习出来。  
 
-Q：为什么要加上 $\beta$ 跟 $\gamma$ 呢？  
+> Q：为什么要加上 $\beta$ 跟 $\gamma$ 呢？  
 
-A：如果做归一化以后， $\tilde{z}$ 的平均值一定是0，如果平均值是0 的话，这会给网络一些限制，这个限制可能会带来负面的影响，所以需要把 $\beta,\gamma$ 加回去，让网络隐藏层的输出平均值不是0。让网络学习 $\beta,\gamma$ 来调整一下输出的分布，从而来调整 $\hat{z}$ 的分布。  
+> A：如果做归一化以后， $\tilde{z}$ 的平均值一定是0，如果平均值是0 的话，这会给网络一些限制，这个限制可能会带来负面的影响，所以需要把 $\beta,\gamma$ 加回去，让网络隐藏层的输出平均值不是0。让网络学习 $\beta,\gamma$ 来调整一下输出的分布，从而来调整 $\hat{z}$ 的分布。  
 
-Q：批量归一化是为了要让每一个不同的维度的范围相同，如果把 $\gamma$ 跟 $\beta$ 加进去，这样不同维度的分布，其范围不会又都不一样了吗？  
+> Q：批量归一化是为了要让每一个不同的维度的范围相同，如果把 $\gamma$ 跟 $\beta$ 加进去，这样不同维度的分布，其范围不会又都不一样了吗？  
 
-A：有可能，但是实际上在训练的时候， $\gamma$ 的初始值都设为1，所以 $\gamma$ 值都为1 的向量。 $\beta$ 是值全部都是0 的向量，即零向量。所以让网络在一开始训练的时候，每一个维度的分布，是比较接近的，也许训练到后来，已经训练够长的一段时间，已经找到一个比较好的误差表面，走到一个比较好的地方以后，再把 $\gamma,\beta$ 慢慢地加进去，所以加了 $\gamma,\beta$ 的批量归一化，往往对训练是有帮助的。  
+> A：有可能，但是实际上在训练的时候， $\gamma$ 的初始值都设为1，所以 $\gamma$ 值都为1 的向量。 $\beta$ 是值全部都是0 的向量，即零向量。所以让网络在一开始训练的时候，每一个维度的分布，是比较接近的，也许训练到后来，已经训练够长的一段时间，已经找到一个比较好的误差表面，走到一个比较好的地方以后，再把 $\gamma,\beta$ 慢慢地加进去，所以加了 $\gamma,\beta$ 的批量归一化，往往对训练是有帮助的。  
 
 ![](img/f6435d4576b76ab55d850b6574218fc486c136fc07e37a6b148e0fcc349cf13b.jpg)  
 图3.44 加 $\gamma,\beta$ 的批量归一化  
@@ -617,16 +619,16 @@ $$
 图3.46 是从批量归一化原始文献的实验结果，横轴代表的是训练的过程，纵轴代表的是验证集上的准确率。黑色的虚线是没有做批量归一化的结果，它用的是inception 的网络（一种网络以CNN 为基础的网络架构）。如果有做批量归一化，则是红色的这一条虚线。红色虚线的训练速度显然比黑色的虚线还要快很多。虽然只要给模型足够的训练的时间，最后会收敛都差不多的准确率。但是红色虚线可以在比较短的时间内跑到一样的准确率。蓝色的菱形代表说几个点的准确率是一样的。粉红色的线是sigmoid 函数，一般的认知，但一般都会选择ReLU，而不是用sigmoid 函数，因为sigmoid 函数的训练是比较困难的。但是这边想要强调的点是，就算是sigmoid 比较难搞的加批量归一化，还是可以训练的，这边没有sigmoid，没有做批量归一化的结果。因为在这个实验上，sigmoid 不加批量归一化，根本连训练都训练不起来。蓝色的实线跟这个蓝色的虚线呢是把学习率设比较大一点， $\times5$ 就是学习率变原来的5倍； $\times30$ 就是学习率变原来的30 倍。因为如果做批量归一化，误差表面会比较平滑，比较容易训练，所以就可以把学习率设大一点。这边有个不好解释的地方，学习率设30 倍的时候比5 倍差，作者也没有解释。  
 
 ![](img/a5bd130ccc756011eceb7a754729aa84781ad509ebcc4f914b1c09165698777d.jpg)  
-图3.46 批量归一化实验结果[10]  
+图3.46 批量归一化实验结果  
 
 ### 3.7.3 内部协变量偏移  
 
-接下来的问题就是批量归一化为什么会有帮助呢？原始的批量归一化论文里面提出内部协变量偏移（internal covariate shift）概念。如图3.47 所示，假设网络有很多层， $-\mathbfcal{x}$ 通过第一层后得到 $\textbf{\em a}$ ， $\textbf{\em a}$ 通过第二层以后得到 $^{b}$ ；计算出梯度以后，把 $\pmb{A}$ 更新成 $A^{\prime}$ ，把 $_B$ 这一层的参数更新成 $B^{\prime}$ 。但是作者认为说，我们在计算 $_B$ 更新到 $B^{\prime}$ 的梯度的时候，这个时候前一层的参数是 $\pmb{A}$ ，或者是前一层的输出是 $\textbf{\em a}$ 。那当前一层从 $\pmb{A}$ 变成 $A^{\prime}$ 的时候，其输出就从 $\textbf{\em a}$ 变成 $\pmb{a}^{\prime}$ 。但是我们计算这个梯度的时候，是根据 $\textbf{\em a}$ 算出来，所以这个更新的方向也许它适合用在 $\textbf{\em a}$ 上，但不适合用在 $\pmb{a}^{\prime}$ 上面。因为我们每次都有做批量归一化，就会让 $\textbf{\em a}$ 和$\pmb{a}^{\prime}$ 的分布比较接近，也许这样就会对训练有帮助。但是论文“How Does Batch NormalizationHelp Optimization?”[11] 认为内部协变量偏移有问题。这篇论文从不同的角度来说明内部协变量偏移不一定是训练网络的时候的一个问题。批量归一化会比较好，可能不一定是因为它解决了内部协变量偏移。这篇论文里面做了很多实验，比如其比较了训练的时候 $\textbf{\em a}$ 的分布的变化，发现不管有没有做批量归一化，其变化都不大。就算是变化很大，对训练也没有太大的伤害。不管是根据 $\textbf{\em a}$ 算出来的梯度，还是根据 $\pmb{a}^{\prime}$ 算出来的梯度，方向居然都差不多。内部协变量偏移可能不是训练网络的时候，最主要的问题，它可能也不是批量归一化会好的一个的关键。  
+接下来的问题就是批量归一化为什么会有帮助呢？原始的批量归一化论文里面提出内部协变量偏移（internal covariate shift）概念。如图3.47 所示，假设网络有很多层， $-\pmb{x}$ 通过第一层后得到 $\pmb{a}$ ， $\pmb{a}$ 通过第二层以后得到 $\pmb{b}$ ；计算出梯度以后，把 $\pmb{A}$ 更新成 $A^{\prime}$ ，把 $B$ 这一层的参数更新成 $B^{\prime}$ 。但是作者认为说，我们在计算 $B$ 更新到 $B^{\prime}$ 的梯度的时候，这个时候前一层的参数是 $\pmb{A}$ ，或者是前一层的输出是 $\pmb{a}$ 。那当前一层从 $\pmb{A}$ 变成 $A^{\prime}$ 的时候，其输出就从 $\pmb{a}$ 变成 $\pmb{a}^{\prime}$ 。但是我们计算这个梯度的时候，是根据 $\pmb{a}$ 算出来，所以这个更新的方向也许它适合用在 $\pmb{a}$ 上，但不适合用在 $\pmb{a}^{\prime}$ 上面。因为我们每次都有做批量归一化，就会让 $\pmb{a}$ 和$\pmb{a}^{\prime}$ 的分布比较接近，也许这样就会对训练有帮助。但是论文“How Does Batch NormalizationHelp Optimization?” 认为内部协变量偏移有问题。这篇论文从不同的角度来说明内部协变量偏移不一定是训练网络的时候的一个问题。批量归一化会比较好，可能不一定是因为它解决了内部协变量偏移。这篇论文里面做了很多实验，比如其比较了训练的时候 $\pmb{a}$ 的分布的变化，发现不管有没有做批量归一化，其变化都不大。就算是变化很大，对训练也没有太大的伤害。不管是根据 $\pmb{a}$ 算出来的梯度，还是根据 $\pmb{a}^{\prime}$ 算出来的梯度，方向居然都差不多。内部协变量偏移可能不是训练网络的时候，最主要的问题，它可能也不是批量归一化会好的一个的关键。  
 
-协变量偏移（covariate shift），训练集和预测集样本分布不一致的问题就叫做协变量偏移现象，这个词汇是原来就有的，内部协变量偏移是批量归一化的作者自己发明的。  
+> 协变量偏移（covariate shift），训练集和预测集样本分布不一致的问题就叫做协变量偏移现象，这个词汇是原来就有的，内部协变量偏移是批量归一化的作者自己发明的。  
 
 ![](img/16c46c9c9eeb78adbe79f162c197f28e4720e7bd9fde514ebc9d9212210c8072.jpg)  
 图3.47 内部协变量偏移示例  
 
-为什么批量归一化会比较好呢，那在这篇“How Does Batch Normalization Help Optimiza-tion?”这篇论文从实验和理论上，至少支持批量归一化可以改变误差表面，让误差表面比较不崎岖这个观点。所以这个观点是有理论的支持，也有实验的佐证的。如果要让网络误差表面变得比较不崎岖，其实不一定要做批量归一化，还有很多其他的方法都可以让误差表面变得不崎岖，这篇论文就试了一些其他的方法，发现跟批量归一化表现也差不多，甚至还稍微好一点，这篇论文的作者也觉得批量归一化是一种偶然的发现，但无论如何，其是一个有用的方法。其实批量归一化不是唯一的归一化，还有很多归一化方法，比如批量重归一化（batchrenormalization）[12]、层归一化（layer normalization）[13]、实例归一化（instance normalization）[14]、组归一化（group normalization）[15]、权重归一化（weight normalization）[16] 和谱归一化（spectrum normalization）[17]。  
+为什么批量归一化会比较好呢，那在这篇“How Does Batch Normalization Help Optimiza-tion?”这篇论文从实验和理论上，至少支持批量归一化可以改变误差表面，让误差表面比较不崎岖这个观点。所以这个观点是有理论的支持，也有实验的佐证的。如果要让网络误差表面变得比较不崎岖，其实不一定要做批量归一化，还有很多其他的方法都可以让误差表面变得不崎岖，这篇论文就试了一些其他的方法，发现跟批量归一化表现也差不多，甚至还稍微好一点，这篇论文的作者也觉得批量归一化是一种偶然的发现，但无论如何，其是一个有用的方法。其实批量归一化不是唯一的归一化，还有很多归一化方法，比如批量重归一化（batchrenormalization）、层归一化（layer normalization）、实例归一化（instance normalization）、组归一化（group normalization）、权重归一化（weight normalization） 和谱归一化（spectrum normalization）。  
 
