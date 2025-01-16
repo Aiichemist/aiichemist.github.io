@@ -110,16 +110,16 @@ $$
 设 $\lambda$ 为 $\pmb{H}$ 的一个特征值 $\lambda$ ， $\pmb{u}$ 为其对应的特征向量。对于我们的优化问题，可令 $\textbf{u}=$ $\theta-\theta^{\prime}$ ，则  
 
 $$
-\pmb{u}^{\mathrm{T}}\pmb{H}\pmb{u}=\pmb{u}^{\mathrm{T}}(\lambda\pmb{u})=\lambda\|\pmb{u}\|^{2}.
+\pmb{u}^{\mathrm{T}}\pmb{H}\pmb{u}=\pmb{u}^{\mathrm{T}}(\lambda\pmb{u})=\lambda\|\pmb{u}\|^{2}.\tag{3.10}
 $$
 
 若 $\lambda<0$ ，则 $\lambda\|u\|^{2}<0$ 。所以 $\begin{array}{r}{\dfrac{1}{2}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)^{\mathrm{T}}\pmb{H}\left(\pmb{\theta}-\pmb{\theta}^{\prime}\right)<0}\end{array}$ 。此时， ${L}(\pmb\theta)<{L}(\pmb\theta^{\prime})$ ，且  
 
 $$
-{\pmb\theta}={\pmb\theta}^{\prime}+{\pmb u}.
+{\pmb\theta}={\pmb\theta}^{\prime}+{\pmb u}.\tag{3.11}
 $$
 
-沿着 $\mathbf{\delta}^{*}$ 的方向更新 $\pmb{\theta}$ ，损失就会变小。因为根据式(3.10) 和式(3.11)，只要 ${\pmb\theta}={\pmb\theta}^{\prime}+{\pmb u}$ ，沿着特征向量 $\mathbf{\delta}^{*}$ 的方向去更新参数，损失就会变小，所以虽然临界点的梯度为零，如果我们是在一个鞍点，只要找出负的特征值，再找出这个特征值对应的特征向量。将其与 $\pmb{\theta}^{\prime}$ 相加，就可以找到一个损失更低的点。  
+沿着 $\pmb{u}$ 的方向更新 $\pmb{\theta}$ ，损失就会变小。因为根据式(3.10) 和式(3.11)，只要 ${\pmb\theta}={\pmb\theta}^{\prime}+{\pmb u}$ ，沿着特征向量 $\pmb{u}$ 的方向去更新参数，损失就会变小，所以虽然临界点的梯度为零，如果我们是在一个鞍点，只要找出负的特征值，再找出这个特征值对应的特征向量。将其与 $\pmb{\theta}^{\prime}$ 相加，就可以找到一个损失更低的点。  
 
 在前面的例子中，原点是一个临界点，此时的海森矩阵如式(3.9) 所示，该海森矩阵有一个负的特征值：−2，特征值−2 对应的特征向量有无穷多个。不妨取 $\pmb{u}=[1,1]^{\mathrm{T}}$ ，作为 $-2$ 对应的特征向量。我们其实只要顺着 $\pmb{u}$ 的方向去更新参数，就可以找到一个比鞍点的损失还要更低的点。以这个例子来看，原点是鞍点，其梯度为零，所以梯度不会告诉我们要怎么更新参数。但海森矩阵的特征向量告诉我们只要往 $[1,1]^{\mathrm{T}}$ 的方向更新。损失就会变得更小，就可以逃离鞍点。  
 
