@@ -157,7 +157,7 @@ var(\vec{\chi})
 =V^TI_{D\times D}V=V^TV\end{split}$$
 也就是说 $\vec{χ}$ 服从 $N(\vec{μ}, VV)$。
 
-注意，上式计算总体方差，因此分母为 $n$。此外注意 $\vec{\zeta}\vec{\zeta}^T$ 转置 $^T$ 所在位置，有别于前文计算数据矩阵 $X$ 的协方差矩阵时遇到的 $X^TX$。
+注意，上式计算总体方差，因此分母为 $n$。此外注意 $\vec{\zeta}\vec{\zeta}^T$ 转置 $T$ 所在位置，有别于前文计算数据矩阵 $X$ 的协方差矩阵时遇到的 $X^TX$。
 
 如果 $\vec{\chi}$ 和 $\vec{\gamma}  = [Y_1, Y_2, …, Y_D]^T$ 满足如下线性映射关系：
 $$\vec{\gamma}=A\vec{\chi}$$
