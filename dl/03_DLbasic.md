@@ -42,7 +42,7 @@ $$
 
 总结一下，损失函数 $L(\theta)$ 在 $\theta^{\prime}$ 附近可近似为式(3.1)，式(3.1) 跟梯度和海森矩阵有关，梯度就是一次微分，海森矩阵里面有二次微分的项。  
 
-在临界点，梯度 $\textbf{\pmb{g}}$ 为零，因此 $\left(\pmb\theta-\pmb\theta^{\prime}\right)^{\mathrm{T}}\pmb g$ 为零。所以在临界点的附近，损失函数可被近似为  
+在临界点，梯度 $\pmb{g}$ 为零，因此 $\left(\pmb\theta-\pmb\theta^{\prime}\right)^{\mathrm{T}}\pmb g$ 为零。所以在临界点的附近，损失函数可被近似为  
 
 $$
 L(\pmb\theta)\approx L\left(\pmb\theta^{\prime}\right)+\dfrac{1}{2}\left(\pmb\theta-\pmb\theta^{\prime}\right)^{\mathrm{T}}{\pmb H}\left(\pmb\theta-\pmb\theta^{\prime}\right)\,;
@@ -166,7 +166,7 @@ $$
 
 实际上，考虑并行运算，批量梯度下降花费的时间不一定更长；对于比较大的批量，计算损失和梯度花费的时间不一定比使用小批量的计算时间长 。使用Tesla V100 GPU 在MNIST数据集得到的实验结果如图3.9 所示。图3.9 中横坐标表示批量大小，纵坐标表示给定批量大小的批量，计算梯度并更新参数所耗费的时间。批量大小从1 到1000，需要耗费的时间几乎是一样的，因为在实际上GPU 可以做并行运算，这1000 笔数据是并行处理的，所以1000笔数据所花的时间并不是一笔数据的1000 倍。当然GPU 并行计算的能力还是存在极限的，当批量大小很大的时候，时间还是会增加的。 当批量大小非常大的时候，GPU 在“跑”完一个批量，计算出梯度所花费的时间还是会随着批量大小的增加而逐渐增长 。当批量大小增加到10000，甚至增加到60000 的时候，GPU 计算梯度并更新参数所耗费的时间确实随着批量大小的增加而逐渐增长。  
 
-> MNIST 中的“NIST”是指国家标准和技术研究所（National Institute of Standards andTechnology），其最初收集了这些数据。MNIST 中 $\mathrm{^{\acute{M}}}^{\prime\prime}$ 是指修改的（Modified），数据经过预处理以方便机器学习算法使用。MNIST 数据集收集了数万张手写数字（ $\mathrm{[0\sim9)}$ ）的 $28\times28$ 像素的灰度图像及其标签。一般大家第一个会尝试的机器学习的任务，往往就是用MNIST 做手写数字识别， 这个简单的分类问题是深度学习研究中的“HelloWorld”。  
+> MNIST 中的“NIST”是指国家标准和技术研究所（National Institute of Standards andTechnology），其最初收集了这些数据。MNIST 中 $M$ 是指修改的（Modified），数据经过预处理以方便机器学习算法使用。MNIST 数据集收集了数万张手写数字（ $\mathrm{0\sim9}$ ）的 $28\times28$ 像素的灰度图像及其标签。一般大家第一个会尝试的机器学习的任务，往往就是用MNIST 做手写数字识别， 这个简单的分类问题是深度学习研究中的“HelloWorld”。  
 
 ![](img/90f879c2fe9799880126a99bff6644073a8478b09692d54ac0f3ebb3fc6d0f10.jpg)  
 图3.9 批量大小与计算时间的关系  
@@ -380,7 +380,7 @@ $$
 \pmb{\theta}_{t+1}^{i}\leftarrow\pmb{\theta}_{t}^{i}-\dfrac{\eta}{\sigma_{t}^{i}}\pmb{g}_{t}^{i}\quad\sigma_{t}^{i}=\sqrt{\alpha\left(\sigma_{t-1}^{i}\right)^{2}+\left(1-\alpha\right)\left(\pmb{g}_{t}^{i}\right)^{2}}
 $$
 
-RMSProp 通过 $\alpha$ 可以决定， $\pmb{g}_{t}^{i}$ 相较于之前存在 $\sigma_{t-1}^{i}$ 里面的 $g_{1}^{i},g_{2}^{i},\cdot\cdot\cdot\cdot\cdot,g_{t-1}^{i}$ 的重要性有多大。如果使用RMSprop，就可以动态调整 ${\boldsymbol{\sigma}}_{t}^{i}$ 这一项。图3.26 中黑线是误差表面，球就从A 走到B，AB 段的路很平坦， $\textbf{\pmb{g}}$ 很小，更新参数的时候，我们会走比较大的步伐。走动BC 段后梯度变大了，AdaGrad 反应比较慢，而RMSprop 会把 $\alpha$ 设小一点，让新的、刚看到的梯度的影响比较大，很快地让 ${\boldsymbol{\sigma}}_{t}^{i}$ 的值变大，很快地让步伐变小，RMSprop 可以很快地“踩刹车”。如果走到CD 段，CD 段是平坦的地方，可以调整 $\alpha$ ，让其比较看重最近算出来的梯度，梯度一变小， ${\boldsymbol{\sigma}}_{t}^{i}$ 的值就变小了，走的步伐就变大了。  
+RMSProp 通过 $\alpha$ 可以决定， $\pmb{g}_{t}^{i}$ 相较于之前存在 $\sigma_{t-1}^{i}$ 里面的 $g_{1}^{i},g_{2}^{i},\cdot\cdot\cdot\cdot\cdot,g_{t-1}^{i}$ 的重要性有多大。如果使用RMSprop，就可以动态调整 ${\boldsymbol{\sigma}}_{t}^{i}$ 这一项。图3.26 中黑线是误差表面，球就从A 走到B，AB 段的路很平坦， $\pmb{g}$ 很小，更新参数的时候，我们会走比较大的步伐。走动BC 段后梯度变大了，AdaGrad 反应比较慢，而RMSprop 会把 $\alpha$ 设小一点，让新的、刚看到的梯度的影响比较大，很快地让 ${\boldsymbol{\sigma}}_{t}^{i}$ 的值变大，很快地让步伐变小，RMSprop 可以很快地“踩刹车”。如果走到CD 段，CD 段是平坦的地方，可以调整 $\alpha$ ，让其比较看重最近算出来的梯度，梯度一变小， ${\boldsymbol{\sigma}}_{t}^{i}$ 的值就变小了，走的步伐就变大了。  
 
 ![](img/0a9a1bf074ac99bc9dcd4543ebe326c2b0fb98de385c236cefbbe09a4cbc90a4.jpg)  
 图3.26 RMSprop 示例  
