@@ -155,11 +155,11 @@ $$
 ![](img/2499edf1e72dd75a71216cc89df5cdb0b48a4dba26c7c3b70650ca2886481cca.jpg)  
 图6.21 根据 $\alpha^{\prime}$ 抽取序列中重要的信息  
 
-刚才讲的是自注意力运作的过程，接下来从矩阵乘法的角度再重新讲一次自注意力的运作过程，如图6.22 所示。现在已经知道 $\pmb{a}^{1}$ 到 $a^{4}$ ，每一个 $\pmb{a}$ 都要分别产生 $\scriptstyle q\cdot\ k$ 和 $\pmb{v}$ ， $\pmb{a}^{1}$ 要产生 $\boldsymbol{q}^{1}\setminus\boldsymbol{k}^{1},\;\boldsymbol{v}^{1}$ ， $\pmb{a}^{2}$ 要产生 $q^{2}$ 、 $k^{2}$ 和 $v^{2}$ ，以此类推。如果要用矩阵运算表示这个操作，每一个 $\pmb{a}^{i}$ 都乘上一个矩阵 $W^{q}$ 得到 $\boldsymbol{q}^{i}$ ，这些不同的 $\pmb{a}$ 可以合起来当作一个矩阵。什么意思呢？$\pmb{a}^{1}$ 乘上 $W^{q}$ 得到 ${\pmb q}^{1}$ ， $a^{2}$ 也乘上 $W^{q}$ 得到 $q^{2}$ ，以此类推。把 $\pmb{a}^{1}$ 到 $a^{4}$ 拼起来可以看作是一个矩阵 $\boldsymbol{\mathit{I}}$ ，矩阵 $\boldsymbol{\mathit{I}}$ 有四列，它的列就是自注意力的输入： $\pmb{a}^{1}$ 到 $a^{4}$ 。把矩阵 $\boldsymbol{\mathit{I}}$ 乘上矩阵 $W^{q}$ 得到 $Q$ 。 $W^{q}$ 是网络的参数， $Q$ 的四个列就是 ${\pmb q}^{1}$ 到 ${\pmb q}^{4}$ 。  
+刚才讲的是自注意力运作的过程，接下来从矩阵乘法的角度再重新讲一次自注意力的运作过程，如图6.22 所示。现在已经知道 $\pmb{a}^{1}$ 到 $a^{4}$ ，每一个 $\pmb{a}$ 都要分别产生 $ q\cdot\ k$ 和 $\pmb{v}$ ， $\pmb{a}^{1}$ 要产生 $\boldsymbol{q}^{1}\setminus\boldsymbol{k}^{1},\;\boldsymbol{v}^{1}$ ， $\pmb{a}^{2}$ 要产生 $q^{2}$ 、 $k^{2}$ 和 $v^{2}$ ，以此类推。如果要用矩阵运算表示这个操作，每一个 $\pmb{a}^{i}$ 都乘上一个矩阵 $W^{q}$ 得到 $\boldsymbol{q}^{i}$ ，这些不同的 $\pmb{a}$ 可以合起来当作一个矩阵。什么意思呢？$\pmb{a}^{1}$ 乘上 $W^{q}$ 得到 ${\pmb q}^{1}$ ， $a^{2}$ 也乘上 $W^{q}$ 得到 $q^{2}$ ，以此类推。把 $\pmb{a}^{1}$ 到 $a^{4}$ 拼起来可以看作是一个矩阵 $\boldsymbol{\mathit{I}}$ ，矩阵 $\boldsymbol{\mathit{I}}$ 有四列，它的列就是自注意力的输入： $\pmb{a}^{1}$ 到 $a^{4}$ 。把矩阵 $\boldsymbol{\mathit{I}}$ 乘上矩阵 $W^{q}$ 得到 $Q$ 。 $W^{q}$ 是网络的参数， $Q$ 的四个列就是 ${\pmb q}^{1}$ 到 ${\pmb q}^{4}$ 。  
 
 产生 $\pmb{k}$ 和 $\pmb{v}$ 的操作跟 $\pmb q$ 是一模一样的， $\pmb{a}$ 乘上 $\boldsymbol{W}^{k}$ 就会得到键 $k$ 。把 $\boldsymbol{\mathit{I}}$ 乘上矩阵 $\boldsymbol{W}^{k}$ ，就得到矩阵 $\kappa$ 。 $\kappa$ 的4 个列就是4 个键： $k^{1}$ 到 $k^{4}$ 。 $\boldsymbol{\mathit{I}}$ 乘上矩阵 $\boldsymbol{W}^{v}$ 会得到矩阵 $\boldsymbol{V}$ 。矩阵$V$ 的4 个列就是4 个向量 $v^{1}$ 到 $v^{4}$ 。因此把输入的向量序列分别乘上三个不同的矩阵可得到  
 
-$\scriptstyle q\cdot\ k$ 和 $\pmb{v}$ 。  
+$ q\cdot\ k$ 和 $\pmb{v}$ 。  
 
 ![](img/957a696f36a18fc0640c0adc45431a78b9d889ffbdbcf3ab0890cb0c56567916.jpg)  
 图6.22 从矩阵乘法的角度理解自注意力的运作过程  
