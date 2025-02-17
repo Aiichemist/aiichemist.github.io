@@ -1,4 +1,6 @@
-# Hey, I'm Aiichemist
+# Aiichemist's blog
+
+![Aiichemist](hello.gif)
 
 ## About Me
   
@@ -104,5 +106,7 @@
     <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker" height="40"/>
   </a>
 
+## Contact
+> email: aiichemist@126.com
   
 </p>
