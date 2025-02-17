@@ -19,7 +19,7 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 
 ### 极限定义
 
->[!quote]+ **数列极限：**设$\{x_n\}$为一数列，若存在常数$a$，对于不论任意小的$\xi>0$，总存在正整数$N$，使$n>N$时，$\vert x_n-a\vert<\xi$恒成立，则常数$a$为数列$\{x_n\}$的**极限**，或$\{x_n\}$**收敛**于$a$，记为：$\lim\limits_{x\to\infty}x_n=a$或$x_n\to a(n\to\infty)$。
+>[!note] **数列极限：**设$\{x_n\}$为一数列，若存在常数$a$，对于不论任意小的$\xi>0$，总存在正整数$N$，使$n>N$时，$\vert x_n-a\vert<\xi$恒成立，则常数$a$为数列$\{x_n\}$的**极限**，或$\{x_n\}$**收敛**于$a$，记为：$\lim\limits_{x\to\infty}x_n=a$或$x_n\to a(n\to\infty)$。
 
 >[!note] $\xi-N$语言：$\lim\limits_{x\to\infty}x_n=a$$\Leftrightarrow$==$\forall\xi>0,\exists N\in N_+$，当$n>N$时，恒有$\vert x_n-a\vert<\xi$==。
 
@@ -70,7 +70,7 @@ $$\sum_{i=1}^n\dfrac{1}{k(k+1)}=\dfrac{1}{1\times2}+\dfrac{1}{2\times3}+\dfrac{1
 
 ### 子数列
 
->[!quote]+ **子数列：**从数列$\{a_n\}:a_1,a_2,\cdots,a_n,\cdots$中选取**无穷多项**并**按原来顺序**组成的新数列就称为原数列的子列，记为$\{a_{n_k}\}:a_{n_1},a_{n_2},\cdots,a_{n_k},\cdots$。
+>[!note] **子数列：**从数列$\{a_n\}:a_1,a_2,\cdots,a_n,\cdots$中选取**无穷多项**并**按原来顺序**组成的新数列就称为原数列的子列，记为$\{a_{n_k}\}:a_{n_1},a_{n_2},\cdots,a_{n_k},\cdots$。
 
 若$n_k$分别取奇数和偶数，则得到**奇数项数列**与**偶数项数列**。
 

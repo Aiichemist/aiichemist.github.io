@@ -236,7 +236,7 @@ $$
 $$\forall x,y\in\mathcal{X},\quad k:\mathcal{X}\times \mathcal{X}\rightarrow \mathbb{R}$$
 则称 $k(x,y)$ 为核函数
 
->[!example]+ $k(x,x')=\exp(-\frac{(x-x')^2}{2\sigma^2})$ 是一个核函数。
+> $k(x,x')=\exp(-\frac{(x-x')^2}{2\sigma^2})$ 是一个核函数。
 >
 >证明：
 >   $$\begin{align}
@@ -258,7 +258,7 @@ s.t.\quad k(x,y)=\phi(x)^T\phi(y)\end{split}$$
 
 正定核函数有下面的等价定义：
 
->[!quote]+ 如果核函数满足：
+>[!note] 如果核函数满足：
 >1.  对称性
 >
 >2.  正定性
