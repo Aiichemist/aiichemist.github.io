@@ -28,6 +28,8 @@
       coverpage: false,
       // 配置仓库
       repo: 'https://github.com/Aiichemist',
+      // logo
+      logo: '/icon.svg',
       // 配置最大支持渲染的标题层级
       maxLevel: 4,
       // 在侧边栏中出现的网站图标
@@ -49,12 +51,14 @@
         formatUpdated: "{YYYY}/{MM}/{DD} {HH}:{mm}",
         whereToPlace: "button"  // "top" or "bottom", default to "bottom"
       },
+      // 小屏设备下合并导航栏到侧边栏
+      mergeNavbar: true,
       // 页面右侧toc
       toc: {
         tocMaxLevel: 2,
         target: "h2, h3, h4, h5, h6",
       },
-      // 标注块
+      /*--- 标注块 ---*/
       // 支持 tip, note, warning, attention
       'flexible-alerts': {
         note: {
