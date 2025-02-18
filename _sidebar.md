@@ -11,8 +11,8 @@
   - [Pandas](/data/pandas/)
   - [Data Visualization](/data/data-visualization/)
 * Artificial Intelligence
-  - [MachineLearning](/ml/)
-  - [DeepLearning](/dl/)
+  - [Machine Learning](/ml/)
+  - [Deep Learning](/dl/)
 * Data Structures & Algorithms
   - Data Struture
   - Algorithms
