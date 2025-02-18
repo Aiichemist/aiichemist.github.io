@@ -1,5 +1,6 @@
 <!-- docs/_sidebar.md -->
 
+* [李宏毅深度学习](/dl/README.md)
 * [1.机器学习基础](/dl/01_MLbasic.md)
 * [2.实践方法论](/dl/02_methods.md)
 * [3.深度学习基础](/dl/03_DLbasic.md)
