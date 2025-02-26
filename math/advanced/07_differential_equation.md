@@ -194,7 +194,8 @@ $$y=e^{-\int P(x)\,\textrm{d}x}(\int Q(x)e^{\int P(x)\,\textrm{d}x}\,\textrm{d}x
 
 高阶微分方程即含二阶以及二阶以上的微分方程，需要将其降为一阶微分方程。
 
-## 5.1 $y^{(n)}=f(x)$型
+## 5.1 类型一
+$$y^{(n)}=f(x)$$
 
 右边是只包含$x$的函数。
 
@@ -204,7 +205,9 @@ $$y=e^{-\int P(x)\,\textrm{d}x}(\int Q(x)e^{\int P(x)\,\textrm{d}x}\,\textrm{d}x
 >
 >解：$y''=\dfrac{1}{2}e^{2x}-\sin x+C_1$，$y'=\dfrac{1}{4}e^{2x}+\cos x+C_1x+C_2$，$y=\dfrac{1}{8}e^{2x}+\sin x+\dfrac{1}{2}C_1x^2+C_2x+C_3$。
 
-## 5.2 $y''=f(x,y')$型
+## 5.2 类型二
+
+$$y''=f(x,y')$$
 
 即存在$y''$，$y'$和$x$但是没有$y$。
 
@@ -216,7 +219,9 @@ $$y=e^{-\int P(x)\,\textrm{d}x}(\int Q(x)e^{\int P(x)\,\textrm{d}x}\,\textrm{d}x
 >
 >$\dfrac{\textrm{d}p}{p}=\dfrac{2x}{1+x^2}\textrm{d}x$，$\ln p=\ln(1+x^2)+C'$，$p=C(1+x^2)$，所以$y'=3(1+x^2)$，$y=x^3+3x+1$。
 
-## 5.3 $y''=f(y,y')$型
+## 5.3 类型三
+
+$$y''=f(y,y')$$
 
 即存在$y''$，$y'$和$y$但是没有$x$。
 
