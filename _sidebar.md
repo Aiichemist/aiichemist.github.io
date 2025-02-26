@@ -13,6 +13,9 @@
 * Artificial Intelligence
   - [Machine Learning](/ml/)
   - [Deep Learning](/dl/)
+  - Computer Vision
+  - Natural Language Processing
+  - Recommendation System
 * Data Structures & Algorithms
   - Data Struture
   - Algorithms
@@ -21,4 +24,6 @@
   - Operating System
   - [Computer Tools](cs/cs-tools/)
   - [Computer Graphics](cs/cg/)
-<!-- [Project Demo](/proj/) -->
+<!--->
+  - [Project Demo](/proj/)
+<!--->

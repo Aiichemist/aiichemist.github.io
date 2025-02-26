@@ -10,13 +10,15 @@
   - Blog: [link here](https://aiichemist.github.io/)
   
   <img align="right" alt="GIF" src="https://github.com/abhisheknaiidu/abhisheknaiidu/blob/master/code.gif?raw=true" width="343" height="220" title="Do what you like, and do it best!">
-
+<!--->
 ## Skill & Interest
   
   - Languages：Python, C++, Java, SQL, LaTeX, Markdown
   - Machine Learning
   - DL,RL(Learning)
   - Interested in **CV, NLP,LLM**
+
+<!--->
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Aiichemist/Aiichemist/output/github-contribution-grid-snake-dark.svg">
@@ -27,6 +29,8 @@
 ## Stats
   ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Aiichemist&hide_progress=true)
   ![Aiichemist](https://github-readme-stats.vercel.app/api?username=Aiichemist\&rank_icon=github)
+
+
 ## Languages and Tools
 
 <p align="center">
