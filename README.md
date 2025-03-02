@@ -31,7 +31,7 @@
 
 ## Languages and Tools
 
-<p align="center">
+<p align="left">
   <a href='https://www.python.org/'>
     <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="Python" height="40"/>
   </a>
