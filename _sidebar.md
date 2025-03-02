@@ -24,6 +24,4 @@
   - Operating System
   - [Computer Tools](cs/cs-tools/)
   - [Computer Graphics](cs/cg/)
-<!--->
-  - [Project Demo](/proj/)
-<!--->
+  - Project Demo
