@@ -6,6 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <style>
+  .page_toc div[class^="lv"] a span {
+    display: inline;  /* 改为行内块 */
+  }
+  </style>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -19,7 +24,11 @@
   <div id="app"></div>
   
   <script>
-    
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
     window.$docsify = {
       name: "<b>Aiichemist</b>",
       repo: '',

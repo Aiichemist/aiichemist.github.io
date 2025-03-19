@@ -197,12 +197,16 @@ l(\theta)&=\log\prod_{i=1}^N(P(x_i,y_i))\\
 \end{split}$$
 其中 $\theta=(\mu_1,\mu_2,\Sigma,\phi)$ ，极大似然估计：
 $$\hat{\theta}=\arg\max_{\theta}l(\theta)$$
+
 ### 求解 $\phi$
+
 *   首先对 $\phi$ 进行求解，将式子对 $\phi$ 求偏导：
 $$\begin{align}&\sum\limits_{i=1}^N\frac{y_i}{\phi}+\frac{y_i-1}{1-\phi}=0\nonumber\\
 \Rightarrow\quad&\phi=\frac{\sum\limits_{i=1}^Ny_i}{N}=\frac{N_1}{N}
 \end{align}$$
+
 ### 求解 $\mu_1$与$\mu_2$
+
 *   然后求解 $\mu_1$：
 $$\begin{align}\hat{\mu_1}&=\mathop{argmax}_{\mu_1}\sum\limits_{i=1}^Ny_i\log N(\mu_1,\Sigma)\nonumber\\
 &=\mathop{argmin}_{\mu_1}\sum\limits_{i=1}^Ny_i(x_i-\mu_1)^T\Sigma^{-1}(x_i-\mu_1)
