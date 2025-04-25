@@ -8,7 +8,7 @@
 
 # 依概率收敛
 
-[**定义：**]{style="color: violet"}设随机变量$X$与随机变量序列$\{X_n\}$（$n=1,2,3\cdots$），如果对任意的$\epsilon>0$，有$\lim\limits_{n\to\infty}P\{\vert X_n-X\vert\geqslant\epsilon\}=0$或$\lim\limits_{n\to\infty}P\{\vert X_n-X\vert<\epsilon\}=1$，则称随机变量序列$\{X_n\}$**依概率收敛于随机变量$X$**，记为$\lim\limits_{n\to\infty}X_n=X(P)$或$X_n\overset{P}{\rightarrow}X(n\to\infty)$。
+>[!note] **定义：**设随机变量$X$与随机变量序列$\{X_n\}$（$n=1,2,3\cdots$），如果对任意的$\epsilon>0$，有$\lim\limits_{n\to\infty}P\{\vert X_n-X\vert\geqslant\epsilon\}=0$或$\lim\limits_{n\to\infty}P\{\vert X_n-X\vert<\epsilon\}=1$，则称随机变量序列$\{X_n\}$**依概率收敛于随机变量$X$**，记为$\lim\limits_{n\to\infty}X_n=X(P)$或$X_n\overset{P}{\rightarrow}X(n\to\infty)$。
 
 即在某项后面的全部项全部落在区域内的概率为1。（不是严格的极限，可能存在超过范围的点，但是不影响后面的点在区域内）
 
@@ -22,7 +22,7 @@
 
 ## 切比雪夫大数定律
 
-[**定义：**]{style="color: violet"}假设随机变量序列$\{X_n\}$（$n=1,2,3\cdots$）是**相互独立**的（不一定同分布），若期望$EX$存在，且方差$DX_i$（$i\geqslant1$）**存在且一致有上界**，即存在常数$C$，使得$DX_i\leqslant C$对一切$i\geqslant1$均成立，则$\forall\epsilon>0$，$\lim\limits_{n\to\infty}P\left\{\left\vert\dfrac{1}{n}\sum\limits_{i=1}^nX_i-\dfrac{1}{n}\sum\limits_{i=1}^nEX_i\right\vert<\epsilon\right\}=1$，$\{X_n\}$服从大数定律：$\dfrac{1}{n}\sum\limits_{i=1}^nX_i\overset{P}{\longrightarrow}\dfrac{1}{n}\sum\limits_{i=1}^nEX_i$。即$\overline{X}\overset{P}{\rightarrow}E\overline{X}$。
+>[!note] **定义：**假设随机变量序列$\{X_n\}$（$n=1,2,3\cdots$）是**相互独立**的（不一定同分布），若期望$EX$存在，且方差$DX_i$（$i\geqslant1$）**存在且一致有上界**，即存在常数$C$，使得$DX_i\leqslant C$对一切$i\geqslant1$均成立，则$\forall\epsilon>0$，$\lim\limits_{n\to\infty}P\left\{\left\vert\dfrac{1}{n}\sum\limits_{i=1}^nX_i-\dfrac{1}{n}\sum\limits_{i=1}^nEX_i\right\vert<\epsilon\right\}=1$，$\{X_n\}$服从大数定律：$\dfrac{1}{n}\sum\limits_{i=1}^nX_i\overset{P}{\longrightarrow}\dfrac{1}{n}\sum\limits_{i=1}^nEX_i$。即$\overline{X}\overset{P}{\rightarrow}E\overline{X}$。
 
 即均值收敛于期望的均值。
 
@@ -52,7 +52,7 @@ $\because X_n\sim E(n)$，$\therefore EX_n=\dfrac{1}{n}$，$DX_n=\dfrac{1}{n^2}$
 
 ## 伯努利大数定律
 
-[**定义：**]{style="color: violet"}假设$\mu_n$是$n$重伯努利试验中事件$A$发生的次数，在每次试验中事件$A$发生的概率为$p$（$0<p<1$），则$\dfrac{\mu_n}{n}\overset{P}{\longrightarrow}p$，即对任意的$\epsilon>0$，有$\lim\limits_{n\to\infty}P\left\{\left\vert\dfrac{\mu_n}{n}-p\right\vert<\epsilon\right\}=\lim\limits_{n\to\infty}P\left\{\left\vert\dfrac{1}{n}\sum\limits_{i=1}^nX_i-\dfrac{1}{n}\sum\limits_{i=1}^nEX_i\right\vert<\epsilon\right\}=\lim\limits_{n\to\infty}P\\\left\{\left\vert\dfrac{1}{n}\sum\limits_{i=1}^nX_i-\dfrac{1}{n}\sum\limits_{i=1}^nEX_i\right\vert<\epsilon\right\}=1$。
+>[!note] **定义：**假设$\mu_n$是$n$重伯努利试验中事件$A$发生的次数，在每次试验中事件$A$发生的概率为$p$（$0<p<1$），则$\dfrac{\mu_n}{n}\overset{P}{\longrightarrow}p$，即对任意的$\epsilon>0$，有$\lim\limits_{n\to\infty}P\left\{\left\vert\dfrac{\mu_n}{n}-p\right\vert<\epsilon\right\}=\lim\limits_{n\to\infty}P\left\{\left\vert\dfrac{1}{n}\sum\limits_{i=1}^nX_i-\dfrac{1}{n}\sum\limits_{i=1}^nEX_i\right\vert<\epsilon\right\}=\lim\limits_{n\to\infty}P\\\left\{\left\vert\dfrac{1}{n}\sum\limits_{i=1}^nX_i-\dfrac{1}{n}\sum\limits_{i=1}^nEX_i\right\vert<\epsilon\right\}=1$。
 
 可以看作通过$n$重伯努利试验，一个事件的试验概率$\dfrac{\mu_n}{n}$会逼近一个固定的事件概率$p$。
 
@@ -68,7 +68,7 @@ $\because X_n\sim E(n)$，$\therefore EX_n=\dfrac{1}{n}$，$DX_n=\dfrac{1}{n^2}$
 
 辛钦大数定律类似切比雪夫大数定律的特殊化，将序列约束为同分布。（但是对方差没有要求，所以不能按切比雪夫定律的证明来做）
 
-[**定义：**]{style="color: violet"}假设随机变量序列$\{X_n\}$（$n=1,2,3\cdots$）是**相互独立**的**同分布**的，如果$EX_i=\mu$（$i=1,2,\cdots$）**存在**，则$\dfrac{1}{n}\sum\limits_{i=1}^nX_i\overset{P}{\longrightarrow}\mu$，即对任意的$\epsilon>0$有$\lim\limits_{n\to\infty}P\left\{\left\vert\dfrac{1}{n}\sum\limits_{i=1}^nX_i-\mu\right\vert<\epsilon\right\}=1$。也可以转换为即$\overline{X}\overset{P}{\rightarrow}E\overline{X}$。
+>[!note] **定义：**假设随机变量序列$\{X_n\}$（$n=1,2,3\cdots$）是**相互独立**的**同分布**的，如果$EX_i=\mu$（$i=1,2,\cdots$）**存在**，则$\dfrac{1}{n}\sum\limits_{i=1}^nX_i\overset{P}{\longrightarrow}\mu$，即对任意的$\epsilon>0$有$\lim\limits_{n\to\infty}P\left\{\left\vert\dfrac{1}{n}\sum\limits_{i=1}^nX_i-\mu\right\vert<\epsilon\right\}=1$。也可以转换为即$\overline{X}\overset{P}{\rightarrow}E\overline{X}$。
 
 即能用平均数可以来逼近期望。
 
@@ -104,7 +104,7 @@ $n$一般大于10以上即可使用中心极限定理。
 
 ## 列维-林德伯格定理
 
-[**定义：**]{style="color: violet"}假设$\{X_n\}$是独立分布的随机变量序列，若$EX_i=\mu$，$DX_i=\sigma^2>0$（$i=1,2,\cdots$）存在，则对任意的实数$x$，有$\lim\limits_{n\to\infty}P\left\{\dfrac{\sum\limits_{i=1}^nX_i-n\mu}{\sqrt{n}\sigma}\leqslant x\right\}=\dfrac{1}{\sqrt{2}\pi}\int_{-\infty}^xe^{-\frac{t^2}{2}}\,\textrm{d}t=\varPhi(x)$。（正态分布标准化）
+>[!note] **定义：**假设$\{X_n\}$是独立分布的随机变量序列，若$EX_i=\mu$，$DX_i=\sigma^2>0$（$i=1,2,\cdots$）存在，则对任意的实数$x$，有$\lim\limits_{n\to\infty}P\left\{\dfrac{\sum\limits_{i=1}^nX_i-n\mu}{\sqrt{n}\sigma}\leqslant x\right\}=\dfrac{1}{\sqrt{2}\pi}\int_{-\infty}^xe^{-\frac{t^2}{2}}\,\textrm{d}t=\varPhi(x)$。（正态分布标准化）
 
 定理要求：独立、同分布、期望方差存在。
 
@@ -124,7 +124,7 @@ $\dfrac{\sum\limits_{i=1}^nX_i-n\mu}{\sqrt{n}\sigma}\sim N(0,1)$，$\sum\limits_
 
 或简称拉普拉斯中心极限定理。是列维-林德伯格定理的特殊情况。
 
-[**定义：**]{style="color: violet"}假设随机变量$Y_n\sim B(n,p)$（$0<p<1$，$n\geqslant1$），则对任意实数$x$，有$\lim\limits_{n\to\infty}P\left\{\dfrac{Y_n-np}{\sqrt{np(1-p)}}\leqslant x\right\}=\dfrac{1}{\sqrt{pi}}\int_{-\infty}^xe^{-\frac{t^2}{2}}\,\textrm{d}t=\varPhi(x)$。
+>[!note] **定义：**假设随机变量$Y_n\sim B(n,p)$（$0<p<1$，$n\geqslant1$），则对任意实数$x$，有$\lim\limits_{n\to\infty}P\left\{\dfrac{Y_n-np}{\sqrt{np(1-p)}}\leqslant x\right\}=\dfrac{1}{\sqrt{pi}}\int_{-\infty}^xe^{-\frac{t^2}{2}}\,\textrm{d}t=\varPhi(x)$。
 
 $\dfrac{Y_n-np}{\sqrt{np(1-p)}}\sim N(0,1)$，$X\sim N[np,np(1-p)]$。即二项分布的极限分布是正态分布。其中正态分布的期望和方差就是二项分布的期望和方差。
 

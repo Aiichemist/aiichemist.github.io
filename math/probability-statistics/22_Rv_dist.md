@@ -4,13 +4,13 @@
 
 ## 随机变量概念
 
-[**定义：**]{style="color: violet"}随机变量就是其值会随机而定的变量。设随机试验$E$的样本空间$\Omega={\omega}$，如果对每一个$\omega$都有唯一的实数$X(\omega)$与之对应，并且对任意实数$x$，$\{\omega|X(\omega)\leqslant x,\omega\in\Omega\}$是随机事件，则称定义在$\Omega$上的实值单值函数$X(\omega)$为**随机变量**，记为随机变量$X$。
+>[!note] **定义：**随机变量就是其值会随机而定的变量。设随机试验$E$的样本空间$\Omega={\omega}$，如果对每一个$\omega$都有唯一的实数$X(\omega)$与之对应，并且对任意实数$x$，$\{\omega|X(\omega)\leqslant x,\omega\in\Omega\}$是随机事件，则称定义在$\Omega$上的实值单值函数$X(\omega)$为**随机变量**，记为随机变量$X$。
 
 ## 分布函数
 
 ### 概念
 
-[**定义：**]{style="color: violet"}设$X$为随机变量，$x$为任意实数，称函数$F(x)=P\{X\leqslant x\}$（$x\in R$且取遍所有实数）为随机变量$X$的分布函数，或称$X$服从分布$F(x)$，记为$X\sim F(x)$。（随着$x$从$-\infty$到$+\infty$，$X(\omega)$到$\varnothing$到$\Omega$）
+>[!note] **定义：**设$X$为随机变量，$x$为任意实数，称函数$F(x)=P\{X\leqslant x\}$（$x\in R$且取遍所有实数）为随机变量$X$的分布函数，或称$X$服从分布$F(x)$，记为$X\sim F(x)$。（随着$x$从$-\infty$到$+\infty$，$X(\omega)$到$\varnothing$到$\Omega$）
 
 ### 性质
 
@@ -32,11 +32,11 @@
 
 # 一维离散型随机变量
 
-[**定义：**]{style="color: violet"}若随机变量$X$只可能取有限个或可列各值$x_1,x_2,\cdots$，则称$X$为离散型随机变量。
+>[!note] **定义：**若随机变量$X$只可能取有限个或可列各值$x_1,x_2,\cdots$，则称$X$为离散型随机变量。
 
 ## 分布律
 
-[**定义：**]{style="color: violet"}$P\{X=x_i\}=p_i$，$i=1,2,\cdots$为$X$的**分布列**、**分布律**或**概率分布**，记为$X\sim p_i$。
+>[!note] **定义：**$P\{X=x_i\}=p_i$，$i=1,2,\cdots$为$X$的**分布列**、**分布律**或**概率分布**，记为$X\sim p_i$。
 
 概率分布常用表格或矩阵表示：
 
@@ -63,7 +63,7 @@ $P\{X=x_i\}=P\{X\leqslant x_i\}-P\{X<x_i\}=F(x_i)-F(x_i-0)$，即某点的概率
 
 ### 0-1分布
 
-[**定义：**]{style="color: violet"}若$X$的概率分布为$X\sim\left(\begin{array}{cc}
+>[!note] **定义：**若$X$的概率分布为$X\sim\left(\begin{array}{cc}
     1 & 0 \\
     p & 1-p
 \end{array}\right)$，即$P\{X=1\}=p$，$P\{X=0\}=1-p$，则称$X$服从参数为$p$的0-1分布，记为$X\sim B(1,p)$（$0<p<1$）。
@@ -72,7 +72,7 @@ $P\{X=x_i\}=P\{X\leqslant x_i\}-P\{X<x_i\}=F(x_i)-F(x_i-0)$，即某点的概率
 
 ### 二项分布
 
-[**定义：**]{style="color: violet"}如果$X$的概率分布为$P\{X=k\}=C_n^kp^k(1-p)^{n-k}$（$k=0,1,\cdots,n$，$0<p<1$），则称$X$服从参数为$(n,p)$的**二项分布**，记为$X\sim B(n,p)$。
+>[!note] **定义：**如果$X$的概率分布为$P\{X=k\}=C_n^kp^k(1-p)^{n-k}$（$k=0,1,\cdots,n$，$0<p<1$），则称$X$服从参数为$(n,p)$的**二项分布**，记为$X\sim B(n,p)$。
 
 二项分布基于$n$重伯努利试验。
 
@@ -80,7 +80,7 @@ $P\{X=x_i\}=P\{X\leqslant x_i\}-P\{X<x_i\}=F(x_i)-F(x_i-0)$，即某点的概率
 
 ### 泊松分布
 
-[**定义：**]{style="color: violet"}如果$X$的概率分布为$P\{X=k\}=\dfrac{\lambda^k}{k!}e^{-\lambda}$（$k=0,1,\cdots,n$，$\lambda>0$），则称$X$服从参数为$\lambda$的**泊松分布**，记为$X\sim P(\lambda)$。
+>[!note] **定义：**如果$X$的概率分布为$P\{X=k\}=\dfrac{\lambda^k}{k!}e^{-\lambda}$（$k=0,1,\cdots,n$，$\lambda>0$），则称$X$服从参数为$\lambda$的**泊松分布**，记为$X\sim P(\lambda)$。
 
 泊松分布基于某场合某单位时间内源源不断的质点来流的个数$X=k$，$\lambda$代表质点流动到来的强度。也可以代表稀有事件发生的概率。
 
@@ -92,7 +92,7 @@ $P\{X=x_i\}=P\{X\leqslant x_i\}-P\{X<x_i\}=F(x_i)-F(x_i-0)$，即某点的概率
 
 ### 几何分布
 
-[**定义：**]{style="color: violet"}如果$X$的概率分布为$P\{X=k\}=(1-p)^{k-1}p$（$k=0,1,\cdots,n$，$0<p<1$），则称$X$服从参数为$p$的**几何分布**，记为$X\sim G(p)$。
+>[!note] **定义：**如果$X$的概率分布为$P\{X=k\}=(1-p)^{k-1}p$（$k=0,1,\cdots,n$，$0<p<1$），则称$X$服从参数为$p$的**几何分布**，记为$X\sim G(p)$。
 
 几何分布与几何无关，代表的是$n$重伯努利试验首次成功就停止试验，试验次数可以为无穷。设$X$表示伯努利试验中事件$A$首次放生所需要的试验次数，则$X\sim G(p)$，其中$p=P(A)$。
 
@@ -100,7 +100,7 @@ $P\{X=x_i\}=P\{X\leqslant x_i\}-P\{X<x_i\}=F(x_i)-F(x_i-0)$，即某点的概率
 
 ### 超几何分布
 
-[**定义：**]{style="color: violet"}如果$X$的概率分布为$P\{X=k\}=\dfrac{C_M^kC_{N-M}^{n-k}}{C_N^n}$（$\max\{0,n-N+M\}\leqslant k\leqslant\min\{MM,n\}$，$M,N,n$为正整数且$M\leqslant N$，$n\leqslant N$，$k$为整数），则称$X$服从参数为$(n,N,M)$的**超几何分布**，记为$X\sim H(n,N,M)$。
+>[!note] **定义：**如果$X$的概率分布为$P\{X=k\}=\dfrac{C_M^kC_{N-M}^{n-k}}{C_N^n}$（$\max\{0,n-N+M\}\leqslant k\leqslant\min\{MM,n\}$，$M,N,n$为正整数且$M\leqslant N$，$n\leqslant N$，$k$为整数），则称$X$服从参数为$(n,N,M)$的**超几何分布**，记为$X\sim H(n,N,M)$。
 
 超几何分布考的可能性很小，事件数就是古典概型的一个特例。
 
@@ -136,11 +136,11 @@ $P\{X=x_i\}=P\{X\leqslant x_i\}-P\{X<x_i\}=F(x_i)-F(x_i-0)$，即某点的概率
 
 # 一维连续型随机变量
 
-[**定义：**]{style="color: violet"}若随机变量$X$的分布函数可以表示为$F(x)=\int_{-\infty}^xf(t)\,\textrm{d}t$（$x\in R$且取遍所有实数），其中$f(x)$是非负可积函数，则$X$为**连续型随机变量**。
+>[!note] **定义：**若随机变量$X$的分布函数可以表示为$F(x)=\int_{-\infty}^xf(t)\,\textrm{d}t$（$x\in R$且取遍所有实数），其中$f(x)$是非负可积函数，则$X$为**连续型随机变量**。
 
 ## 概率密度
 
-[**定义：**]{style="color: violet"}若对于随机变量$X$的分布函数$F(x)$存在非负可积函数$f(x)$使得对于任意实数$x$都有$F(x)=\int_{-\infty}^xf(t)\,\textrm{d}t$，则$f(x)$称为$X$的**概率密度函数**，简称**概率密度**，记为$X\sim f(x)$。
+>[!note] **定义：**若对于随机变量$X$的分布函数$F(x)$存在非负可积函数$f(x)$使得对于任意实数$x$都有$F(x)=\int_{-\infty}^xf(t)\,\textrm{d}t$，则$f(x)$称为$X$的**概率密度函数**，简称**概率密度**，记为$X\sim f(x)$。
 
 ## 性质
 
@@ -157,7 +157,7 @@ $P\{X=x_i\}=P\{X\leqslant x_i\}-P\{X<x_i\}=F(x_i)-F(x_i-0)$，即某点的概率
 
 ### 均匀分布
 
-[**定义：**]{style="color: violet"}如果$X$的概率密度或分布函数分别为$f(x)=\left\{\begin{array}{ll}
+>[!note] **定义：**如果$X$的概率密度或分布函数分别为$f(x)=\left\{\begin{array}{ll}
     \dfrac{1}{b-a}, & a<x<b \\
     0, & \text{其他}
 \end{array}\right.$，$F(x)=\left\{\begin{array}{ll}
@@ -166,19 +166,23 @@ $P\{X=x_i\}=P\{X\leqslant x_i\}-P\{X<x_i\}=F(x_i)-F(x_i-0)$，即某点的概率
     1, & x\geqslant b
 \end{array}\right.$，则称$X$在区间$(a,b)$上服从**均匀分布**，记为$X\sim U(a,b)$。
 
+![](img/image5.png)
+
 几何概型在一维情况下就是几何分布。
 
 若$X$在区间$I$上的任一子区间取值的概率与该子区间的长度成正比，则$X\sim U(a,b)$。
 
 ### 指数分布
 
-[**定义：**]{style="color: violet"}如果$X$的概率密度或分布函数分别为$f(x)=\left\{\begin{array}{ll}
+>[!note] **定义：**如果$X$的概率密度或分布函数分别为$f(x)=\left\{\begin{array}{ll}
     \lambda e^{-\lambda x}, & x>0 \\
     0, & \text{其他}
 \end{array}\right.$，$F(x)=\left\{\begin{array}{ll}
     1-e^{-\lambda x}, & x\geqslant0 \\
     0, & x<0 \\
 \end{array}\right.$，则称$X$在区间$(a,b)$上服从参数为$\lambda$的**指数分布**，记为$X\sim E(\lambda)$。
+
+![](img/image6.png)
 
 指数分布中$\lambda$代表失效率，往往用来代表一个事物毁坏的过程，如灯泡毁坏。
 
@@ -194,9 +198,11 @@ $=1-F(t)=1-P\{X\leqslant t\}=P\{X>t\}$。
 
 ### 正态分布
 
-[**定义：**]{style="color: violet"}如果$X$的概率密度为$f(x)=\dfrac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$（$-\infty<x<+\infty$，$-\infty<\mu<+\infty$，$\sigma>0$），则称$X$服从参数为$(\mu,\sigma^2)$的**正态分布**，称$X$为**正态变量**，记为$X\sim N(\mu,\sigma^2)$。
+>[!note] **定义：**如果$X$的概率密度为$f(x)=\dfrac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$（$-\infty<x<+\infty$，$-\infty<\mu<+\infty$，$\sigma>0$），则称$X$服从参数为$(\mu,\sigma^2)$的**正态分布**，称$X$为**正态变量**，记为$X\sim N(\mu,\sigma^2)$。
 
 $f(x)$的图形关于$x=\mu$对称，即$f(\mu-x)=f(\mu+x)$，并在$x=\mu$处有唯一最大值$f(\mu)=\dfrac{1}{\sqrt{2\pi}\sigma}$。$\mu-\sigma$和$\mu+\sigma$为拐点。
+
+![](img/image7.png)
 
 当$\mu=0$，$\sigma=1$时的正态分布$N(0,1)=\dfrac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}$为**标准正态分布**，记为$\varPhi(x)$，$\varPhi(x)$为偶函数，$\varPhi(0)=\dfrac{1}{2}$，$\varPhi(-x)=1-\varPhi(x)$。
 
@@ -227,14 +233,14 @@ $\therefore\dfrac{3}{2}A+B=1$。又$P\{1<X<2\}=P\{2<X<3\}$。
 $\therefore\int_1^2Ax\,\textrm{d}x=\int_2^3B\,\textrm{d}x$，即$\therefore\int_1^2Ax\,\textrm{d}x=\int_2^2B\,\textrm{d}x=\dfrac{1}{2}$，$A=\dfrac{1}{3}$，$B=\dfrac{1}{2}$。
 
 $f(x)=\left\{\begin{array}{ll}
-    \dfrac{1}{3}x, & 1<x<2 \medskip \\
+    \dfrac{1}{3}x, & 1<x<2  \\
     \dfrac{1}{2}, & 2\leqslant x<3 \\
     0, & \text{其他}
 \end{array}\right.$，$\because F(x)=\int_{-\infty}^xf(t)\,\textrm{d}t$。
 
 $\therefore F(x)=\left\{\begin{array}{ll}
     0, & x<1 \\
-    \int_1^x\dfrac{1}{3}t\,\textrm{d}t=\dfrac{x^2}{6}-\dfrac{1}{6}, & 1\leqslant x<2 \medskip \\
+    \int_1^x\dfrac{1}{3}t\,\textrm{d}t=\dfrac{x^2}{6}-\dfrac{1}{6}, & 1\leqslant x<2  \\
     \int_1^2\dfrac{1}{3}x\,\textrm{d}x+\int_2^x\dfrac{1}{2}\,\textrm{d}x=\dfrac{1}{2}x-\dfrac{1}{2}, & 2\leqslant x<3 \\
     1, & x\geqslant3
 \end{array}\right.$
@@ -260,23 +266,23 @@ $\therefore F(x)=\left\{\begin{array}{ll}
 
 **例题：**设$X$是仅可能取6个值的离散型随机变量，分布为：
 
-   X    -2     -1     0      1      2      3
-  --- ------ ------ ------ ------ ------ ------
-   P   0.05   0.15   0.20   0.25   0.20   0.15
+   X  |  -2  |  -1  |  0    |  1   |  2   |  3
+  ---  | ------ |  ------  | ------ |  ------ |  ----- |  -----
+   P  |   0.05  |   0.15  |   0.20  |   0.25  |   0.20  |   0.15
 
 求$Y=2X+1$，$Z=X^2$的概率分布。
 
 因为$Y=2X+1$是线性的，所以改变$X$变为$Y$，所对应的$P$不变：
 
-   Y    -3     -1     1      3      5      7
-  --- ------ ------ ------ ------ ------ ------
-   P   0.05   0.15   0.20   0.25   0.20   0.15
+Y |  -3  | -1   |  1    |  3   |   5   |     7
+----- |  ----- |  ------ | ------ |  ------ |  ------  | ------
+   P    | 0.05   |  0.15  |   0.20   |  0.25  |   0.20  |   0.15
 
 对于$Z=X^2$是一个平方，导致$Z$的值有些是一样的，所以概率合在一起：
 
-   Z    0      1      4      9
-  --- ------ ------ ------ ------
-   P   0.20   0.40   0.25   0.15
+   Z  |  0    |  1   |   4   |   9
+  ---| ------| ------| ------| ------
+   P|   0.20|   0.40 |  0.25  | 0.15
 
 ## 连续性
 
@@ -312,13 +318,13 @@ $\therefore F(x)=\left\{\begin{array}{ll}
 
 ## 概念
 
-多维随机变量[**定义：**]{style="color: violet"}如果$X_1,X_2,\cdots,X_n$是定义在同一个样本空间上的$n$个随机变量，则称$(X_1,X_2,\cdots,X_n)$为**$n$维随机变量**或**$n$维随机向量**，$X_i$为第$i$个分量。
+多维随机变量>[!note] **定义：**如果$X_1,X_2,\cdots,X_n$是定义在同一个样本空间上的$n$个随机变量，则称$(X_1,X_2,\cdots,X_n)$为**$n$维随机变量**或**$n$维随机向量**，$X_i$为第$i$个分量。
 
 当$n=2$时，$(X,Y)$为**二维随机变量/二维随机向量**。
 
 ## 联合分布函数
 
-[**定义：**]{style="color: violet"}对任意$n$个实数$x_1,x_2,\cdots,x_n$称为$n$元函数$F(x_1,x_2,\cdots,x_n)=P\{X_1\leqslant x_1,X_2\leqslant x_2,\cdots,X_n\leqslant x_n\}$为$n$为随机变量$(X_1,X_2,\cdots,X_n)$的**联合分布函数**。
+>[!note] **定义：**对任意$n$个实数$x_1,x_2,\cdots,x_n$称为$n$元函数$F(x_1,x_2,\cdots,x_n)=P\{X_1\leqslant x_1,X_2\leqslant x_2,\cdots,X_n\leqslant x_n\}$为$n$为随机变量$(X_1,X_2,\cdots,X_n)$的**联合分布函数**。
 
 当$n=2$时对任意的实数$xy$称二元函数$F(x,y)=P\{X\leqslant x,Y\leqslant y\}$为二维随机变量$(X,Y)$的**联合分布函数**，简称**分布函数**，记为$(X,Y)\sim F(x,y)$。
 
@@ -334,7 +340,7 @@ $\therefore F(x)=\left\{\begin{array}{ll}
 
 ## 边缘分布函数
 
-[**定义：**]{style="color: violet"}设二维随机变量$(X,Y)$的联合分布函数为$F(x,y)$，随机变量$X,Y$的分布函数$F_X(x)$与$F_Y(y)$分别称$(X,Y)$关于$X$与关于$Y$的**边缘分布函数**。
+>[!note] **定义：**设二维随机变量$(X,Y)$的联合分布函数为$F(x,y)$，随机变量$X,Y$的分布函数$F_X(x)$与$F_Y(y)$分别称$(X,Y)$关于$X$与关于$Y$的**边缘分布函数**。
 
 $F_X(x)=P\{X\leqslant x\}=P\{X\leqslant x,Y<+\infty\}=\lim\limits_{y\to+\infty}P\{X\leqslant x,Y\leqslant y\}=\lim\limits_{y\to+\infty}F(x,y)=F(x,+\infty)$。同理$F_Y(y)=F(+\infty,y)$。
 
@@ -344,21 +350,21 @@ $F_X(x)=P\{X\leqslant x\}=P\{X\leqslant x,Y<+\infty\}=\lim\limits_{y\to+\infty}P
 
 ## 条件分布函数
 
-[**定义：**]{style="color: violet"}对于二维随机变量$(X，Y)$，可以考虑在其中一个随机变量取得可能的固定值的条件下，另一随机变量的概率分布，这样得到的$X$或$Y$的概率分布叫做**条件概率分布**，**简称条件分布**。
+>[!note] **定义：**对于二维随机变量$(X，Y)$，可以考虑在其中一个随机变量取得可能的固定值的条件下，另一随机变量的概率分布，这样得到的$X$或$Y$的概率分布叫做**条件概率分布**，**简称条件分布**。
 
 [**定理：**]{style="color: aqua"}条件概率密度=$\dfrac{\text{联合概率密度}}{\text{边缘概率密度}}$。
 
 # 二维离散型随机变量
 
-[**定义：**]{style="color: violet"}若二维随机变量$(X,Y)$只能取有限或可列对值$(x_1,y_1),(x_2,y_2),\cdots$则称$(X,Y)$为**二维离散型随机变量**。
+>[!note] **定义：**若二维随机变量$(X,Y)$只能取有限或可列对值$(x_1,y_1),(x_2,y_2),\cdots$则称$(X,Y)$为**二维离散型随机变量**。
 
 ## 联合分布律
 
-[**定义：**]{style="color: violet"}$p_{ij}=P\{X=x_i,Y=y_j\}$，$i,j=1,2,\cdots$为$(X,Y)$的**分布律**或随机变量$X$和$Y$的**联合分布律**，记为$(X,Y)\sim p_{ij}$。
+>[!note] **定义：**$p_{ij}=P\{X=x_i,Y=y_j\}$，$i,j=1,2,\cdots$为$(X,Y)$的**分布律**或随机变量$X$和$Y$的**联合分布律**，记为$(X,Y)\sim p_{ij}$。
 
 数列$\{p_{ij}\}$，$i,j=1,2,\cdots$是某一二维离散型随机变量的概率分布的充要条件是$p_{ij}\geqslant0$，$\sum\limits_{i=1}^\infty\sum\limits_{j=1}^\infty p_{ij}=1$。
 
-[**定义：**]{style="color: violet"}若$p_{ij}$，$i,j=1,2,\cdots$为$(X,Y)$的概率分布，则$(X,Y)$的**联合分布函数**为$F(x,y)=P\{X\leqslant x,Y\leqslant y\}=\sum\limits_{x_i\leqslant x}\sum\limits_{y_j\leqslant y}p_{ij}$。
+>[!note] **定义：**若$p_{ij}$，$i,j=1,2,\cdots$为$(X,Y)$的概率分布，则$(X,Y)$的**联合分布函数**为$F(x,y)=P\{X\leqslant x,Y\leqslant y\}=\sum\limits_{x_i\leqslant x}\sum\limits_{y_j\leqslant y}p_{ij}$。
 
 联合分布函数是以$(x,y)$为定点的左下角平面上$(X,Y)$所有可能取值的概率的和。
 
@@ -366,7 +372,7 @@ $F_X(x)=P\{X\leqslant x\}=P\{X\leqslant x,Y<+\infty\}=\lim\limits_{y\to+\infty}P
 
 ## 边缘分布律
 
-[**定义：**]{style="color: violet"}对于同一个$x$值的所有$y$取值的概率的和，就是该$x$值的**边缘分布律**。同理对于同一个$y$值的所有$x$取值的概率的和，就是该$y$值的**边缘分布律**。
+>[!note] **定义：**对于同一个$x$值的所有$y$取值的概率的和，就是该$x$值的**边缘分布律**。同理对于同一个$y$值的所有$x$取值的概率的和，就是该$y$值的**边缘分布律**。
 
 即$p_{i\cdot}=P\{X=x_i\}=\sum\limits_{j=1}^\infty P\{X=x_i,Y=y_j\}=\sum\limits_{j=1}^\infty p_{ij}$（$i=1,2,\cdots$）。
 
@@ -376,13 +382,13 @@ $p_{\cdot j}=P\{Y=y_i\}=\sum\limits_{i=1}^\infty P\{X=x_i,Y=y_j\}=\sum\limits_{i
 
 条件分布律类比随机事件概率中的条件概率。
 
-[**定义：**]{style="color: violet"}如果$(X,Y)\sim p_{ij}$（$i,j=1,2,\cdots$），对固定的$j$，如果$p_{\cdot j}=P\{Y=y_j\}>0$，则称$P\{X=x_i|Y=y_j\}=\dfrac{P\{X=x_i,Y=y_j\}}{P\{Y=y_j\}}=\dfrac{p_{ij}}{p_{\cdot j}}$（$i=1,2,\cdots$）为$X$在$Y=y_j$条件下的**条件分布**。
+>[!note] **定义：**如果$(X,Y)\sim p_{ij}$（$i,j=1,2,\cdots$），对固定的$j$，如果$p_{\cdot j}=P\{Y=y_j\}>0$，则称$P\{X=x_i|Y=y_j\}=\dfrac{P\{X=x_i,Y=y_j\}}{P\{Y=y_j\}}=\dfrac{p_{ij}}{p_{\cdot j}}$（$i=1,2,\cdots$）为$X$在$Y=y_j$条件下的**条件分布**。
 
-同理[**定义：**]{style="color: violet"}$Y$在$X=x_i$条件下的**条件分布**为$P\{Y=y_j|X=x_i\}=\dfrac{p_{ij}}{p_{i\cdot}}$（$j=1,2,\cdots$）。
+同理>[!note] **定义：**$Y$在$X=x_i$条件下的**条件分布**为$P\{Y=y_j|X=x_i\}=\dfrac{p_{ij}}{p_{i\cdot}}$（$j=1,2,\cdots$）。
 
 # 二维连续型随机变量
 
-[**定义：**]{style="color: violet"}如果二维随机变量$(X,Y)$的联合分布函数$F(x,y)$可表示为$F(x,y)=\int_{-\infty}^x\int_{-\infty}^yf(u,v)\,\textrm{d}u\textrm{d}v$，（$(x,y)\int R^2$），其中$f(x,y)$为非负可积函数，则称$(X,Y)$为**二维连续型随机变量**，$f(x,y)$为$(X,Y)$的**概率密度**，记为$(X,Y)\sim f(x,y)$。
+>[!note] **定义：**如果二维随机变量$(X,Y)$的联合分布函数$F(x,y)$可表示为$F(x,y)=\int_{-\infty}^x\int_{-\infty}^yf(u,v)\,\textrm{d}u\textrm{d}v$，（$(x,y)\int R^2$），其中$f(x,y)$为非负可积函数，则称$(X,Y)$为**二维连续型随机变量**，$f(x,y)$为$(X,Y)$的**概率密度**，记为$(X,Y)\sim f(x,y)$。
 
 二元函数$f(x,y)$是概率密度的充要条件$f(x,y)\geqslant0$，$\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(x,y)\,\textrm{d}x\textrm{d}y$\
 $=1$。
@@ -391,7 +397,7 @@ $=1$。
 
 ## 联合概率密度
 
-[**定义：**]{style="color: violet"}设$(X,Y)$的联合分布函数为$F(x,y)$，概率密度为$f(x,y)$，则
+>[!note] **定义：**设$(X,Y)$的联合分布函数为$F(x,y)$，概率密度为$f(x,y)$，则
 
 -   $F(x,y)$为$(x,y)$的二元连续函数，且$F(x,y)=P\{X\leqslant x,Y\leqslant y\}=\int_{-\infty}^x\int_{-\infty}^xf(u,v)\,\textrm{d}u\textrm{d}v$。
 
@@ -403,24 +409,24 @@ $=1$。
 
 ## 边缘概率密度
 
-[**定义：**]{style="color: violet"}设$(X,Y)\sim f(x,y)$，则$X$的边缘分布函数为$P\{X\leqslant x\}=F_X(x)=F(-\infty,x)=\int_{-\infty}^x\left[\int_{-\infty}^{+\infty}f(u,v)\,\textrm{d}v\right]\textrm{d}u$，所以$X$为连续型随机变量，其概率密度$f_X(x)=\int_{-\infty}^{+\infty}f(x,y)\,\textrm{d}y$，称$f_X(x)$为$(X,Y)$关于$X$的**边缘概率密度**。同理$Y$也为连续型随机变量，关于$Y$的边缘分布函数为$P\{Y\leqslant y\}=F_Y(y)=\int_{-\infty}^y[\int_{-\infty}^{+\infty}f(x,y)\,\textrm{d}x]\textrm{d}y$，其概率密度为$f_Y(y)=\int_{-\infty}^{+\infty}f(x,y)\,\textrm{d}x$。
+>[!note] **定义：**设$(X,Y)\sim f(x,y)$，则$X$的边缘分布函数为$P\{X\leqslant x\}=F_X(x)=F(-\infty,x)=\int_{-\infty}^x\left[\int_{-\infty}^{+\infty}f(u,v)\,\textrm{d}v\right]\textrm{d}u$，所以$X$为连续型随机变量，其概率密度$f_X(x)=\int_{-\infty}^{+\infty}f(x,y)\,\textrm{d}y$，称$f_X(x)$为$(X,Y)$关于$X$的**边缘概率密度**。同理$Y$也为连续型随机变量，关于$Y$的边缘分布函数为$P\{Y\leqslant y\}=F_Y(y)=\int_{-\infty}^y[\int_{-\infty}^{+\infty}f(x,y)\,\textrm{d}x]\textrm{d}y$，其概率密度为$f_Y(y)=\int_{-\infty}^{+\infty}f(x,y)\,\textrm{d}x$。
 
 联合概率密度决定边缘概率密度，所以相同联合概率密度的拥有同样边缘概率密度。
 
 ## 条件概率密度
 
-[**定义：**]{style="color: violet"}设$(X,Y)\sim f(x,y)$，边缘概率密度$f_X(x)>0$，则称$f_{Y|X}(y|x)=\dfrac{f(x,y)}{f_X(x)}$为$Y$在$X=x$条件下的**条件概率密度**。同理$X$在$Y=y$条件下的条件概率密度为$f_{X|Y}(x|y)=\dfrac{f(x,y)}{f_Y(y)}$。
+>[!note] **定义：**设$(X,Y)\sim f(x,y)$，边缘概率密度$f_X(x)>0$，则称$f_{Y|X}(y|x)=\dfrac{f(x,y)}{f_X(x)}$为$Y$在$X=x$条件下的**条件概率密度**。同理$X$在$Y=y$条件下的条件概率密度为$f_{X|Y}(x|y)=\dfrac{f(x,y)}{f_Y(y)}$。
 
 若$f_X(x)>0$，$f_Y(y)>0$，则有概率密度乘法公式$f(x,y)=f_X(x)f_{Y|X}(y|x)=f_Y(y)f_{X|Y}(x|y)$。
 
 如果$XY$独立，则$f(x,y)=f(x)f(y)$，此时条件概率密度就等于边缘概率密度。
 
-[**定义：**]{style="color: violet"}$Y$在$X=x$条件下的**条件分布函数**为$F_{Y|X}(y|x)=\int_{-\infty}^yf_{Y|X}(y|x)\,\textrm{d}y=\displaystyle{\int_{-\infty}^y\dfrac{f(x,y)}{f_X(x)}\textrm{d}y}$，同理$X$在$Y=y$条件下的条件分布函数为$F_{X|Y}(x|y)=$\
+>[!note] **定义：**$Y$在$X=x$条件下的**条件分布函数**为$F_{Y|X}(y|x)=\int_{-\infty}^yf_{Y|X}(y|x)\,\textrm{d}y=\displaystyle{\int_{-\infty}^y\dfrac{f(x,y)}{f_X(x)}\textrm{d}y}$，同理$X$在$Y=y$条件下的条件分布函数为$F_{X|Y}(x|y)=$\
 $\int_{-\infty}^xf_{X|Y}(x|y)\,\textrm{d}x=\displaystyle{\int_{-\infty}^x\dfrac{f(x,y)}{f_Y(y)}}\textrm{d}x$。
 
 ## 二维均匀分布
 
-[**定义：**]{style="color: violet"}若$(X,Y)$的概率密度为$f(x,y)=\left\{\begin{array}{ll}
+>[!note] **定义：**若$(X,Y)$的概率密度为$f(x,y)=\left\{\begin{array}{ll}
     \dfrac{1}{S_D}, & (x,y)\in D \\
     0, & \text{其他}
 \end{array}\right.$，$S_D$为区域$D$的面积，则称$(X,Y)$在平面有界区域$D$上服从**均匀分布**。
@@ -429,7 +435,7 @@ $\int_{-\infty}^xf_{X|Y}(x|y)\,\textrm{d}x=\displaystyle{\int_{-\infty}^x\dfrac{
 
 ## 二维正态分布
 
-[**定义：**]{style="color: violet"}若$(X,Y)$的概率密度为：
+>[!note] **定义：**若$(X,Y)$的概率密度为：
 
 $f(x,y)=\dfrac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}\exp\left\{-\dfrac{1}{2(1-\rho^2)}\left[\left(\dfrac{x-\mu_1}{\sigma_1}\right)^2-2\rho\left(\dfrac{x-\mu_1}{\sigma_1}\right)\left(\dfrac{y-\mu_2}{\sigma_2}\right)+\left(\dfrac{y-\mu_2}{\sigma_2}\right)^2\right]\right\}$
 
@@ -447,7 +453,7 @@ $f(x,y)=\dfrac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}\exp\left\{-\dfrac{1}{2(1-
 
 ## 概念
 
-[**定义：**]{style="color: violet"}设随机变量$X,Y$的联合分布函数为$F(x,y)$，边缘分布函数为$F_X(x)$，$F_Y(y)$，若对任意实数$x$，$y$，有$P\{X\leqslant x,Y\leqslant y\}=P\{X\leqslant x\}P\{Y\leqslant y\}$，即$F(x,y)=F_X(x)F_Y(y)$，则称随机变量$X$和$Y$相互独立。即对于离散型随机变量$P\{X=x_i,Y=y_j\}=P\{X=x_i\}P\{Y=y_j\}$。对于连续型随机变量$f(x,y)=f_X(x)f_Y(y)$。
+>[!note] **定义：**设随机变量$X,Y$的联合分布函数为$F(x,y)$，边缘分布函数为$F_X(x)$，$F_Y(y)$，若对任意实数$x$，$y$，有$P\{X\leqslant x,Y\leqslant y\}=P\{X\leqslant x\}P\{Y\leqslant y\}$，即$F(x,y)=F_X(x)F_Y(y)$，则称随机变量$X$和$Y$相互独立。即对于离散型随机变量$P\{X=x_i,Y=y_j\}=P\{X=x_i\}P\{Y=y_j\}$。对于连续型随机变量$f(x,y)=f_X(x)f_Y(y)$。
 
 ## 充要条件
 
@@ -481,7 +487,7 @@ $f(x,y)=\dfrac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}\exp\left\{-\dfrac{1}{2(1-
 
 # 二维随机变量函数分布
 
-[**定义：**]{style="color: violet"}设$X,Y$为随机变量，$g(x,y)$为二元函数，则以随机变量$X,Y$作为变量的函数$U=g(X,Y)$也是随机变量，称为**随机变量$X,Y$的函数**。
+>[!note] **定义：**设$X,Y$为随机变量，$g(x,y)$为二元函数，则以随机变量$X,Y$作为变量的函数$U=g(X,Y)$也是随机变量，称为**随机变量$X,Y$的函数**。
 
 ## 离散型
 
@@ -497,12 +503,12 @@ $f(x,y)=\dfrac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}\exp\left\{-\dfrac{1}{2(1-
 
 (1)解：因为该题目是二维离散型随机变量，所以分析：
 
-                0     1     2    $X_1$边缘
-  ----------- ----- ----- ----- -----------
-       0       1/9   2/9   1/9      4/9
-       1       2/9   2/9    0       4/9
-       2       1/9    0     0       1/9
-   $X_2$边缘   4/9   4/9   1/9       1
+$x_1$ \ $x_2$  | 0   |    1   |    2  |    $X_1$边缘
+----- |----- |----- |----- |-----
+ 0    |   1/9  | 2/9  | 1/9   |   4/9
+1    |   2/9  | 2/9   | 0     |  4/9
+2    |   1/9  |  0    | 0     |  1/9
+$X_2$边缘  | 4/9 |  4/9  | 1/9    |   1
 
 从而联合分布就是表格最中心的部分，边缘分布就是两边。
 
@@ -570,7 +576,7 @@ $\,\textrm{d}y$。
 
 积谁不换谁，换完求偏导。
 
-当$XY$相互独立时，对于联合概率密度就能变成边缘概率密度的乘积，得到卷积公式[**定义：**]{style="color: violet"}
+当$XY$相互独立时，对于联合概率密度就能变成边缘概率密度的乘积，得到卷积公式>[!note] **定义：**
 
 $f_Z(z)=\int_{-\infty}^{+\infty}f_X(x)f_Y(z-x)\,\textrm{d}x=\int_{-\infty}^{+\infty}f_X(z-y)f_Y(y)\,\textrm{d}y$。
 
