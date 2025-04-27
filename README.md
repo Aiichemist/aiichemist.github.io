@@ -1,22 +1,21 @@
-# Aiichemist's blog
+
 
 ![Aiichemist](hello.gif)
 
-## About Me
+#### About Me
   
-  - I'm Aiichemist:
-    -  An undergraduate student majoring in artificial intelligence.
-  - Take the long view, be patient, and make friends with time through the power of knowledge.
-  - Blog: [link here](https://aiichemist.github.io/)
+I'm Aiichemist:
+-  An undergraduate student majoring in artificial intelligence.
+- Take the long view, be patient, and make friends with time through the power of knowledge.
+- Blog: [link here](https://aiichemist.github.io/)
   
   <img align="right" alt="GIF" src="https://github.com/abhisheknaiidu/abhisheknaiidu/blob/master/code.gif?raw=true" width="343" height="220" title="Do what you like, and do it best!">
 
-## Skill & Interest
+#### Skill & Interest
   
   - Languages：Python, C++, Java, SQL, LaTeX, Markdown
-  - Machine Learning
-  - DL,RL(Learning)
-  - Interested in **CV, NLP,LLM**
+  - Interested in **ML,DL,RL,CV,NLP,RS,LLM...**
+
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Aiichemist/Aiichemist/output/github-contribution-grid-snake-dark.svg">
@@ -24,12 +23,12 @@
   <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/Aiichemist/Aiichemist/output/github-contribution-grid-snake.svg">
 </picture>
 
-## Stats
+#### Stats
   ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Aiichemist&hide_progress=true)
   ![Aiichemist](https://github-readme-stats.vercel.app/api?username=Aiichemist\&rank_icon=github)
 
 
-## Languages and Tools
+#### Languages and Tools
 
 <p align="left">
   <a href='https://www.python.org/'>
@@ -109,6 +108,6 @@
   </a>
 </p>
 
-## Contact
+#### Contact
 > email: aiichemist@126.com
 
