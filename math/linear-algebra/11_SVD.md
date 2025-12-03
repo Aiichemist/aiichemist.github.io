@@ -65,7 +65,7 @@ $U = [\vec{u}_1, \vec{u}_2, \ldots,\vec{u}_n]$ 为$R^n$ 的规范正交基，$V 
 
 ## 手算奇异值分解
 
-给定矩阵$X￥：
+给定矩阵$X$：
 
 $$X=\begin{bmatrix}0 &1\\1 & 1\\1 & 0\end{bmatrix}$$
 

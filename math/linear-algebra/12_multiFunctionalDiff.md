@@ -27,7 +27,7 @@ $$\frac{\partial f(\vec{x})}{\partial\vec{x}}=\begin{bmatrix}\dfrac{\partial f(\
 
 $$f(\vec{x})=\vec{w}^T\vec{x}+b=\vec{x}^T\vec{w}+b$$
 
-$其中，\vec{x} 和 \vec{w} 均为列向量：$
+其中，$\vec{x}$ 和 $\vec{w}$ 均为列向量：
 
 $$\vec{x}=\begin{bmatrix}w_1\\w_2\\\vdots\\w_D\end{bmatrix},\vec{x}=\begin{bmatrix}x_1\\x_2\\\vdots\\x_D\end{bmatrix}$$
 
@@ -41,7 +41,7 @@ $$f(\vec{x})=w_1x_1+w_2x_2+\cdots+w_Dx_D+b$$
 
   
 
-$多元一次函数 f(\vec{x}) 对 \vec{x} 求一阶导，并写成列向量形式：$
+多元一次函数$ f(\vec{x}) $对$ \vec{x}$ 求一阶导，并写成列向量形式：
 
 $$\frac{\partial f(\vec{x})}{\partial\vec{x}}=\begin{bmatrix}\dfrac{\partial f(\vec{x})}{\partial x_1}\\\dfrac{\partial f(\vec{x})}{\partial x_2}\\\vdots\\\dfrac{\partial f(\vec{x})}{\partial x_D}\end{bmatrix}=\begin{bmatrix}w_1\\w_2\\\vdots\\w_D\end{bmatrix}=\vec{w}$$
 
