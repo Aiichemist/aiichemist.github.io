@@ -1,6 +1,6 @@
 <!-- docs/_sidebar.md -->
 
-* Math
+* [Math](/math/)
   - [Advanced Math](/math/advanced/)
   - [Linear Algebra](/math/linear-algebra/)
   - [Probability Statistics](/math/probability-statistics/)

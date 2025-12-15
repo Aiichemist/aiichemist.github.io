@@ -1,4 +1,6 @@
 <!-- docs/_sidebar.md -->
+
+* [🔙​](/math/README.md)
 * 纯数学相关
     * [随机事件与概率](/math/probability-statistics/21_Re_prob.md)
     * [随机变量及其分布](/math/probability-statistics/22_Rv_dist.md)

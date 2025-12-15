@@ -85,13 +85,9 @@ $$\frac{\partial(\vec{x}^TQ\vec{x})}{\partial\vec{x}}=(Q+Q^T)\vec{x}$$
 
 注意，$Q$为常数方阵。
 
-  
-
 如果 $Q$ 为对称矩阵，上式对 $\vec{x}$ 一阶导数可以写成：
 
 $$\frac{\partial(\vec{x}^TQ\vec{x})}{\partial\vec{x}}=2Q\vec{x}$$
-
-  
 
 假设 $Q$ 为对称矩阵，给定如下二次函数：
 

@@ -1,5 +1,6 @@
 <!-- docs/_sidebar.md -->
 
+* [🔙​](/math/README.md)
 * 纯数学相关
     * [行列式](/math/linear-algebra/21_Displacement.md)
     * [矩阵](/math/linear-algebra/22_Matrix.md)

@@ -1,5 +1,6 @@
 <!-- docs/_sidebar.md -->
 
+* [🔙​](/math/README.md)
 * [函数极限与连续](/math/advanced/01_limitOfFunctions.md)
 * [数列极限](/math/advanced/02_limitOfSeries.md)
 * [一元函数微分学](/math/advanced/03_diff_1.md)
