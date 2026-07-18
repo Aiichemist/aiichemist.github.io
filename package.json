@@ -1,0 +1,14 @@
+{
+  "name": "aiichemist-docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aiichemist Docsify documentation site",
+  "scripts": {
+    "start": "docsify serve . --open",
+    "serve": "docsify serve ."
+  },
+  "devDependencies": {
+    "docsify-cli": "^4.4.4",
+    "prismjs": "^1.30.0"
+  }
+}

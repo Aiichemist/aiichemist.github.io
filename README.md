@@ -112,3 +112,16 @@ I'm Aiichemist:
 #### Contact
 > email: aiichemist@126.com
 
+#### Local development
+
+This site is powered by Docsify. Install Node.js 18 or newer, then run:
+
+```bash
+npm install
+npm start
+```
+
+The documentation will be available at `http://localhost:3000`. The repository
+can be published directly with GitHub Pages because Docsify renders Markdown in
+the browser and does not require a build step.
+
